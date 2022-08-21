@@ -47,17 +47,105 @@
         </div>
     </header>
     <section style="margin-top: -50px;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-2 col-12"></div>
-                <div class="col-lg-6 col-md-8 col-12">
+                <div class="col-md-2 col-12"></div>
+                <div class="col-md-8 col-12">
                     <div class="card shadow border border-white border-5 rounded-0">
                         <div class="card-body">
-                            <img src="screenshot.png" alt="" class="img-fluid">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">QM Buy / LME</label>
+                                            <input type="text" class="form-control shadow-none active rounded-0" id="qm-buy">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">FX Rate (1 USD)</label>
+                                            <input type="text" class="form-control shadow-none rounded-0" id="fx-rate">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">QM Sell GAE 10x</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="qm-sell">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Unit Request</label>
+                                            <input type="text" class="form-control shadow-none rounded-0" id="unit-req">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Upfront Payment</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="upfront-pay">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Tawarruq Finance (unit)</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="tawarruq-fin">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Upfront 3.5% Management Fee</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="upfront-mgmt-fee">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12"></div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Total Payment via FPX</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="total-payment-fpx">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Gram Listed GAE 10x</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="gram-listed-gae">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Current GAE 10x Value</label>
+                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                                id="current-gae-value">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button"
+                                            class="btn btn-primary shadow-none rounded-0">Calculate</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-2 col-12"></div>
+                <div class="col-md-2 col-12"></div>
             </div>
         </div>
     </section>
@@ -65,7 +153,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- <p class="text-center" id="bdate"></p> -->
                     <p class="text-center mt-3">
                         <span class="btn rounded-pill text-white px-5">2021 © myZodiacSign by <a
                                 href="http://https://anupammondal.in">Anupam M</a></span>
@@ -75,12 +162,19 @@
         </div>
     </footer>
 
+    <script>
+        const getValueInput = () => {
+            let inputValue = document.getElementById("domTextElement").value;
+            document.getElementById("valueInput").innerHTML = inputValue;
+        }
+    </script>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
