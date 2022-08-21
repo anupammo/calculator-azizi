@@ -36,7 +36,7 @@
     </style>
 </head>
 
-<body>
+<body onload="getValueInput();">
     <header>
         <div class="container">
             <div class="row">
@@ -58,22 +58,35 @@
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">QM Buy / LME</label>
-                                            <input type="text" class="form-control shadow-none active rounded-0" id="qm-buy">
+                                            <input type="number" class="form-control shadow-none rounded-0" id="qm_buy"
+                                                value="56.19">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">FX Rate (1 USD)</label>
-                                            <input type="text" class="form-control shadow-none rounded-0" id="fx-rate">
+                                            <input type="number" class="form-control shadow-none rounded-0" id="fx_rate"
+                                                value="4.476">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label class="form-label">QM Sell GAE 10x</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
-                                                id="qm-sell">
+                                            <label class="form-label">
+                                                <span class="me-4">QM Sell GAE 10x</span>
+                                                <strong class="text-primary">$</strong>
+                                                <strong class="text-primary" id="qm_sell"></strong>
+                                            </label>
+                                            <!-- <input type="number" disabled class="form-control shadow-none rounded-0"
+                                                id="qm_sell"> -->
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                <span class="me-4">or in MYR</span>
+                                                <strong class="text-primary">RM</strong>
+                                                <strong class="text-primary" id="in-rm"></strong>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12"></div>
@@ -82,13 +95,14 @@
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Unit Request</label>
-                                            <input type="text" class="form-control shadow-none rounded-0" id="unit-req">
+                                            <input type="number" class="form-control shadow-none rounded-0"
+                                                id="unit_req" value="1">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Upfront Payment</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                            <input type="number" disabled class="form-control shadow-none rounded-0"
                                                 id="upfront-pay">
                                         </div>
                                     </div>
@@ -97,14 +111,14 @@
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Tawarruq Finance (unit)</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
-                                                id="tawarruq-fin">
+                                            <!-- <input type="number" disabled class="form-control shadow-none rounded-0"
+                                                id="tawarruq-fin"> -->
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Upfront 3.5% Management Fee</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                            <input type="number" disabled class="form-control shadow-none rounded-0"
                                                 id="upfront-mgmt-fee">
                                         </div>
                                     </div>
@@ -114,7 +128,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Total Payment via FPX</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                            <input type="number" disabled class="form-control shadow-none rounded-0"
                                                 id="total-payment-fpx">
                                         </div>
                                     </div>
@@ -123,14 +137,14 @@
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Gram Listed GAE 10x</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                            <input type="number" disabled class="form-control shadow-none rounded-0"
                                                 id="gram-listed-gae">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">Current GAE 10x Value</label>
-                                            <input type="text" disabled class="form-control shadow-none rounded-0"
+                                            <input type="number" disabled class="form-control shadow-none rounded-0"
                                                 id="current-gae-value">
                                         </div>
                                     </div>
@@ -164,8 +178,37 @@
 
     <script>
         const getValueInput = () => {
-            let inputValue = document.getElementById("domTextElement").value;
-            document.getElementById("valueInput").innerHTML = inputValue;
+            let qm_buy = parseFloat(document.getElementById("qm_buy").value);
+            let fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            let unit_req = parseFloat(document.getElementById("unit_req").value);
+            // document.getElementById("valueInput").innerHTML = inputValue;
+            let qm_sell_gae = parseFloat((qm_buy * 0.035) + qm_buy).toFixed(2);
+            // document.getElementById("qm_sell").value = qm_sell_gae;
+            document.getElementById("qm_sell").innerHTML = qm_sell_gae;
+
+            let upfront_payment = parseFloat(250 * fx_rate * unit_req).toFixed(2);
+            document.getElementById("upfront-pay").value = upfront_payment;
+
+            let upfront_fee = parseFloat(((2250 * unit_req) * 0.035) * fx_rate).toFixed(2);
+            document.getElementById("upfront-mgmt-fee").value = upfront_fee;
+
+            let in_rm = parseFloat(qm_sell_gae * fx_rate).toFixed(2);
+            document.getElementById("in-rm").innerHTML = in_rm;
+
+            let total_payment = parseFloat(upfront_payment) + parseFloat(upfront_fee);
+            document.getElementById("total-payment-fpx").value = total_payment;
+
+            let gram_listed = parseFloat((2500 * unit_req) / qm_sell_gae).toFixed(4);
+            document.getElementById("gram-listed-gae").value = gram_listed;
+
+            let current_gae = parseFloat((gram_listed * qm_buy) - 2250).toFixed(2);
+            document.getElementById("current-gae-value").value = current_gae;
+
+            // Confused here
+            // let tawarruq_finance = parseFloat(fx_rate * unit_req).toFixed(2);
+            // document.getElementById("tawarruq-fin").value = tawarruq_finance;
+
+            console.log('https://anupammondal.in');
         }
     </script>
 
