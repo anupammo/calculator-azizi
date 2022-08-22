@@ -349,13 +349,15 @@
             let net_cash_out = parseFloat((gram_listed * future_qm) - (250 * 9 * unit_req)).toFixed(2);
             document.getElementById("net-cash-out").innerHTML = net_cash_out;
 
-            let total_gain = parseInt(((gram_listed * prediction_gain) - (250 * 9 * unit_req)) * (fx_rate - upfront_payment));
+
+            let total_gain = parseInt((((gram_listed * future_qm) - (250 * 9 * unit_req)) * fx_rate) - (250 * fx_rate * unit_req)).toFixed(2);
             document.getElementById("total-gain").innerHTML = total_gain;
 
-            let mf_refund = parseFloat((((2250 * unit_req) * 0.03) * fx_rate) - (((2250 * unit_req) * 0.035 / 365) * days_invested) * fx_rate).toFixed(2);
-            document.getElementById("mf-refund").innerHTML = mf_refund;
 
-            console.log(((gram_listed * prediction_gain) - (250 * 9 * unit_req)) * (fx_rate - upfront_payment));
+            let mf_refund = parseFloat((((2250 * unit_req) * 0.035) * fx_rate) - (((2250 * unit_req) * 0.035 / 365) * days_invested) * fx_rate).toFixed(2);
+            document.getElementById("mf-refund").innerHTML = mf_refund;
+            console.log(gram_listed * prediction_gain);
+            console.log(gram_listed, future_qm, 250, 9, unit_req, fx_rate, 250, fx_rate, unit_req);
         }
     </script>
 
