@@ -177,12 +177,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-12">
                                         <button type="button" onclick="getCalculate();"
                                             class="btn btn-primary shadow-none rounded-0">Calculate</button>
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -266,12 +266,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
+                                <div class="row">
                                     <div class="col-12">
                                         <button type="button" onclick="getPrediction();"
                                             class="btn btn-primary shadow-none rounded-0">Prediction</button>
                                     </div>
-                                </div> -->
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -325,27 +325,26 @@
             console.log(dev_url);
         }
         const getPrediction = () => {
-            let prediction_gain = parseFloat(document.getElementById("prediction-gain").value);
-            let days_invested = parseFloat(document.getElementById("days-invested").value);
+            let prediction_gain = parseInt(document.getElementById("prediction-gain").value);
+            let days_invested = parseInt(document.getElementById("days-invested").value);
 
-            let fx_rate = parseFloat(document.getElementById("fx_rate").value);
-            let qm_sell_gae = parseFloat(document.getElementById("qm_sell").value).toFixed(2);
-            let unit_req = parseFloat(document.getElementById("unit_req").value);
-            let upfront_payment = parseFloat(document.getElementById("upfront-pay").value).toFixed(2);
-            let gram_listed = parseFloat(document.getElementById("gram-listed-gae").value).toFixed(4);
+            let fx_rate = parseFloat(document.getElementById("fx_rate").value).toFixed(3);
+            let qm_sell_gae = parseFloat(document.getElementById("qm_sell").textContent);
+            let unit_req = parseInt(document.getElementById("unit_req").value);
+            let upfront_payment = parseFloat(document.getElementById("upfront-pay").textContent).toFixed(2);
+            let gram_listed = parseFloat(document.getElementById("gram-listed-gae").textContent).toFixed(4);
 
-            let future_qm = parseFloat(((prediction_gain / 100) + qm_sell_gae) + qm_sell_gae).toFixed(2);
+            let future_qm = parseFloat(((prediction_gain / 100) * qm_sell_gae) + qm_sell_gae).toFixed(2);
             document.getElementById("future-qm").innerHTML = future_qm;
 
-            let net_cash_out = parseFloat((gram_listed * future_qm) - (250 * 9 * unit_req)).toFixed(2);
-            document.getElementById("net-cash-out").innerHTML = net_cash_out;
+            // let net_cash_out = parseFloat((parsefloat(gram_listed).toFixed(4) * future_qm) - (250 * 9 * unit_req)).toFixed(2);
+            // document.getElementById("net-cash-out").innerHTML = net_cash_out;
 
-            let total_gain = parseFloat((((gram_listed * prediction_gain) - (250 * 9 * unit_req) * fx_rate) - upfront_payment)).toFixed(2);
-            document.getElementById("total-gain").innerHTML = total_gain;
+            // let total_gain = parseFloat((((parsefloat(gram_listed).toFixed(4) * parseInt(prediction_gain)) - (250 * 9 * unit_req) * fx_rate) - upfront_payment)).toFixed(2);
+            // document.getElementById("total-gain").innerHTML = total_gain;
 
-            let mf_refund = parseFloat((((2250 * unit_req) * 0.035) * fx_rate) - (((2250 * unit_req) * 0.035/365) * days_invested) * fx_rate).toFixed(2);
-            document.getElementById("mf-refund").innerHTML = mf_refund;
-
+            // let mf_refund = parseFloat((((2250 * unit_req) * 0.035) * fx_rate) - (((2250 * unit_req) * 0.035/365) * days_invested) * fx_rate).toFixed(2);
+            // document.getElementById("mf-refund").innerHTML = mf_refund;
             console.log(future_qm);
         }
     </script>
