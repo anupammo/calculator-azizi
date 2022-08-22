@@ -36,12 +36,18 @@
     </style>
 </head>
 
-<body onload="getValueInput();">
-    <header>
+<body>
+    <header class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center display-3 my-5 py-5">Calculator</h1>
+                    <h1 class="text-center">
+                        <span class="display-3">Online Calculator</span>                        
+                        <br>
+                        <span class="lead p">by</span>                       
+                        <br>
+                        <a class="lead text-dark" style="text-decoration: none;" href="https://sites.google.com/moe-dl.edu.my/cikguemas/">CikguEmas.Com</a>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -59,14 +65,14 @@
                                         <div class="mb-3">
                                             <label class="form-label">QM Buy / LME</label>
                                             <input type="number" class="form-control shadow-none rounded-0" id="qm_buy"
-                                                value="56.19">
+                                                placeholder="56.19">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">FX Rate (1 USD)</label>
                                             <input type="number" class="form-control shadow-none rounded-0" id="fx_rate"
-                                                value="4.476">
+                                                placeholder="4.476">
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +102,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Unit Request</label>
                                             <input type="number" class="form-control shadow-none rounded-0"
-                                                id="unit_req" value="1">
+                                                id="unit_req" placeholder="1">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -171,7 +177,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <button type="button"
+                                        <button type="button" onclick="getValueInput();"
                                             class="btn btn-primary shadow-none rounded-0">Calculate</button>
                                     </div>
                                 </div>
