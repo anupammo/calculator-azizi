@@ -36,7 +36,7 @@
     </style>
 </head>
 
-<body onload="getCalculate();">
+<body onload="dtlsDev();">
     <header class="bg-style py-5">
         <div class="container">
             <div class="row">
@@ -66,14 +66,14 @@
                                         <div class="mb-3">
                                             <label class="form-label">QM Buy / LME</label>
                                             <input type="number" class="form-control shadow-none rounded-0" id="qm_buy"
-                                                placeholder="56.19" value="56.19">
+                                                placeholder="56.19">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label class="form-label">FX Rate (1 USD)</label>
                                             <input type="number" class="form-control shadow-none rounded-0" id="fx_rate"
-                                                placeholder="4.476" value="4.476">
+                                                placeholder="4.476">
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Unit Request</label>
                                             <input type="number" class="form-control shadow-none rounded-0"
-                                                id="unit_req" placeholder="1" value="1">
+                                                id="unit_req" placeholder="1">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -177,12 +177,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
+                                <div class="row">
                                     <div class="col-12">
                                         <button type="button" onclick="getCalculate();"
                                             class="btn btn-primary shadow-none rounded-0">Calculate</button>
                                     </div>
-                                </div> -->
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                                             </div>
                                             <div class="col-auto w-50">
                                                 <input type="number" class="form-control shadow-none rounded-0"
-                                                    id="prediction-gain" placeholder="1" value="1">
+                                                    id="prediction-gain" placeholder="1">
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +225,7 @@
                                             </div>
                                             <div class="col-auto w-50">
                                                 <input type="number" class="form-control shadow-none rounded-0"
-                                                    id="days-invested" placeholder="150" value="150">
+                                                    id="days-invested" placeholder="150">
                                             </div>
                                         </div>
                                     </div>
@@ -356,8 +356,8 @@
 
             let mf_refund = parseFloat((((2250 * unit_req) * 0.035) * fx_rate) - (((2250 * unit_req) * 0.035 / 365) * days_invested) * fx_rate).toFixed(2);
             document.getElementById("mf-refund").innerHTML = mf_refund;
-            console.log(gram_listed * prediction_gain);
-            console.log(gram_listed, future_qm, 250, 9, unit_req, fx_rate, 250, fx_rate, unit_req);
+            // console.log(gram_listed * future_qm);
+            // console.log(gram_listed, future_qm, 250, 9, unit_req, fx_rate, 250, fx_rate, unit_req);
         }
     </script>
 
