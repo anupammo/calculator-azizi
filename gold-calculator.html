@@ -76,64 +76,37 @@
     </header>
 
     <section style="margin-top: -50px;">
-        <!-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <form action="">
+                            <form>
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="col-auto">
                                         <div class="mb-3">
-                                            <label class="form-label">Year</label>
-                                            <input type="number" min="2022" max="2025" class="form-control shadow-none"
-                                                id="id_year" value="2022">
+                                            <label class="form-label">Increment Estimation / Year [%]</label>
+                                            <input type="number" min="0" max="5000" class="form-control shadow-none"
+                                                id="incr_est" value="7" placeholder="8">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="col-auto">
                                         <div class="mb-3">
-                                            <label class="form-label">Expences</label>
-                                            <select class="form-select shadow-none" id="id_exp">
-                                                <option selected>Select month</option>
-                                                <option value="01">Jan</option>
-                                                <option value="02">Feb</option>
-                                                <option value="03">Mar</option>
-                                                <option value="04">Apr</option>
-                                                <option value="05">May</option>
-                                                <option value="06">Jun</option>
-                                                <option value="07">Jul</option>
-                                                <option value="08" selected>Aug</option>
-                                                <option value="09">Sep</option>
-                                                <option value="10">Oct</option>
-                                                <option value="11">Nov</option>
-                                                <option value="12">Dec</option>
-                                            </select>
+                                            <label class="form-label">GSM QM sell value [RM]</label>
+                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                                value="272.65" placeholder="272.65">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="col-auto">
                                         <div class="mb-3">
-                                            <label class="form-label">Value [RM]</label>
-                                            <input type="number" value="1000" class="form-control shadow-none"
-                                                id="id_val">
+                                            <label class="form-label">LME / QM buy value [RM]</label>
+                                            <input type="number" disabled class="form-control shadow-none" id="buy_val">
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-12">
-                                        <div class="row">
-                                            <div class="col-auto w-50">
-                                                <div class="mb-3">
-                                                    <br>
-                                                    <button type="button" onclick="getCalculate()"
-                                                        class="btn btn-block btn-primary shadow-none mt-2 w-100">Submit</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto w-50">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Gold weight [g]</label>
-                                                    <input type="number" class="form-control shadow-none" id="id_weight"
-                                                        disabled>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-auto">
+                                        <hr class="border border-white">
+                                        <button type="button" onclick="putCalculate()"
+                                            class="btn btn-primary shadow-none">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -141,8 +114,8 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-        <div class="container">
+        </div>
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <div class="card shadow">
@@ -339,26 +312,34 @@
                 <div class="col-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <form>
+                            <!-- <form>
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="mb-3">
-                                            <label class="form-label">Value</label>
-                                            <input type="number" class="form-control shadow-none" id="">
+                                            <label class="form-label">Increment Estimation / Year [%]</label>
+                                            <input type="number" min="0" max="5000" class="form-control shadow-none"
+                                                id="incr_est" value="8" placeholder="8">
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <div class="mb-3">
-                                            <label class="form-label">Expences</label>
-                                            <input type="number" class="form-control shadow-none" id="">
+                                            <label class="form-label">GSM QM sell value [RM]</label>
+                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                                value="272.65" placeholder="272.65">
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <hr>
+                                        <div class="mb-3">
+                                            <label class="form-label">LME / QM buy value [RM]</label>
+                                            <input type="number" disabled class="form-control shadow-none" id="buy_val">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <hr class="border border-white">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -384,7 +365,7 @@
                                         <td>Otto</td>
                                         <td>@mdo</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>@mdo</td>
                                         <th scope="row">2</th>
                                         <td>Jacob</td>
@@ -393,7 +374,7 @@
                                         <td>Jacob</td>
                                         <td>Thornton</td>
                                         <td>@fat</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -454,17 +435,19 @@
             let exp_12 = document.getElementById("exp_12").value;
             let val_12 = parseInt(document.getElementById("val_12").value);
             document.getElementById("weight_12").innerHTML = (val_12 / gsa_val).toFixed(4) + 'g';
-
             document.getElementById("total_cash").innerHTML = (val_1 + val_2 + val_3 + val_4 + val_5 + val_6 + val_7 + val_8 + val_9 + val_10 + val_11 + val_12);
-            document.getElementById("total_gold").innerHTML = (((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) +  ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) +  ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))).toFixed(4) + 'g';
-            
+            document.getElementById("total_gold").innerHTML = (((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) + ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) + ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))).toFixed(4) + 'g';
             document.getElementById("gca_cash").innerHTML = ((val_1 + val_2 + val_3 + val_4 + val_5 + val_6 + val_7 + val_8 + val_9 + val_10 + val_11 + val_12)) * 0.85;
-            document.getElementById("gca_gold").innerHTML = (((((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) +  ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) +  ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))) * 0.85).toFixed(4)) + 'g';
-            
+            document.getElementById("gca_gold").innerHTML = (((((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) + ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) + ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))) * 0.85).toFixed(4)) + 'g';
             document.getElementById("lock_cash").innerHTML = ((val_1 + val_2 + val_3 + val_4 + val_5 + val_6 + val_7 + val_8 + val_9 + val_10 + val_11 + val_12)) * 0.15;
-            document.getElementById("lock_gold").innerHTML = (((((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) +  ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) +  ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))) * 0.15).toFixed(4)) + 'g';
-            
+            document.getElementById("lock_gold").innerHTML = (((((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) + ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) + ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))) * 0.15).toFixed(4)) + 'g';
+
             console.log(((val_1 / gsa_val).toFixed(4)))
+        }
+        const putCalculate = () => {
+            let incr_est = parseInt(document.getElementById("incr_est").value);
+            let sell_val = parseFloat(document.getElementById("sell_val").value).toFixed(2);
+            document.getElementById("buy_val").value = (sell_val - (sell_val * (incr_est / 100))).toFixed(2);
         }
 
     </script>
