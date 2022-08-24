@@ -347,6 +347,46 @@
                                         <td id="row2_col7"></td>
                                         <td id="row2_col8">2024</td>
                                     </tr>
+                                    <tr>
+                                        <td id="row3_col1"></td>
+                                        <th id="row3_col2">3</th>
+                                        <td id="row3_col3"></td>
+                                        <td id="row3_col4"></td>
+                                        <td id="row3_col5"></td>
+                                        <td id="row3_col6"></td>
+                                        <td id="row3_col7"></td>
+                                        <td id="row3_col8">2025</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="row4_col1"></td>
+                                        <th id="row4_col2">4</th>
+                                        <td id="row4_col3"></td>
+                                        <td id="row4_col4"></td>
+                                        <td id="row4_col5"></td>
+                                        <td id="row4_col6"></td>
+                                        <td id="row4_col7"></td>
+                                        <td id="row4_col8">2026</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="row5_col1"></td>
+                                        <th id="row5_col2">5</th>
+                                        <td id="row5_col3"></td>
+                                        <td id="row5_col4"></td>
+                                        <td id="row5_col5"></td>
+                                        <td id="row5_col6"></td>
+                                        <td id="row5_col7"></td>
+                                        <td id="row5_col8">2027</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="row6_col1"></td>
+                                        <th id="row6_col2">6</th>
+                                        <td id="row6_col3"></td>
+                                        <td id="row6_col4"></td>
+                                        <td id="row6_col5"></td>
+                                        <td id="row6_col6"></td>
+                                        <td id="row6_col7"></td>
+                                        <td id="row6_col8">2028</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -422,9 +462,9 @@
             let buy_val = parseFloat(document.getElementById("buy_val").value);
             let rate = parseFloat(incr_est / 100).toFixed(2);
             let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
-            const lockgold = (document.getElementById("lock_gold").innerHTML);
-            const totalgold = (document.getElementById("total_gold").innerHTML);
-            const gcacash = (document.getElementById("gca_cash").innerHTML);
+            let lockgold = (document.getElementById("lock_gold").innerHTML);
+            let totalgold = (document.getElementById("total_gold").innerHTML);
+            let gcacash = (document.getElementById("gca_cash").innerHTML);
 
             let row1_col2 = document.getElementById("row1_col2").innerHTML = 1;
             let row1_col3 = document.getElementById("row1_col3").innerHTML = (parseFloat(gsa_val) + (parseFloat(gsa_val) * parseFloat(rate))).toFixed(2);
@@ -439,8 +479,40 @@
             let row2_col1 = document.getElementById("row2_col1").innerHTML = parseFloat((row2_col3 * 1.07)).toFixed(2);
             let row2_col4 = document.getElementById("row2_col4").innerHTML = (row2_col3 * lockgold).toFixed(2);
             let row2_col5 = document.getElementById("row2_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row2_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
-            let row2_col6 = document.getElementById("row2_col6").innerHTML = parseFloat(gcacash * 0.035).toFixed(2);
+            let row2_col6 = document.getElementById("row2_col6").innerHTML = parseFloat((gcacash * 0.035) * row2_col2).toFixed(2);
             let row2_col7 = document.getElementById("row2_col7").innerHTML = (((parseFloat(row2_col4)) + (parseFloat(row2_col5))) - (parseFloat(row2_col6))).toFixed(2);
+
+            let row3_col2 = document.getElementById("row3_col2").innerHTML = 3;
+            let row3_col3 = document.getElementById("row3_col3").innerHTML = (parseFloat(row2_col3) + (parseFloat(row2_col3) * parseFloat(rate))).toFixed(2);
+            let row3_col1 = document.getElementById("row3_col1").innerHTML = parseFloat((row3_col3 * 1.07)).toFixed(2);
+            let row3_col4 = document.getElementById("row3_col4").innerHTML = (row3_col3 * lockgold).toFixed(2);
+            let row3_col5 = document.getElementById("row3_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row3_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row3_col6 = document.getElementById("row3_col6").innerHTML = parseFloat((gcacash * 0.035) * row3_col2).toFixed(2);
+            let row3_col7 = document.getElementById("row3_col7").innerHTML = (((parseFloat(row3_col4)) + (parseFloat(row3_col5))) - (parseFloat(row3_col6))).toFixed(2);
+
+            let row4_col2 = document.getElementById("row4_col2").innerHTML = 4;
+            let row4_col3 = document.getElementById("row4_col3").innerHTML = (parseFloat(row3_col3) + (parseFloat(row3_col3) * parseFloat(rate))).toFixed(2);
+            let row4_col1 = document.getElementById("row4_col1").innerHTML = parseFloat((row4_col3 * 1.07)).toFixed(2);
+            let row4_col4 = document.getElementById("row4_col4").innerHTML = (row4_col3 * lockgold).toFixed(2);
+            let row4_col5 = document.getElementById("row4_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row4_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row4_col6 = document.getElementById("row4_col6").innerHTML = parseFloat((gcacash * 0.035) * row4_col2).toFixed(2);
+            let row4_col7 = document.getElementById("row4_col7").innerHTML = (((parseFloat(row4_col4)) + (parseFloat(row4_col5))) - (parseFloat(row4_col6))).toFixed(2);
+
+            let row5_col2 = document.getElementById("row5_col2").innerHTML = 5;
+            let row5_col3 = document.getElementById("row5_col3").innerHTML = (parseFloat(row4_col3) + (parseFloat(row4_col3) * parseFloat(rate))).toFixed(2);
+            let row5_col1 = document.getElementById("row5_col1").innerHTML = parseFloat((row5_col3 * 1.07)).toFixed(2);
+            let row5_col4 = document.getElementById("row5_col4").innerHTML = (row5_col3 * lockgold).toFixed(2);
+            let row5_col5 = document.getElementById("row5_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row5_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row5_col6 = document.getElementById("row5_col6").innerHTML = parseFloat((gcacash * 0.035) * row5_col2).toFixed(2);
+            let row5_col7 = document.getElementById("row5_col7").innerHTML = (((parseFloat(row5_col4)) + (parseFloat(row5_col5))) - (parseFloat(row5_col6))).toFixed(2);
+
+            let row6_col2 = document.getElementById("row6_col2").innerHTML = 6;
+            let row6_col3 = document.getElementById("row6_col3").innerHTML = (parseFloat(row5_col3) + (parseFloat(row5_col3) * parseFloat(rate))).toFixed(2);
+            let row6_col1 = document.getElementById("row6_col1").innerHTML = parseFloat((row6_col3 * 1.07)).toFixed(2);
+            let row6_col4 = document.getElementById("row6_col4").innerHTML = (row6_col3 * lockgold).toFixed(2);
+            let row6_col5 = document.getElementById("row6_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row6_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row6_col6 = document.getElementById("row6_col6").innerHTML = parseFloat((gcacash * 0.035) * row6_col2).toFixed(2);
+            let row6_col7 = document.getElementById("row6_col7").innerHTML = (((parseFloat(row6_col4)) + (parseFloat(row6_col5))) - (parseFloat(row6_col6))).toFixed(2);
 
             console.log();
         }
