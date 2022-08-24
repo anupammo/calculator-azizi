@@ -87,14 +87,14 @@
                                         <div class="mb-3">
                                             <label class="form-label">Increment Estimation / Year [%]</label>
                                             <input type="number" min="0" max="5000" class="form-control shadow-none"
-                                                id="incr_est" value="7" placeholder="8">
+                                                id="incr_est" value="8" placeholder="8">
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <label class="form-label">GSM QM sell value [RM]</label>
                                             <input type="number" class="form-control shadow-none" id="sell_val"
-                                                value="272.65" placeholder="272.65">
+                                                value="269.47" placeholder="269.47">
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -357,7 +357,7 @@
                                 <tbody>
                                     <tr>
                                         <td id="row1_col1">0</td>
-                                        <th scope="row" id="row1_col2">1</th>
+                                        <th id="row1_col2" scope="row">1</th>
                                         <td id="row1_col3">2</td>
                                         <td id="row1_col4">3</td>
                                         <td id="row1_col5">4</td>
@@ -437,7 +437,7 @@
             let incr_est = parseInt(document.getElementById("incr_est").value);
             let sell_val = parseFloat(document.getElementById("sell_val").value).toFixed(2);
             let rate = (parseFloat(incr_est / 100).toFixed(2));
-            let qm_buy = document.getElementById("buy_val").value = (sell_val - (sell_val * rate)).toFixed(2);
+            let qm_buy = document.getElementById("buy_val").value = (sell_val - (sell_val * 0.07)).toFixed(2);
 
             const lockgold = (document.getElementById("lock_gold").innerHTML);
             const totalcash = (document.getElementById("total_cash").innerHTML);
@@ -445,12 +445,13 @@
             const lockgold_val = lockgold.slice(0, -1);
             let row1_col2 = document.getElementById("row1_col2").innerHTML = 1;
             let row1_col3 = document.getElementById("row1_col3").innerHTML = parseFloat(qm_buy + (qm_buy * rate)).toFixed(2);
+            let row1_col1 = document.getElementById("row1_col1").innerHTML = parseFloat(row1_col3 + (row1_col3 * rate)).toFixed(2);
             let row1_col4 = document.getElementById("row1_col4").innerHTML = parseFloat(row1_col3 * lockgold_val).toFixed(2);
             let row1_col5 = document.getElementById("row1_col5").innerHTML = parseFloat((totalcash * row1_col3) - (totalcash * row1_col3)).toFixed(2);
             let row1_col6 = document.getElementById("row1_col6").innerHTML = parseFloat(gcacash * 0.035).toFixed(2);
-            let row1_col7 = document.getElementById("row1_col7").innerHTML = parseFloat(gcacash * 0.035).toFixed(2);
+            let row1_col7 = document.getElementById("row1_col7").innerHTML = parseFloat((row1_col4 + row1_col5) - row1_col6).toFixed(2);
             
-            console.log(totalcash, row1_col3, qm_buy)
+            console.log(totalcash)
         }
 
     </script>
