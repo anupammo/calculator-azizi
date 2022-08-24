@@ -416,7 +416,7 @@
             const gcacash = (document.getElementById("gca_cash").innerHTML);
             let row1_col2 = document.getElementById("row1_col2").innerHTML = 1;
             let row1_col3 = document.getElementById("row1_col3").innerHTML =  (parseFloat(qm_buy) + (parseFloat(qm_buy) * parseFloat(rate))).toFixed(2);
-            let row1_col1 = document.getElementById("row1_col1").innerHTML = parseFloat(row1_col3 + (row1_col3 * 0.07)).toFixed(2);
+            let row1_col1 = document.getElementById("row1_col1").innerHTML = parseFloat((row1_col3 * 1.07)).toFixed(2);
             let row1_col4 = document.getElementById("row1_col4").innerHTML = (row1_col3 * lockgold).toFixed(2);            
             let row1_col5 = document.getElementById("row1_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row1_col3)) - (parseFloat(totalgold) * parseFloat(qm_buy))).toFixed(2);
             let row1_col6 = document.getElementById("row1_col6").innerHTML = parseFloat(gcacash * 0.035).toFixed(2);
