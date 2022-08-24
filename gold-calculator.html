@@ -273,7 +273,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <p class="text-center display-1 py-5 my-5"></p>
+                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -548,6 +548,8 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
     <script>
         const getCalculate = () => {
             let gsa_val = document.getElementById("sell_val").value;
@@ -768,6 +770,29 @@
 
             console.log();
         }
+    </script>
+
+    <script>
+        var xValues = [2023, 2027, 2037, 2042];
+
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    data: [937.13, 4685.63, 9371.25, 14056.88, 18742.50],
+                    borderColor: "blue",
+                    fill: false
+                }, {
+                    data: [6187.18, 15619.17, 34281.41, 63897.82, 109614.40],
+                    borderColor: "red",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: { display: false }
+            }
+        });
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
