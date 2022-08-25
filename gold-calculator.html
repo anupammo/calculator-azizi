@@ -326,10 +326,10 @@
                                         <th scope="row">After 20 Years</th>
                                     </tr>
                                     <tr>
-                                        <th>0</th>
-                                        <th>0</th>
-                                        <th>0</th>
-                                        <th>0</th>
+                                        <th id="5years">0</th>
+                                        <th id="10years">0</th>
+                                        <th id="15years">0</th>
+                                        <th id="20years">0</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -805,6 +805,12 @@
             let row20_col5 = document.getElementById("row20_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row20_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
             let row20_col6 = document.getElementById("row20_col6").innerHTML = parseFloat((gcacash * 0.035) * row20_col2).toFixed(2);
             let row20_col7 = document.getElementById("row20_col7").innerHTML = (((parseFloat(row20_col4)) + (parseFloat(row20_col5))) - (parseFloat(row20_col6))).toFixed(2);
+
+
+            document.getElementById("5years").innerHTML = row5_col7;
+            document.getElementById("10years").innerHTML = row10_col7;
+            document.getElementById("15years").innerHTML = row15_col7;
+            document.getElementById("20years").innerHTML = row20_col7;
 
 
             var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
