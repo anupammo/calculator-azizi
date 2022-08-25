@@ -74,6 +74,28 @@
             </div>
         </div>
     </header>
+    <!-- <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-2 col-12"></div>
+                <div class="col-lg-4 col-md-8 col-12">
+                    <p>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Button with data-bs-target
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Some placeholder content for the collapse component. This panel is hidden by default but
+                            revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-2 col-12"></div>
+            </div>
+        </div>
+    </section> -->
     <section style="margin-top: -50px;">
         <div class="container">
             <div class="row">
@@ -85,22 +107,22 @@
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <label class="form-label">LME / QM buy value [RM]</label>
-                                            <input type="number" min="0" max="5000" class="form-control shadow-none"
-                                                id="incr_est" value="0" placeholder="0">
+                                            <input type="number" disabled class="form-control shadow-none" id="sell_val"
+                                                value="0" placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <label class="form-label">GSM QM sell value [RM]</label>
-                                            <input type="number" class="form-control shadow-none" id="buy_val"
-                                                value="0" placeholder="0">
+                                            <input type="number" class="form-control shadow-none" id="buy_val" value="0"
+                                                placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <label class="form-label">Increment Estimation / Year [%]</label>
-                                            <input type="number" disabled class="form-control shadow-none" id="sell_val"
-                                                value="0" placeholder="0">
+                                            <input type="number" min="0" max="5000" class="form-control shadow-none"
+                                                id="incr_est" value="0" placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -314,25 +336,25 @@
                         <div class="card-body">
                             <table class="table">
                                 <thead class="text-center">
-                                  <tr>
-                                    <th scope="col" colspan="4">Termination Value 15% Net cash value</th>
-                                  </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4">Termination Value 15% Net cash value</th>
+                                    </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                  <tr>
-                                    <th scope="row">After 5 Years</th>
-                                    <th scope="row">After 10 Years</th>
-                                    <th scope="row">After 15 Years</th>
-                                    <th scope="row">After 20 Years</th>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                  </tr>
+                                    <tr>
+                                        <th scope="row">After 5 Years</th>
+                                        <th scope="row">After 10 Years</th>
+                                        <th scope="row">After 15 Years</th>
+                                        <th scope="row">After 20 Years</th>
+                                    </tr>
+                                    <tr>
+                                        <th>0</th>
+                                        <th>0</th>
+                                        <th>0</th>
+                                        <th>0</th>
+                                    </tr>
                                 </tbody>
-                              </table>  
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -343,8 +365,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="card shadow">
-                        <div class="card-body">
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -352,8 +374,10 @@
                                             <th scope="col">Spread +7% QM Sell</th>
                                             <th scope="col">Number of years saved</th>
                                             <th scope="col">Qm Buy / LME if</th>
-                                            <th scope="col">Estimated Price of 15% Gold in Holding Inventory</th>
-                                            <th scope="col">GAIN / LOSS 100% Gram Price Difference Gold Value in the
+                                            <th scope="col">Estimated Price of 15% Gold in Holding Inventory
+                                            </th>
+                                            <th scope="col">GAIN / LOSS 100% Gram Price Difference Gold Value in
+                                                the
                                                 CURRENT
                                                 year <minus>Previous</th>
                                             <th scope="col">3.5% MF for 85% Received</th>
@@ -804,6 +828,13 @@
             let row20_col6 = document.getElementById("row20_col6").innerHTML = parseFloat((gcacash * 0.035) * row20_col2).toFixed(2);
             let row20_col7 = document.getElementById("row20_col7").innerHTML = (((parseFloat(row20_col4)) + (parseFloat(row20_col5))) - (parseFloat(row20_col6))).toFixed(2);
 
+
+            var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+            var collapseList = collapseElementList.map(function (collapseEl) {
+                return new bootstrap.Collapse(collapseEl)
+            })
+
+
             console.log();
         }
 
@@ -836,10 +867,12 @@
         crossorigin="anonymous"></script> -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
