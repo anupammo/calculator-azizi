@@ -84,23 +84,23 @@
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="mb-3">
-                                            <label class="form-label">Increment Estimation / Year [%]</label>
-                                            <input type="number" min="0" max="5000" class="form-control shadow-none"
-                                                id="incr_est" value="8" placeholder="8">
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="mb-3">
                                             <label class="form-label">LME / QM buy value [RM]</label>
-                                            <input type="number" class="form-control shadow-none" id="buy_val"
-                                                value="250" placeholder="250">
+                                            <input type="number" min="0" max="5000" class="form-control shadow-none"
+                                                id="incr_est" value="0" placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <label class="form-label">GSM QM sell value [RM]</label>
+                                            <input type="number" class="form-control shadow-none" id="buy_val"
+                                                value="0" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="mb-3">
+                                            <label class="form-label">Increment Estimation / Year [%]</label>
                                             <input type="number" disabled class="form-control shadow-none" id="sell_val"
-                                                value="267.50" placeholder="267.50">
+                                                value="0" placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -120,7 +120,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table mt-2">
+                            <table class="table table-small mt-2">
                                 <thead>
                                     <tr>
                                         <th>Expences</th>
@@ -132,149 +132,149 @@
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_1" placeholder="Project 1"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_1" value="1000"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_1" class="text-end">3.7383</td>
+                                        <td id="weight_1" class="text-end py-1 my-0">3.7383</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_2" placeholder="Project 2"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_2" value="2000"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_2" class="text-end">7.4766</td>
+                                        <td id="weight_2" class="text-end py-1 my-0">7.4766</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_3" placeholder="Project 3"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_3" value="1500"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_3" class="text-end">5.6075</td>
+                                        <td id="weight_3" class="text-end py-1 my-0">5.6075</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_4" placeholder="Project 4"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_4" value="2000"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_4" class="text-end">7.4766</td>
+                                        <td id="weight_4" class="text-end py-1 my-0">7.4766</td>
                                     </tr>
 
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_5" placeholder="Project 5"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_5" value="2250"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_5" class="text-end">8.4112</td>
+                                        <td id="weight_5" class="text-end py-1 my-0">8.4112</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_6" placeholder="Project 6"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_6" value="2500"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_6" class="text-end">9.3458</td>
+                                        <td id="weight_6" class="text-end py-1 my-0">9.3458</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_7" placeholder="Project 7"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_7" value="2750"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_7" class="text-end">10.2804</td>
+                                        <td id="weight_7" class="text-end py-1 my-0">10.2804</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_8" placeholder="Project 8"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_8" value="3000"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_8" class="text-end">11.2150</td>
+                                        <td id="weight_8" class="text-end py-1 my-0">11.2150</td>
                                     </tr>
 
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_9" placeholder="Project 9"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_9" value="3250"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_9" class="text-end">12.1495</td>
+                                        <td id="weight_9" class="text-end py-1 my-0">12.1495</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_10" placeholder="Project 10"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_10" value="3500"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_10" class="text-end">13.0841</td>
+                                        <td id="weight_10" class="text-end py-1 my-0">13.0841</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_11" placeholder="Project 11"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_11" value="3750"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_11" class="text-end">14.0187</td>
+                                        <td id="weight_11" class="text-end py-1 my-0">14.0187</td>
                                     </tr>
                                     <tr>
                                         <td class="py-0">
                                             <input type="text" id="exp_12" placeholder="Project 12"
-                                                class="form-control shadow-none border-0 py-0 my-2">
+                                                class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
                                             <input type="number" id="val_12" value="4000"
-                                                class="form-control text-center shadow-none border-0 py-0 my-2">
+                                                class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
-                                        <td id="weight_12" class="text-end">14.9533</td>
+                                        <td id="weight_12" class="text-end py-1 my-0">14.9533</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <button type="button" onclick="getCalculate()"
-                                class="btn btn-block btn-primary shadow-none mt-2 px-5">Submit</button>
+                                class="btn btn-block btn-primary shadow-none my-0 px-5">Submit</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-                            <table class="table">
+                            <canvas id="myChart" class="w-100 my-4"></canvas>
+                            <table class="table my-4">
                                 <thead>
                                     <tr>
                                         <th scope="col">Total</th>
@@ -312,223 +312,226 @@
                 <div class="col-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Spread +7% QM Sell</th>
-                                        <th scope="col">Number of years saved</th>
-                                        <th scope="col">Qm Buy / LME if</th>
-                                        <th scope="col">Estimated Price of 15% Gold in Holding Inventory</th>
-                                        <th scope="col">GAIN / LOSS 100% Gram Price Difference Gold Value in the CURRENT
-                                            year <minus>Previous</th>
-                                        <th scope="col">3.5% MF for 85% Received</th>
-                                        <th scope="col">Termination Value 15% Net cash value</th>
-                                        <th scope="col">Year</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td id="row1_col1"></td>
-                                        <th id="row1_col2">1</th>
-                                        <td id="row1_col3"></td>
-                                        <td id="row1_col4"></td>
-                                        <td id="row1_col5"></td>
-                                        <td id="row1_col6"></td>
-                                        <td id="row1_col7"></td>
-                                        <td id="row1_col8">2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row2_col1"></td>
-                                        <th id="row2_col2">2</th>
-                                        <td id="row2_col3"></td>
-                                        <td id="row2_col4"></td>
-                                        <td id="row2_col5"></td>
-                                        <td id="row2_col6"></td>
-                                        <td id="row2_col7"></td>
-                                        <td id="row2_col8">2024</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row3_col1"></td>
-                                        <th id="row3_col2">3</th>
-                                        <td id="row3_col3"></td>
-                                        <td id="row3_col4"></td>
-                                        <td id="row3_col5"></td>
-                                        <td id="row3_col6"></td>
-                                        <td id="row3_col7"></td>
-                                        <td id="row3_col8">2025</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row4_col1"></td>
-                                        <th id="row4_col2">4</th>
-                                        <td id="row4_col3"></td>
-                                        <td id="row4_col4"></td>
-                                        <td id="row4_col5"></td>
-                                        <td id="row4_col6"></td>
-                                        <td id="row4_col7"></td>
-                                        <td id="row4_col8">2026</td>
-                                    </tr>
-                                    <tr class="bg-warning">
-                                        <td id="row5_col1"></td>
-                                        <th id="row5_col2">5</th>
-                                        <td id="row5_col3"></td>
-                                        <td id="row5_col4"></td>
-                                        <td id="row5_col5"></td>
-                                        <td id="row5_col6"></td>
-                                        <td id="row5_col7"></td>
-                                        <td id="row5_col8">2027</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row6_col1"></td>
-                                        <th id="row6_col2">6</th>
-                                        <td id="row6_col3"></td>
-                                        <td id="row6_col4"></td>
-                                        <td id="row6_col5"></td>
-                                        <td id="row6_col6"></td>
-                                        <td id="row6_col7"></td>
-                                        <td id="row6_col8">2028</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row7_col1"></td>
-                                        <th id="row7_col2">7</th>
-                                        <td id="row7_col3"></td>
-                                        <td id="row7_col4"></td>
-                                        <td id="row7_col5"></td>
-                                        <td id="row7_col6"></td>
-                                        <td id="row7_col7"></td>
-                                        <td id="row7_col8">2029</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row8_col1"></td>
-                                        <th id="row8_col2">8</th>
-                                        <td id="row8_col3"></td>
-                                        <td id="row8_col4"></td>
-                                        <td id="row8_col5"></td>
-                                        <td id="row8_col6"></td>
-                                        <td id="row8_col7"></td>
-                                        <td id="row8_col8">2030</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row9_col1"></td>
-                                        <th id="row9_col2">9</th>
-                                        <td id="row9_col3"></td>
-                                        <td id="row9_col4"></td>
-                                        <td id="row9_col5"></td>
-                                        <td id="row9_col6"></td>
-                                        <td id="row9_col7"></td>
-                                        <td id="row9_col8">2031</td>
-                                    </tr>
-                                    <tr class="bg-warning">
-                                        <td id="row10_col1"></td>
-                                        <th id="row10_col2">10</th>
-                                        <td id="row10_col3"></td>
-                                        <td id="row10_col4"></td>
-                                        <td id="row10_col5"></td>
-                                        <td id="row10_col6"></td>
-                                        <td id="row10_col7"></td>
-                                        <td id="row10_col8">2032</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row11_col1"></td>
-                                        <th id="row11_col2">11</th>
-                                        <td id="row11_col3"></td>
-                                        <td id="row11_col4"></td>
-                                        <td id="row11_col5"></td>
-                                        <td id="row11_col6"></td>
-                                        <td id="row11_col7"></td>
-                                        <td id="row11_col8">2033</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row12_col1"></td>
-                                        <th id="row12_col2">12</th>
-                                        <td id="row12_col3"></td>
-                                        <td id="row12_col4"></td>
-                                        <td id="row12_col5"></td>
-                                        <td id="row12_col6"></td>
-                                        <td id="row12_col7"></td>
-                                        <td id="row12_col8">2034</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row13_col1"></td>
-                                        <th id="row13_col2">13</th>
-                                        <td id="row13_col3"></td>
-                                        <td id="row13_col4"></td>
-                                        <td id="row13_col5"></td>
-                                        <td id="row13_col6"></td>
-                                        <td id="row13_col7"></td>
-                                        <td id="row13_col8">2035</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row14_col1"></td>
-                                        <th id="row14_col2">14</th>
-                                        <td id="row14_col3"></td>
-                                        <td id="row14_col4"></td>
-                                        <td id="row14_col5"></td>
-                                        <td id="row14_col6"></td>
-                                        <td id="row14_col7"></td>
-                                        <td id="row14_col8">2036</td>
-                                    </tr>
-                                    <tr class="bg-warning">
-                                        <td id="row15_col1"></td>
-                                        <th id="row15_col2">15</th>
-                                        <td id="row15_col3"></td>
-                                        <td id="row15_col4"></td>
-                                        <td id="row15_col5"></td>
-                                        <td id="row15_col6"></td>
-                                        <td id="row15_col7"></td>
-                                        <td id="row15_col8">2037</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row16_col1"></td>
-                                        <th id="row16_col2">16</th>
-                                        <td id="row16_col3"></td>
-                                        <td id="row16_col4"></td>
-                                        <td id="row16_col5"></td>
-                                        <td id="row16_col6"></td>
-                                        <td id="row16_col7"></td>
-                                        <td id="row16_col8">2038</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row17_col1"></td>
-                                        <th id="row17_col2">17</th>
-                                        <td id="row17_col3"></td>
-                                        <td id="row17_col4"></td>
-                                        <td id="row17_col5"></td>
-                                        <td id="row17_col6"></td>
-                                        <td id="row17_col7"></td>
-                                        <td id="row17_col8">2039</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row18_col1"></td>
-                                        <th id="row18_col2">18</th>
-                                        <td id="row18_col3"></td>
-                                        <td id="row18_col4"></td>
-                                        <td id="row18_col5"></td>
-                                        <td id="row18_col6"></td>
-                                        <td id="row18_col7"></td>
-                                        <td id="row18_col8">2040</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="row19_col1"></td>
-                                        <th id="row19_col2">19</th>
-                                        <td id="row19_col3"></td>
-                                        <td id="row19_col4"></td>
-                                        <td id="row19_col5"></td>
-                                        <td id="row19_col6"></td>
-                                        <td id="row19_col7"></td>
-                                        <td id="row19_col8">2041</td>
-                                    </tr>
-                                    <tr class="bg-warning">
-                                        <td id="row20_col1"></td>
-                                        <th id="row20_col2">20</th>
-                                        <td id="row20_col3"></td>
-                                        <td id="row20_col4"></td>
-                                        <td id="row20_col5"></td>
-                                        <td id="row20_col6"></td>
-                                        <td id="row20_col7"></td>
-                                        <td id="row20_col8">2042</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Spread +7% QM Sell</th>
+                                            <th scope="col">Number of years saved</th>
+                                            <th scope="col">Qm Buy / LME if</th>
+                                            <th scope="col">Estimated Price of 15% Gold in Holding Inventory</th>
+                                            <th scope="col">GAIN / LOSS 100% Gram Price Difference Gold Value in the
+                                                CURRENT
+                                                year <minus>Previous</th>
+                                            <th scope="col">3.5% MF for 85% Received</th>
+                                            <th scope="col">Termination Value 15% Net cash value</th>
+                                            <th scope="col">Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="row1_col1">0</td>
+                                            <th id="row1_col2">1</th>
+                                            <td id="row1_col3">0</td>
+                                            <td id="row1_col4">0</td>
+                                            <td id="row1_col5">0</td>
+                                            <td id="row1_col6">0</td>
+                                            <td id="row1_col7">0</td>
+                                            <td id="row1_col8">2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row2_col1">0</td>
+                                            <th id="row2_col2">2</th>
+                                            <td id="row2_col3">0</td>
+                                            <td id="row2_col4">0</td>
+                                            <td id="row2_col5">0</td>
+                                            <td id="row2_col6">0</td>
+                                            <td id="row2_col7">0</td>
+                                            <td id="row2_col8">2024</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row3_col1">0</td>
+                                            <th id="row3_col2">3</th>
+                                            <td id="row3_col3">0</td>
+                                            <td id="row3_col4">0</td>
+                                            <td id="row3_col5">0</td>
+                                            <td id="row3_col6">0</td>
+                                            <td id="row3_col7">0</td>
+                                            <td id="row3_col8">2025</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row4_col1">0</td>
+                                            <th id="row4_col2">4</th>
+                                            <td id="row4_col3">0</td>
+                                            <td id="row4_col4">0</td>
+                                            <td id="row4_col5">0</td>
+                                            <td id="row4_col6">0</td>
+                                            <td id="row4_col7">0</td>
+                                            <td id="row4_col8">2026</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <td id="row5_col1">0</td>
+                                            <th id="row5_col2">5</th>
+                                            <td id="row5_col3">0</td>
+                                            <td id="row5_col4">0</td>
+                                            <td id="row5_col5">0</td>
+                                            <td id="row5_col6">0</td>
+                                            <td id="row5_col7">0</td>
+                                            <td id="row5_col8">2027</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row6_col1">0</td>
+                                            <th id="row6_col2">6</th>
+                                            <td id="row6_col3">0</td>
+                                            <td id="row6_col4">0</td>
+                                            <td id="row6_col5">0</td>
+                                            <td id="row6_col6">0</td>
+                                            <td id="row6_col7">0</td>
+                                            <td id="row6_col8">2028</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row7_col1">0</td>
+                                            <th id="row7_col2">7</th>
+                                            <td id="row7_col3">0</td>
+                                            <td id="row7_col4">0</td>
+                                            <td id="row7_col5">0</td>
+                                            <td id="row7_col6">0</td>
+                                            <td id="row7_col7">0</td>
+                                            <td id="row7_col8">2029</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row8_col1">0</td>
+                                            <th id="row8_col2">8</th>
+                                            <td id="row8_col3">0</td>
+                                            <td id="row8_col4">0</td>
+                                            <td id="row8_col5">0</td>
+                                            <td id="row8_col6">0</td>
+                                            <td id="row8_col7">0</td>
+                                            <td id="row8_col8">2030</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row9_col1">0</td>
+                                            <th id="row9_col2">9</th>
+                                            <td id="row9_col3">0</td>
+                                            <td id="row9_col4">0</td>
+                                            <td id="row9_col5">0</td>
+                                            <td id="row9_col6">0</td>
+                                            <td id="row9_col7">0</td>
+                                            <td id="row9_col8">2031</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <td id="row10_col1">0</td>
+                                            <th id="row10_col2">10</th>
+                                            <td id="row10_col3">0</td>
+                                            <td id="row10_col4">0</td>
+                                            <td id="row10_col5">0</td>
+                                            <td id="row10_col6">0</td>
+                                            <td id="row10_col7">0</td>
+                                            <td id="row10_col8">2032</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row11_col1">0</td>
+                                            <th id="row11_col2">11</th>
+                                            <td id="row11_col3">0</td>
+                                            <td id="row11_col4">0</td>
+                                            <td id="row11_col5">0</td>
+                                            <td id="row11_col6">0</td>
+                                            <td id="row11_col7">0</td>
+                                            <td id="row11_col8">2033</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row12_col1">0</td>
+                                            <th id="row12_col2">12</th>
+                                            <td id="row12_col3">0</td>
+                                            <td id="row12_col4">0</td>
+                                            <td id="row12_col5">0</td>
+                                            <td id="row12_col6">0</td>
+                                            <td id="row12_col7">0</td>
+                                            <td id="row12_col8">2034</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row13_col1">0</td>
+                                            <th id="row13_col2">13</th>
+                                            <td id="row13_col3">0</td>
+                                            <td id="row13_col4">0</td>
+                                            <td id="row13_col5">0</td>
+                                            <td id="row13_col6">0</td>
+                                            <td id="row13_col7">0</td>
+                                            <td id="row13_col8">2035</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row14_col1">0</td>
+                                            <th id="row14_col2">14</th>
+                                            <td id="row14_col3">0</td>
+                                            <td id="row14_col4">0</td>
+                                            <td id="row14_col5">0</td>
+                                            <td id="row14_col6">0</td>
+                                            <td id="row14_col7">0</td>
+                                            <td id="row14_col8">2036</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <td id="row15_col1">0</td>
+                                            <th id="row15_col2">15</th>
+                                            <td id="row15_col3">0</td>
+                                            <td id="row15_col4">0</td>
+                                            <td id="row15_col5">0</td>
+                                            <td id="row15_col6">0</td>
+                                            <td id="row15_col7">0</td>
+                                            <td id="row15_col8">2037</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row16_col1">0</td>
+                                            <th id="row16_col2">16</th>
+                                            <td id="row16_col3">0</td>
+                                            <td id="row16_col4">0</td>
+                                            <td id="row16_col5">0</td>
+                                            <td id="row16_col6">0</td>
+                                            <td id="row16_col7">0</td>
+                                            <td id="row16_col8">2038</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row17_col1">0</td>
+                                            <th id="row17_col2">17</th>
+                                            <td id="row17_col3">0</td>
+                                            <td id="row17_col4">0</td>
+                                            <td id="row17_col5">0</td>
+                                            <td id="row17_col6">0</td>
+                                            <td id="row17_col7">0</td>
+                                            <td id="row17_col8">2039</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row18_col1">0</td>
+                                            <th id="row18_col2">18</th>
+                                            <td id="row18_col3">0</td>
+                                            <td id="row18_col4">0</td>
+                                            <td id="row18_col5">0</td>
+                                            <td id="row18_col6">0</td>
+                                            <td id="row18_col7">0</td>
+                                            <td id="row18_col8">2040</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="row19_col1">0</td>
+                                            <th id="row19_col2">19</th>
+                                            <td id="row19_col3">0</td>
+                                            <td id="row19_col4">0</td>
+                                            <td id="row19_col5">0</td>
+                                            <td id="row19_col6">0</td>
+                                            <td id="row19_col7">0</td>
+                                            <td id="row19_col8">2041</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <td id="row20_col1">0</td>
+                                            <th id="row20_col2">20</th>
+                                            <td id="row20_col3">0</td>
+                                            <td id="row20_col4">0</td>
+                                            <td id="row20_col5">0</td>
+                                            <td id="row20_col6">0</td>
+                                            <td id="row20_col7"></td>
+                                            <td id="row20_col8">2042</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -770,11 +773,8 @@
 
             console.log();
         }
-    </script>
 
-    <script>
         var xValues = [2023, 2027, 2037, 2042];
-
         new Chart("myChart", {
             type: "line",
             data: {
