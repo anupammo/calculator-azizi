@@ -58,7 +58,7 @@
     </style>
 </head>
 
-<body onload="lastCalculate();">
+<body onload="">
     <header class="parallax gold-bg py-5">
         <div class="container">
             <div class="row">
@@ -266,7 +266,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" onclick="getCalculate()"
+                            <button type="button" onclick="lastCalculate();"
                                 class="btn btn-block btn-primary shadow-none my-0 px-5">Submit</button>
                         </div>
                     </div>
@@ -595,6 +595,8 @@
             let incr_est = document.getElementById("incr_est").value;
             let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
         }
+
+
         const lastCalculate = () => {
             let buy_val = document.getElementById("buy_val").value;
             let incr_est = document.getElementById("incr_est").value;
@@ -793,7 +795,6 @@
 
             // console.log(i_rate);
         }
-
 
         var xValues = [2023, 2027, 2037, 2042];
         new Chart("myChart", {
