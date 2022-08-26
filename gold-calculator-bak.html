@@ -633,8 +633,7 @@
                 total_cash += parseInt(val_rm[i]);
             }
             document.getElementById("total_cash").innerHTML = total_cash;
-            let gca_cash = parseInt(total_cash * 0.85);
-            document.getElementById("gca_cash").innerHTML = gca_cash;
+            document.getElementById("gca_cash").innerHTML = parseInt(total_cash * 0.85);
             document.getElementById("lock_cash").innerHTML = parseInt(total_cash * 0.15);
 
             let total_gold = 0;
@@ -663,33 +662,29 @@
             const col3_data = [];
             let temp_col3 = buy_val;
             const col4_data = [];
+            let temp_col4;
             const col5_data = [];
-            const col6_data = [];
-            const col7_data = [];
+            let temp_col5;
             for (let i = 0; i < 20; i++) {
                 col3_data[i] = (parseFloat(temp_col3) + (parseFloat(temp_col3) * i_rate)).toFixed(2);
                 temp_col3 = col3_data[i];
 
                 col4_data[i] = (col3_data[i] * lock_gold).toFixed(2);
 
-                col5_data[i] = ((total_gold * col3_data[i]) - (total_gold * buy_val)).toFixed(2);
-
-                col6_data[i] = ((gca_cash * 0.035) * (i + 1)).toFixed(2);
-
-                col7_data[i] = ((parseFloat(col4_data[i]) + parseFloat(col4_data[i])) - parseFloat(col6_data[i])).toFixed(2);
-
-                // console.log(col7_data[i]);
+                col5_data[i] = ((total_gold * col3_data[i])-(total_gold * buy_val)).toFixed(2);
+                
+                console.log(col5_data[i]);
             }
             // Col-3 data on 20 years table
-            document.getElementById("row1_col3").innerHTML = col3_data[0];
-            document.getElementById("row2_col3").innerHTML = col3_data[1];
-            document.getElementById("row3_col3").innerHTML = col3_data[2];
-            document.getElementById("row4_col3").innerHTML = col3_data[3];
-            document.getElementById("row5_col3").innerHTML = col3_data[4];
-            document.getElementById("row6_col3").innerHTML = col3_data[5];
-            document.getElementById("row7_col3").innerHTML = col3_data[6];
-            document.getElementById("row8_col3").innerHTML = col3_data[7];
-            document.getElementById("row9_col3").innerHTML = col3_data[8];
+            document.getElementById("row1_col3").innerHTML  = col3_data[0];
+            document.getElementById("row2_col3").innerHTML  = col3_data[1];
+            document.getElementById("row3_col3").innerHTML  = col3_data[2];
+            document.getElementById("row4_col3").innerHTML  = col3_data[3];
+            document.getElementById("row5_col3").innerHTML  = col3_data[4];
+            document.getElementById("row6_col3").innerHTML  = col3_data[5];
+            document.getElementById("row7_col3").innerHTML  = col3_data[6];
+            document.getElementById("row8_col3").innerHTML  = col3_data[7];
+            document.getElementById("row9_col3").innerHTML  = col3_data[8];
             document.getElementById("row10_col3").innerHTML = col3_data[9];
             document.getElementById("row11_col3").innerHTML = col3_data[10];
             document.getElementById("row12_col3").innerHTML = col3_data[11];
@@ -702,15 +697,15 @@
             document.getElementById("row19_col3").innerHTML = col3_data[18];
             document.getElementById("row20_col3").innerHTML = col3_data[19];
             // Col-4 data on 20 years table
-            document.getElementById("row1_col4").innerHTML = col4_data[0];
-            document.getElementById("row2_col4").innerHTML = col4_data[1];
-            document.getElementById("row3_col4").innerHTML = col4_data[2];
-            document.getElementById("row4_col4").innerHTML = col4_data[3];
-            document.getElementById("row5_col4").innerHTML = col4_data[4];
-            document.getElementById("row6_col4").innerHTML = col4_data[5];
-            document.getElementById("row7_col4").innerHTML = col4_data[6];
-            document.getElementById("row8_col4").innerHTML = col4_data[7];
-            document.getElementById("row9_col4").innerHTML = col4_data[8];
+            document.getElementById("row1_col4").innerHTML  = col4_data[0];
+            document.getElementById("row2_col4").innerHTML  = col4_data[1];
+            document.getElementById("row3_col4").innerHTML  = col4_data[2];
+            document.getElementById("row4_col4").innerHTML  = col4_data[3];
+            document.getElementById("row5_col4").innerHTML  = col4_data[4];
+            document.getElementById("row6_col4").innerHTML  = col4_data[5];
+            document.getElementById("row7_col4").innerHTML  = col4_data[6];
+            document.getElementById("row8_col4").innerHTML  = col4_data[7];
+            document.getElementById("row9_col4").innerHTML  = col4_data[8];
             document.getElementById("row10_col4").innerHTML = col4_data[9];
             document.getElementById("row11_col4").innerHTML = col4_data[10];
             document.getElementById("row12_col4").innerHTML = col4_data[11];
@@ -723,72 +718,263 @@
             document.getElementById("row19_col4").innerHTML = col4_data[18];
             document.getElementById("row20_col4").innerHTML = col4_data[19];
             // Col-5 data on 20 years table
-            document.getElementById("row1_col5").innerHTML = col5_data[0];
-            document.getElementById("row2_col5").innerHTML = col5_data[1];
-            document.getElementById("row3_col5").innerHTML = col5_data[2];
-            document.getElementById("row4_col5").innerHTML = col5_data[3];
-            document.getElementById("row5_col5").innerHTML = col5_data[4];
-            document.getElementById("row6_col5").innerHTML = col5_data[5];
-            document.getElementById("row7_col5").innerHTML = col5_data[6];
-            document.getElementById("row8_col5").innerHTML = col5_data[7];
-            document.getElementById("row9_col5").innerHTML = col5_data[8];
-            document.getElementById("row10_col5").innerHTML = col5_data[9];
-            document.getElementById("row11_col5").innerHTML = col5_data[10];
-            document.getElementById("row12_col5").innerHTML = col5_data[11];
-            document.getElementById("row13_col5").innerHTML = col5_data[12];
-            document.getElementById("row14_col5").innerHTML = col5_data[13];
-            document.getElementById("row15_col5").innerHTML = col5_data[14];
-            document.getElementById("row16_col5").innerHTML = col5_data[15];
-            document.getElementById("row17_col5").innerHTML = col5_data[16];
-            document.getElementById("row18_col5").innerHTML = col5_data[17];
-            document.getElementById("row19_col5").innerHTML = col5_data[18];
-            document.getElementById("row20_col5").innerHTML = col5_data[19];
-            // Col-6 data on 20 years table
-            document.getElementById("row1_col6").innerHTML = col6_data[0];
-            document.getElementById("row2_col6").innerHTML = col6_data[1];
-            document.getElementById("row3_col6").innerHTML = col6_data[2];
-            document.getElementById("row4_col6").innerHTML = col6_data[3];
-            document.getElementById("row5_col6").innerHTML = col6_data[4];
-            document.getElementById("row6_col6").innerHTML = col6_data[5];
-            document.getElementById("row7_col6").innerHTML = col6_data[6];
-            document.getElementById("row8_col6").innerHTML = col6_data[7];
-            document.getElementById("row9_col6").innerHTML = col6_data[8];
-            document.getElementById("row10_col6").innerHTML = col6_data[9];
-            document.getElementById("row11_col6").innerHTML = col6_data[10];
-            document.getElementById("row12_col6").innerHTML = col6_data[11];
-            document.getElementById("row13_col6").innerHTML = col6_data[12];
-            document.getElementById("row14_col6").innerHTML = col6_data[13];
-            document.getElementById("row15_col6").innerHTML = col6_data[14];
-            document.getElementById("row16_col6").innerHTML = col6_data[15];
-            document.getElementById("row17_col6").innerHTML = col6_data[16];
-            document.getElementById("row18_col6").innerHTML = col6_data[17];
-            document.getElementById("row19_col6").innerHTML = col6_data[18];
-            document.getElementById("row20_col6").innerHTML = col6_data[19];
-            // Col-7 data on 20 years table
-            document.getElementById("row1_col7").innerHTML = col7_data[0];
-            document.getElementById("row2_col7").innerHTML = col7_data[1];
-            document.getElementById("row3_col7").innerHTML = col7_data[2];
-            document.getElementById("row4_col7").innerHTML = col7_data[3];
-            document.getElementById("row5_col7").innerHTML = col7_data[4];
-            document.getElementById("row6_col7").innerHTML = col7_data[5];
-            document.getElementById("row7_col7").innerHTML = col7_data[6];
-            document.getElementById("row8_col7").innerHTML = col7_data[7];
-            document.getElementById("row9_col7").innerHTML = col7_data[8];
-            document.getElementById("row10_col7").innerHTML = col7_data[9];
-            document.getElementById("row11_col7").innerHTML = col7_data[10];
-            document.getElementById("row12_col7").innerHTML = col7_data[11];
-            document.getElementById("row13_col7").innerHTML = col7_data[12];
-            document.getElementById("row14_col7").innerHTML = col7_data[13];
-            document.getElementById("row15_col7").innerHTML = col7_data[14];
-            document.getElementById("row16_col7").innerHTML = col7_data[15];
-            document.getElementById("row17_col7").innerHTML = col7_data[16];
-            document.getElementById("row18_col7").innerHTML = col7_data[17];
-            document.getElementById("row19_col7").innerHTML = col7_data[18];
-            document.getElementById("row20_col7").innerHTML = col7_data[19];
+            document.getElementById("row1_col4").innerHTML  = col5_data[0];
+            document.getElementById("row2_col4").innerHTML  = col5_data[1];
+            document.getElementById("row3_col4").innerHTML  = col5_data[2];
+            document.getElementById("row4_col4").innerHTML  = col5_data[3];
+            document.getElementById("row5_col4").innerHTML  = col5_data[4];
+            document.getElementById("row6_col4").innerHTML  = col5_data[5];
+            document.getElementById("row7_col4").innerHTML  = col5_data[6];
+            document.getElementById("row8_col4").innerHTML  = col5_data[7];
+            document.getElementById("row9_col4").innerHTML  = col5_data[8];
+            document.getElementById("row10_col4").innerHTML = col5_data[9];
+            document.getElementById("row11_col4").innerHTML = col5_data[10];
+            document.getElementById("row12_col4").innerHTML = col5_data[11];
+            document.getElementById("row13_col4").innerHTML = col5_data[12];
+            document.getElementById("row14_col4").innerHTML = col5_data[13];
+            document.getElementById("row15_col4").innerHTML = col5_data[14];
+            document.getElementById("row16_col4").innerHTML = col5_data[15];
+            document.getElementById("row17_col4").innerHTML = col5_data[16];
+            document.getElementById("row18_col4").innerHTML = col5_data[17];
+            document.getElementById("row19_col4").innerHTML = col5_data[18];
+            document.getElementById("row20_col4").innerHTML = col5_data[19];
 
             // console.log(i_rate);
         }
 
+
+        const getCalculate = () => {
+            let gsa_val = document.getElementById("sell_val").value;
+            let exp_1 = document.getElementById("exp_1").value;
+            let val_1 = parseInt(document.getElementById("val_1").value);
+            document.getElementById("weight_1").innerHTML = (val_1 / gsa_val).toFixed(4);
+            let exp_2 = document.getElementById("exp_2").value;
+            let val_2 = parseInt(document.getElementById("val_2").value);
+            document.getElementById("weight_2").innerHTML = (val_2 / gsa_val).toFixed(4);
+            let exp_3 = document.getElementById("exp_3").value;
+            let val_3 = parseInt(document.getElementById("val_3").value);
+            document.getElementById("weight_3").innerHTML = (val_3 / gsa_val).toFixed(4);
+            let exp_4 = document.getElementById("exp_4").value;
+            let val_4 = parseInt(document.getElementById("val_4").value);
+            document.getElementById("weight_4").innerHTML = (val_4 / gsa_val).toFixed(4);
+            let exp_5 = document.getElementById("exp_5").value;
+            let val_5 = parseInt(document.getElementById("val_5").value);
+            document.getElementById("weight_5").innerHTML = (val_5 / gsa_val).toFixed(4);
+            let exp_6 = document.getElementById("exp_6").value;
+            let val_6 = parseInt(document.getElementById("val_6").value);
+            document.getElementById("weight_6").innerHTML = (val_6 / gsa_val).toFixed(4);
+            let exp_7 = document.getElementById("exp_7").value;
+            let val_7 = parseInt(document.getElementById("val_7").value);
+            document.getElementById("weight_7").innerHTML = (val_7 / gsa_val).toFixed(4);
+            let exp_8 = document.getElementById("exp_8").value;
+            let val_8 = parseInt(document.getElementById("val_8").value);
+            document.getElementById("weight_8").innerHTML = (val_8 / gsa_val).toFixed(4);
+            let exp_9 = document.getElementById("exp_9").value;
+            let val_9 = parseInt(document.getElementById("val_9").value);
+            document.getElementById("weight_9").innerHTML = (val_9 / gsa_val).toFixed(4);
+            let exp_10 = document.getElementById("exp_10").value;
+            let val_10 = parseInt(document.getElementById("val_10").value);
+            document.getElementById("weight_10").innerHTML = (val_10 / gsa_val).toFixed(4);
+            let exp_11 = document.getElementById("exp_11").value;
+            let val_11 = parseInt(document.getElementById("val_11").value);
+            document.getElementById("weight_11").innerHTML = (val_11 / gsa_val).toFixed(4);
+            let exp_12 = document.getElementById("exp_12").value;
+            let val_12 = parseInt(document.getElementById("val_12").value);
+            document.getElementById("weight_12").innerHTML = (val_12 / gsa_val).toFixed(4);
+            document.getElementById("total_cash").innerHTML = (val_1 + val_2 + val_3 + val_4 + val_5 + val_6 + val_7 + val_8 + val_9 + val_10 + val_11 + val_12);
+            document.getElementById("total_gold").innerHTML = (((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) + ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) + ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))).toFixed(4);
+            document.getElementById("gca_cash").innerHTML = ((val_1 + val_2 + val_3 + val_4 + val_5 + val_6 + val_7 + val_8 + val_9 + val_10 + val_11 + val_12)) * 0.85;
+            document.getElementById("gca_gold").innerHTML = (((((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) + ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) + ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))) * 0.85).toFixed(4));
+            document.getElementById("lock_cash").innerHTML = ((val_1 + val_2 + val_3 + val_4 + val_5 + val_6 + val_7 + val_8 + val_9 + val_10 + val_11 + val_12)) * 0.15;
+            document.getElementById("lock_gold").innerHTML = (((((val_1 / gsa_val)) + ((val_2 / gsa_val)) + ((val_3 / gsa_val)) + ((val_4 / gsa_val)) + ((val_5 / gsa_val)) + ((val_6 / gsa_val)) + ((val_7 / gsa_val)) + ((val_8 / gsa_val)) + ((val_9 / gsa_val)) + ((val_10 / gsa_val)) + ((val_11 / gsa_val)) + ((val_12 / gsa_val))) * 0.15).toFixed(4));
+
+            console.log();
+        }
+        const putCalculate = () => {
+            let gsa_val = document.getElementById("buy_val").value;
+            let incr_est = parseInt(document.getElementById("incr_est").value);
+            let buy_val = parseFloat(document.getElementById("buy_val").value);
+            let rate = parseFloat(incr_est / 100).toFixed(2);
+            let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
+            let lockgold = (document.getElementById("lock_gold").innerHTML);
+            let totalgold = (document.getElementById("total_gold").innerHTML);
+            let gcacash = (document.getElementById("gca_cash").innerHTML);
+
+            let row1_col2 = document.getElementById("row1_col2").innerHTML = 1;
+            let row1_col3 = document.getElementById("row1_col3").innerHTML = (parseFloat(gsa_val) + (parseFloat(gsa_val) * parseFloat(rate))).toFixed(2);
+            let row1_col1 = document.getElementById("row1_col1").innerHTML = parseFloat((row1_col3 * 1.07)).toFixed(2);
+            let row1_col4 = document.getElementById("row1_col4").innerHTML = (row1_col3 * lockgold).toFixed(2);
+            let row1_col5 = document.getElementById("row1_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row1_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row1_col6 = document.getElementById("row1_col6").innerHTML = parseFloat(gcacash * 0.035).toFixed(2);
+            let row1_col7 = document.getElementById("row1_col7").innerHTML = (((parseFloat(row1_col4)) + (parseFloat(row1_col5))) - (parseFloat(row1_col6))).toFixed(2);
+
+            let row2_col2 = document.getElementById("row2_col2").innerHTML = 2;
+            let row2_col3 = document.getElementById("row2_col3").innerHTML = (parseFloat(row1_col3) + (parseFloat(row1_col3) * parseFloat(rate))).toFixed(2);
+            let row2_col1 = document.getElementById("row2_col1").innerHTML = parseFloat((row2_col3 * 1.07)).toFixed(2);
+            let row2_col4 = document.getElementById("row2_col4").innerHTML = (row2_col3 * lockgold).toFixed(2);
+            let row2_col5 = document.getElementById("row2_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row2_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row2_col6 = document.getElementById("row2_col6").innerHTML = parseFloat((gcacash * 0.035) * row2_col2).toFixed(2);
+            let row2_col7 = document.getElementById("row2_col7").innerHTML = (((parseFloat(row2_col4)) + (parseFloat(row2_col5))) - (parseFloat(row2_col6))).toFixed(2);
+
+            let row3_col2 = document.getElementById("row3_col2").innerHTML = 3;
+            let row3_col3 = document.getElementById("row3_col3").innerHTML = (parseFloat(row2_col3) + (parseFloat(row2_col3) * parseFloat(rate))).toFixed(2);
+            let row3_col1 = document.getElementById("row3_col1").innerHTML = parseFloat((row3_col3 * 1.07)).toFixed(2);
+            let row3_col4 = document.getElementById("row3_col4").innerHTML = (row3_col3 * lockgold).toFixed(2);
+            let row3_col5 = document.getElementById("row3_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row3_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row3_col6 = document.getElementById("row3_col6").innerHTML = parseFloat((gcacash * 0.035) * row3_col2).toFixed(2);
+            let row3_col7 = document.getElementById("row3_col7").innerHTML = (((parseFloat(row3_col4)) + (parseFloat(row3_col5))) - (parseFloat(row3_col6))).toFixed(2);
+
+            let row4_col2 = document.getElementById("row4_col2").innerHTML = 4;
+            let row4_col3 = document.getElementById("row4_col3").innerHTML = (parseFloat(row3_col3) + (parseFloat(row3_col3) * parseFloat(rate))).toFixed(2);
+            let row4_col1 = document.getElementById("row4_col1").innerHTML = parseFloat((row4_col3 * 1.07)).toFixed(2);
+            let row4_col4 = document.getElementById("row4_col4").innerHTML = (row4_col3 * lockgold).toFixed(2);
+            let row4_col5 = document.getElementById("row4_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row4_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row4_col6 = document.getElementById("row4_col6").innerHTML = parseFloat((gcacash * 0.035) * row4_col2).toFixed(2);
+            let row4_col7 = document.getElementById("row4_col7").innerHTML = (((parseFloat(row4_col4)) + (parseFloat(row4_col5))) - (parseFloat(row4_col6))).toFixed(2);
+
+            let row5_col2 = document.getElementById("row5_col2").innerHTML = 5;
+            let row5_col3 = document.getElementById("row5_col3").innerHTML = (parseFloat(row4_col3) + (parseFloat(row4_col3) * parseFloat(rate))).toFixed(2);
+            let row5_col1 = document.getElementById("row5_col1").innerHTML = parseFloat((row5_col3 * 1.07)).toFixed(2);
+            let row5_col4 = document.getElementById("row5_col4").innerHTML = (row5_col3 * lockgold).toFixed(2);
+            let row5_col5 = document.getElementById("row5_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row5_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row5_col6 = document.getElementById("row5_col6").innerHTML = parseFloat((gcacash * 0.035) * row5_col2).toFixed(2);
+            let row5_col7 = document.getElementById("row5_col7").innerHTML = (((parseFloat(row5_col4)) + (parseFloat(row5_col5))) - (parseFloat(row5_col6))).toFixed(2);
+
+            let row6_col2 = document.getElementById("row6_col2").innerHTML = 6;
+            let row6_col3 = document.getElementById("row6_col3").innerHTML = (parseFloat(row5_col3) + (parseFloat(row5_col3) * parseFloat(rate))).toFixed(2);
+            let row6_col1 = document.getElementById("row6_col1").innerHTML = parseFloat((row6_col3 * 1.07)).toFixed(2);
+            let row6_col4 = document.getElementById("row6_col4").innerHTML = (row6_col3 * lockgold).toFixed(2);
+            let row6_col5 = document.getElementById("row6_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row6_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row6_col6 = document.getElementById("row6_col6").innerHTML = parseFloat((gcacash * 0.035) * row6_col2).toFixed(2);
+            let row6_col7 = document.getElementById("row6_col7").innerHTML = (((parseFloat(row6_col4)) + (parseFloat(row6_col5))) - (parseFloat(row6_col6))).toFixed(2);
+
+            let row7_col2 = document.getElementById("row7_col2").innerHTML = 7;
+            let row7_col3 = document.getElementById("row7_col3").innerHTML = (parseFloat(row6_col3) + (parseFloat(row6_col3) * parseFloat(rate))).toFixed(2);
+            let row7_col1 = document.getElementById("row7_col1").innerHTML = parseFloat((row7_col3 * 1.07)).toFixed(2);
+            let row7_col4 = document.getElementById("row7_col4").innerHTML = (row7_col3 * lockgold).toFixed(2);
+            let row7_col5 = document.getElementById("row7_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row7_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row7_col6 = document.getElementById("row7_col6").innerHTML = parseFloat((gcacash * 0.035) * row7_col2).toFixed(2);
+            let row7_col7 = document.getElementById("row7_col7").innerHTML = (((parseFloat(row7_col4)) + (parseFloat(row7_col5))) - (parseFloat(row7_col6))).toFixed(2);
+
+            let row8_col2 = document.getElementById("row8_col2").innerHTML = 8;
+            let row8_col3 = document.getElementById("row8_col3").innerHTML = (parseFloat(row7_col3) + (parseFloat(row7_col3) * parseFloat(rate))).toFixed(2);
+            let row8_col1 = document.getElementById("row8_col1").innerHTML = parseFloat((row8_col3 * 1.07)).toFixed(2);
+            let row8_col4 = document.getElementById("row8_col4").innerHTML = (row8_col3 * lockgold).toFixed(2);
+            let row8_col5 = document.getElementById("row8_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row8_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row8_col6 = document.getElementById("row8_col6").innerHTML = parseFloat((gcacash * 0.035) * row8_col2).toFixed(2);
+            let row8_col7 = document.getElementById("row8_col7").innerHTML = (((parseFloat(row8_col4)) + (parseFloat(row8_col5))) - (parseFloat(row8_col6))).toFixed(2);
+
+            let row9_col2 = document.getElementById("row9_col2").innerHTML = 9;
+            let row9_col3 = document.getElementById("row9_col3").innerHTML = (parseFloat(row8_col3) + (parseFloat(row8_col3) * parseFloat(rate))).toFixed(2);
+            let row9_col1 = document.getElementById("row9_col1").innerHTML = parseFloat((row9_col3 * 1.07)).toFixed(2);
+            let row9_col4 = document.getElementById("row9_col4").innerHTML = (row9_col3 * lockgold).toFixed(2);
+            let row9_col5 = document.getElementById("row9_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row9_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row9_col6 = document.getElementById("row9_col6").innerHTML = parseFloat((gcacash * 0.035) * row9_col2).toFixed(2);
+            let row9_col7 = document.getElementById("row9_col7").innerHTML = (((parseFloat(row9_col4)) + (parseFloat(row9_col5))) - (parseFloat(row9_col6))).toFixed(2);
+
+            let row10_col2 = document.getElementById("row10_col2").innerHTML = 10;
+            let row10_col3 = document.getElementById("row10_col3").innerHTML = (parseFloat(row9_col3) + (parseFloat(row9_col3) * parseFloat(rate))).toFixed(2);
+            let row10_col1 = document.getElementById("row10_col1").innerHTML = parseFloat((row10_col3 * 1.07)).toFixed(2);
+            let row10_col4 = document.getElementById("row10_col4").innerHTML = (row10_col3 * lockgold).toFixed(2);
+            let row10_col5 = document.getElementById("row10_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row10_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row10_col6 = document.getElementById("row10_col6").innerHTML = parseFloat((gcacash * 0.035) * row10_col2).toFixed(2);
+            let row10_col7 = document.getElementById("row10_col7").innerHTML = (((parseFloat(row10_col4)) + (parseFloat(row10_col5))) - (parseFloat(row10_col6))).toFixed(2);
+
+            let row11_col2 = document.getElementById("row11_col2").innerHTML = 11;
+            let row11_col3 = document.getElementById("row11_col3").innerHTML = (parseFloat(row10_col3) + (parseFloat(row10_col3) * parseFloat(rate))).toFixed(2);
+            let row11_col1 = document.getElementById("row11_col1").innerHTML = parseFloat((row11_col3 * 1.07)).toFixed(2);
+            let row11_col4 = document.getElementById("row11_col4").innerHTML = (row11_col3 * lockgold).toFixed(2);
+            let row11_col5 = document.getElementById("row11_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row11_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row11_col6 = document.getElementById("row11_col6").innerHTML = parseFloat((gcacash * 0.035) * row11_col2).toFixed(2);
+            let row11_col7 = document.getElementById("row11_col7").innerHTML = (((parseFloat(row11_col4)) + (parseFloat(row11_col5))) - (parseFloat(row11_col6))).toFixed(2);
+
+            let row12_col2 = document.getElementById("row12_col2").innerHTML = 12;
+            let row12_col3 = document.getElementById("row12_col3").innerHTML = (parseFloat(row11_col3) + (parseFloat(row11_col3) * parseFloat(rate))).toFixed(2);
+            let row12_col1 = document.getElementById("row12_col1").innerHTML = parseFloat((row12_col3 * 1.07)).toFixed(2);
+            let row12_col4 = document.getElementById("row12_col4").innerHTML = (row12_col3 * lockgold).toFixed(2);
+            let row12_col5 = document.getElementById("row12_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row12_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row12_col6 = document.getElementById("row12_col6").innerHTML = parseFloat((gcacash * 0.035) * row12_col2).toFixed(2);
+            let row12_col7 = document.getElementById("row12_col7").innerHTML = (((parseFloat(row12_col4)) + (parseFloat(row12_col5))) - (parseFloat(row12_col6))).toFixed(2);
+
+            let row13_col2 = document.getElementById("row13_col2").innerHTML = 13;
+            let row13_col3 = document.getElementById("row13_col3").innerHTML = (parseFloat(row12_col3) + (parseFloat(row12_col3) * parseFloat(rate))).toFixed(2);
+            let row13_col1 = document.getElementById("row13_col1").innerHTML = parseFloat((row13_col3 * 1.07)).toFixed(2);
+            let row13_col4 = document.getElementById("row13_col4").innerHTML = (row13_col3 * lockgold).toFixed(2);
+            let row13_col5 = document.getElementById("row13_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row13_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row13_col6 = document.getElementById("row13_col6").innerHTML = parseFloat((gcacash * 0.035) * row13_col2).toFixed(2);
+            let row13_col7 = document.getElementById("row13_col7").innerHTML = (((parseFloat(row13_col4)) + (parseFloat(row13_col5))) - (parseFloat(row13_col6))).toFixed(2);
+
+            let row14_col2 = document.getElementById("row14_col2").innerHTML = 14;
+            let row14_col3 = document.getElementById("row14_col3").innerHTML = (parseFloat(row13_col3) + (parseFloat(row13_col3) * parseFloat(rate))).toFixed(2);
+            let row14_col1 = document.getElementById("row14_col1").innerHTML = parseFloat((row14_col3 * 1.07)).toFixed(2);
+            let row14_col4 = document.getElementById("row14_col4").innerHTML = (row14_col3 * lockgold).toFixed(2);
+            let row14_col5 = document.getElementById("row14_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row14_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row14_col6 = document.getElementById("row14_col6").innerHTML = parseFloat((gcacash * 0.035) * row14_col2).toFixed(2);
+            let row14_col7 = document.getElementById("row14_col7").innerHTML = (((parseFloat(row14_col4)) + (parseFloat(row14_col5))) - (parseFloat(row14_col6))).toFixed(2);
+
+            let row15_col2 = document.getElementById("row15_col2").innerHTML = 15;
+            let row15_col3 = document.getElementById("row15_col3").innerHTML = (parseFloat(row14_col3) + (parseFloat(row14_col3) * parseFloat(rate))).toFixed(2);
+            let row15_col1 = document.getElementById("row15_col1").innerHTML = parseFloat((row15_col3 * 1.07)).toFixed(2);
+            let row15_col4 = document.getElementById("row15_col4").innerHTML = (row15_col3 * lockgold).toFixed(2);
+            let row15_col5 = document.getElementById("row15_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row15_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row15_col6 = document.getElementById("row15_col6").innerHTML = parseFloat((gcacash * 0.035) * row15_col2).toFixed(2);
+            let row15_col7 = document.getElementById("row15_col7").innerHTML = (((parseFloat(row15_col4)) + (parseFloat(row15_col5))) - (parseFloat(row15_col6))).toFixed(2);
+
+            let row16_col2 = document.getElementById("row16_col2").innerHTML = 16;
+            let row16_col3 = document.getElementById("row16_col3").innerHTML = (parseFloat(row15_col3) + (parseFloat(row15_col3) * parseFloat(rate))).toFixed(2);
+            let row16_col1 = document.getElementById("row16_col1").innerHTML = parseFloat((row16_col3 * 1.07)).toFixed(2);
+            let row16_col4 = document.getElementById("row16_col4").innerHTML = (row16_col3 * lockgold).toFixed(2);
+            let row16_col5 = document.getElementById("row16_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row16_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row16_col6 = document.getElementById("row16_col6").innerHTML = parseFloat((gcacash * 0.035) * row16_col2).toFixed(2);
+            let row16_col7 = document.getElementById("row16_col7").innerHTML = (((parseFloat(row16_col4)) + (parseFloat(row16_col5))) - (parseFloat(row16_col6))).toFixed(2);
+
+            let row17_col2 = document.getElementById("row17_col2").innerHTML = 17;
+            let row17_col3 = document.getElementById("row17_col3").innerHTML = (parseFloat(row16_col3) + (parseFloat(row16_col3) * parseFloat(rate))).toFixed(2);
+            let row17_col1 = document.getElementById("row17_col1").innerHTML = parseFloat((row17_col3 * 1.07)).toFixed(2);
+            let row17_col4 = document.getElementById("row17_col4").innerHTML = (row17_col3 * lockgold).toFixed(2);
+            let row17_col5 = document.getElementById("row17_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row17_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row17_col6 = document.getElementById("row17_col6").innerHTML = parseFloat((gcacash * 0.035) * row17_col2).toFixed(2);
+            let row17_col7 = document.getElementById("row17_col7").innerHTML = (((parseFloat(row17_col4)) + (parseFloat(row17_col5))) - (parseFloat(row17_col6))).toFixed(2);
+
+            let row18_col2 = document.getElementById("row18_col2").innerHTML = 18;
+            let row18_col3 = document.getElementById("row18_col3").innerHTML = (parseFloat(row17_col3) + (parseFloat(row17_col3) * parseFloat(rate))).toFixed(2);
+            let row18_col1 = document.getElementById("row18_col1").innerHTML = parseFloat((row18_col3 * 1.07)).toFixed(2);
+            let row18_col4 = document.getElementById("row18_col4").innerHTML = (row18_col3 * lockgold).toFixed(2);
+            let row18_col5 = document.getElementById("row18_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row18_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row18_col6 = document.getElementById("row18_col6").innerHTML = parseFloat((gcacash * 0.035) * row18_col2).toFixed(2);
+            let row18_col7 = document.getElementById("row18_col7").innerHTML = (((parseFloat(row18_col4)) + (parseFloat(row18_col5))) - (parseFloat(row18_col6))).toFixed(2);
+
+            let row19_col2 = document.getElementById("row19_col2").innerHTML = 19;
+            let row19_col3 = document.getElementById("row19_col3").innerHTML = (parseFloat(row18_col3) + (parseFloat(row18_col3) * parseFloat(rate))).toFixed(2);
+            let row19_col1 = document.getElementById("row19_col1").innerHTML = parseFloat((row19_col3 * 1.07)).toFixed(2);
+            let row19_col4 = document.getElementById("row19_col4").innerHTML = (row19_col3 * lockgold).toFixed(2);
+            let row19_col5 = document.getElementById("row19_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row19_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row19_col6 = document.getElementById("row19_col6").innerHTML = parseFloat((gcacash * 0.035) * row19_col2).toFixed(2);
+            let row19_col7 = document.getElementById("row19_col7").innerHTML = (((parseFloat(row19_col4)) + (parseFloat(row19_col5))) - (parseFloat(row19_col6))).toFixed(2);
+
+            let row20_col2 = document.getElementById("row20_col2").innerHTML = 20;
+            let row20_col3 = document.getElementById("row20_col3").innerHTML = (parseFloat(row19_col3) + (parseFloat(row19_col3) * parseFloat(rate))).toFixed(2);
+            let row20_col1 = document.getElementById("row20_col1").innerHTML = parseFloat((row20_col3 * 1.07)).toFixed(2);
+            let row20_col4 = document.getElementById("row20_col4").innerHTML = (row20_col3 * lockgold).toFixed(2);
+            let row20_col5 = document.getElementById("row20_col5").innerHTML = ((parseFloat(totalgold) * parseFloat(row20_col3)) - (parseFloat(totalgold) * parseFloat(gsa_val))).toFixed(2);
+            let row20_col6 = document.getElementById("row20_col6").innerHTML = parseFloat((gcacash * 0.035) * row20_col2).toFixed(2);
+            let row20_col7 = document.getElementById("row20_col7").innerHTML = (((parseFloat(row20_col4)) + (parseFloat(row20_col5))) - (parseFloat(row20_col6))).toFixed(2);
+
+
+            document.getElementById("5years").innerHTML = row5_col7;
+            document.getElementById("10years").innerHTML = row10_col7;
+            document.getElementById("15years").innerHTML = row15_col7;
+            document.getElementById("20years").innerHTML = row20_col7;
+
+
+            var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+            var collapseList = collapseElementList.map(function (collapseEl) {
+                return new bootstrap.Collapse(collapseEl)
+            })
+
+
+            console.log();
+        }
 
         var xValues = [2023, 2027, 2037, 2042];
         new Chart("myChart", {
