@@ -590,14 +590,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <script>
+        var xValues = [2027, 2032, 2-37, 2042];
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    data: [],
+                    borderColor: "red",
+                    fill: false
+                }, {
+                    data: [1272.44, 2646.65, 4753.80, 7888.61],
+                    borderColor: "blue",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: { display: false }
+            }
+        });
+
         const firstCalculate = () => {
             let buy_val = document.getElementById("buy_val").value;
             let incr_est = document.getElementById("incr_est").value;
             let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
         }
 
-
         const lastCalculate = () => {
+
             let buy_val = document.getElementById("buy_val").value;
             let incr_est = document.getElementById("incr_est").value;
             let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
@@ -632,9 +653,9 @@
 
             let total_cash = 0;
             for (let i = 0; i < val_rm.length; i++) {
-                total_cash += parseInt(val_rm[i]);
+                total_cash += parseFloat(val_rm[i]);
             }
-            document.getElementById("total_cash").innerHTML = total_cash;
+            document.getElementById("total_cash").innerHTML = parseFloat(total_cash).toFixed();
             let gca_cash = parseInt(total_cash * 0.85);
             document.getElementById("gca_cash").innerHTML = gca_cash;
             document.getElementById("lock_cash").innerHTML = parseInt(total_cash * 0.15);
@@ -793,28 +814,18 @@
             document.getElementById("15years").innerHTML = col7_data[14];
             document.getElementById("20years").innerHTML = col7_data[19];
 
-            // console.log(i_rate);
-        }
 
-        var xValues = [2023, 2027, 2037, 2042];
-        new Chart("myChart", {
-            type: "line",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    data: [937.13, 4685.63, 9371.25, 14056.88, 18742.50],
-                    borderColor: "blue",
-                    fill: false
-                }, {
-                    data: [6187.18, 15619.17, 34281.41, 63897.82, 109614.40],
-                    borderColor: "red",
-                    fill: false
-                }]
-            },
-            options: {
-                legend: { display: false }
-            }
-        });
+            let a1 = col7_data[4];
+            let a2 = col7_data[9];
+            let a3 = col7_data[14];
+            let a4 = col7_data[19];
+
+            myChart.data.datasets[0].data = [col7_data[4], col7_data[9], col7_data[14], col7_data[19]];
+            myChart.data.datasets[1].data = [1272.44, 2646.65, 4753.80, 7888.61];
+            myChart.update();
+
+            // console.log();
+        }
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
