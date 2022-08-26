@@ -599,13 +599,13 @@
             data: {
                 labels: xValues,
                 datasets: [{
-                    label: '7%',
-                    data: [1272.44, 2646.65, 4753.80, 7888.61],
+                    label: '%',
+                    data: [],
                     borderColor: "blue",
                     fill: false
                 }, {
-                    label: '?',
-                    data: [],
+                    label: '%',
+                    data: [1050, 1150, 1200, 1250],
                     borderColor: "red",
                     fill: false
                 }]
@@ -849,7 +849,8 @@
             document.getElementById("20years").innerHTML = col7_data[19];
 
             myChart.data.datasets[0].data = [col7_data[4], col7_data[9], col7_data[14], col7_data[19]];
-            myChart.data.datasets[1].label = incr_est + "%";
+            myChart.data.datasets[0].label = incr_est + "%";
+            myChart.data.datasets[1].label = "7%";
             myChart.data.datasets[1].data = [col7_7data[4], col7_7data[9], col7_7data[14], col7_7data[19]];
             myChart.update();
 
