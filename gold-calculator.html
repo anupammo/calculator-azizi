@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="col-auto">
                                         <hr class="border border-white">
-                                        <button type="button" onclick="putCalculate()"
+                                        <button type="button" onclick="topCalculate()"
                                             class="btn btn-primary shadow-none">Submit</button>
                                     </div>
                                 </div>
@@ -592,6 +592,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <script>
+        const topCalculate = () => {
+            let buy_val = document.getElementById("buy_val").value;
+            let incr_est = document.getElementById("incr_est").value;
+            let rate = parseFloat(incr_est / 100).toFixed(2);
+            let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
+            // console.log(buy_val,incr_est, rate, sell_val);
+        }
         const getCalculate = () => {
             let gsa_val = document.getElementById("sell_val").value;
             let exp_1 = document.getElementById("exp_1").value;
