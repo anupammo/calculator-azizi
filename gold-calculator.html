@@ -86,8 +86,8 @@
                                     <div class="col-auto">
                                         <div class="mb-3">
                                             <label class="form-label">LME / QM buy value [RM]</label>
-                                            <input type="number" class="form-control shadow-none" id="buy_val"
-                                                value="250" placeholder="0">
+                                            <input type="number" class="form-control shadow-none" id="buy_val" value="0"
+                                                placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -101,13 +101,13 @@
                                         <div class="mb-3">
                                             <label class="form-label">Increment Estimation / Year [%]</label>
                                             <input type="number" min="0" max="5000" class="form-control shadow-none"
-                                                id="incr_est" value="7" placeholder="0">
+                                                id="incr_est" value="0" placeholder="0">
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <hr class="border border-white">
                                         <button type="button" onclick="firstCalculate()"
-                                            class="btn btn-primary shadow-none">Submit</button>
+                                            class="btn btn-primary shadow-none">QM sell value</button>
                                     </div>
                                 </div>
                             </form>
@@ -138,7 +138,7 @@
                                                 class="form-control shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td class="py-0">
-                                            <input type="number" id="val_1" value="3000"
+                                            <input type="number" id="val_1" value="0"
                                                 class="form-control text-center shadow-none border-0 py-1 my-0">
                                         </td>
                                         <td id="weight_1" class="text-end py-1 my-0">0</td>
@@ -344,231 +344,233 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- <div class="collapse" id="collapseExample">
-                        <div class="card card-body"> -->
-                    <div class="table-responsive">
-                        <table class="table text-center">
-                            <thead>
-                                <tr>
-                                    <!-- <th scope="col">Spread +7% QM Sell</th> -->
-                                    <th scope="col">Number of years saved</th>
-                                    <th scope="col">Qm Buy / LME if</th>
-                                    <th scope="col">Estimated Price of 15% Gold in Holding Inventory
-                                    </th>
-                                    <th scope="col">GAIN / LOSS 100% Gram Price Difference Gold Value in
-                                        the
-                                        CURRENT
-                                        year <minus>Previous</th>
-                                    <th scope="col">3.5% MF for 85% Received</th>
-                                    <th scope="col">Termination Value 15% Net cash value</th>
-                                    <th scope="col">Year</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!-- <td id="row1_col1">0</td> -->
-                                    <th id="row1_col2">1</th>
-                                    <td id="row1_col3">0</td>
-                                    <td id="row1_col4">0</td>
-                                    <td id="row1_col5">0</td>
-                                    <td id="row1_col6">0</td>
-                                    <td id="row1_col7">0</td>
-                                    <td id="row1_col8">2023</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row2_col1">0</td> -->
-                                    <th id="row2_col2">2</th>
-                                    <td id="row2_col3">0</td>
-                                    <td id="row2_col4">0</td>
-                                    <td id="row2_col5">0</td>
-                                    <td id="row2_col6">0</td>
-                                    <td id="row2_col7">0</td>
-                                    <td id="row2_col8">2024</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row3_col1">0</td> -->
-                                    <th id="row3_col2">3</th>
-                                    <td id="row3_col3">0</td>
-                                    <td id="row3_col4">0</td>
-                                    <td id="row3_col5">0</td>
-                                    <td id="row3_col6">0</td>
-                                    <td id="row3_col7">0</td>
-                                    <td id="row3_col8">2025</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row4_col1">0</td> -->
-                                    <th id="row4_col2">4</th>
-                                    <td id="row4_col3">0</td>
-                                    <td id="row4_col4">0</td>
-                                    <td id="row4_col5">0</td>
-                                    <td id="row4_col6">0</td>
-                                    <td id="row4_col7">0</td>
-                                    <td id="row4_col8">2026</td>
-                                </tr>
-                                <tr class="bg-warning">
-                                    <!-- <td id="row5_col1">0</td> -->
-                                    <th id="row5_col2">5</th>
-                                    <td id="row5_col3">0</td>
-                                    <td id="row5_col4">0</td>
-                                    <td id="row5_col5">0</td>
-                                    <td id="row5_col6">0</td>
-                                    <td id="row5_col7">0</td>
-                                    <td id="row5_col8">2027</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row6_col1">0</td> -->
-                                    <th id="row6_col2">6</th>
-                                    <td id="row6_col3">0</td>
-                                    <td id="row6_col4">0</td>
-                                    <td id="row6_col5">0</td>
-                                    <td id="row6_col6">0</td>
-                                    <td id="row6_col7">0</td>
-                                    <td id="row6_col8">2028</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row7_col1">0</td> -->
-                                    <th id="row7_col2">7</th>
-                                    <td id="row7_col3">0</td>
-                                    <td id="row7_col4">0</td>
-                                    <td id="row7_col5">0</td>
-                                    <td id="row7_col6">0</td>
-                                    <td id="row7_col7">0</td>
-                                    <td id="row7_col8">2029</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row8_col1">0</td> -->
-                                    <th id="row8_col2">8</th>
-                                    <td id="row8_col3">0</td>
-                                    <td id="row8_col4">0</td>
-                                    <td id="row8_col5">0</td>
-                                    <td id="row8_col6">0</td>
-                                    <td id="row8_col7">0</td>
-                                    <td id="row8_col8">2030</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row9_col1">0</td> -->
-                                    <th id="row9_col2">9</th>
-                                    <td id="row9_col3">0</td>
-                                    <td id="row9_col4">0</td>
-                                    <td id="row9_col5">0</td>
-                                    <td id="row9_col6">0</td>
-                                    <td id="row9_col7">0</td>
-                                    <td id="row9_col8">2031</td>
-                                </tr>
-                                <tr class="bg-warning">
-                                    <!-- <td id="row10_col1">0</td> -->
-                                    <th id="row10_col2">10</th>
-                                    <td id="row10_col3">0</td>
-                                    <td id="row10_col4">0</td>
-                                    <td id="row10_col5">0</td>
-                                    <td id="row10_col6">0</td>
-                                    <td id="row10_col7">0</td>
-                                    <td id="row10_col8">2032</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row11_col1">0</td> -->
-                                    <th id="row11_col2">11</th>
-                                    <td id="row11_col3">0</td>
-                                    <td id="row11_col4">0</td>
-                                    <td id="row11_col5">0</td>
-                                    <td id="row11_col6">0</td>
-                                    <td id="row11_col7">0</td>
-                                    <td id="row11_col8">2033</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row12_col1">0</td> -->
-                                    <th id="row12_col2">12</th>
-                                    <td id="row12_col3">0</td>
-                                    <td id="row12_col4">0</td>
-                                    <td id="row12_col5">0</td>
-                                    <td id="row12_col6">0</td>
-                                    <td id="row12_col7">0</td>
-                                    <td id="row12_col8">2034</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row13_col1">0</td> -->
-                                    <th id="row13_col2">13</th>
-                                    <td id="row13_col3">0</td>
-                                    <td id="row13_col4">0</td>
-                                    <td id="row13_col5">0</td>
-                                    <td id="row13_col6">0</td>
-                                    <td id="row13_col7">0</td>
-                                    <td id="row13_col8">2035</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row14_col1">0</td> -->
-                                    <th id="row14_col2">14</th>
-                                    <td id="row14_col3">0</td>
-                                    <td id="row14_col4">0</td>
-                                    <td id="row14_col5">0</td>
-                                    <td id="row14_col6">0</td>
-                                    <td id="row14_col7">0</td>
-                                    <td id="row14_col8">2036</td>
-                                </tr>
-                                <tr class="bg-warning">
-                                    <!-- <td id="row15_col1">0</td> -->
-                                    <th id="row15_col2">15</th>
-                                    <td id="row15_col3">0</td>
-                                    <td id="row15_col4">0</td>
-                                    <td id="row15_col5">0</td>
-                                    <td id="row15_col6">0</td>
-                                    <td id="row15_col7">0</td>
-                                    <td id="row15_col8">2037</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row16_col1">0</td> -->
-                                    <th id="row16_col2">16</th>
-                                    <td id="row16_col3">0</td>
-                                    <td id="row16_col4">0</td>
-                                    <td id="row16_col5">0</td>
-                                    <td id="row16_col6">0</td>
-                                    <td id="row16_col7">0</td>
-                                    <td id="row16_col8">2038</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row17_col1">0</td> -->
-                                    <th id="row17_col2">17</th>
-                                    <td id="row17_col3">0</td>
-                                    <td id="row17_col4">0</td>
-                                    <td id="row17_col5">0</td>
-                                    <td id="row17_col6">0</td>
-                                    <td id="row17_col7">0</td>
-                                    <td id="row17_col8">2039</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row18_col1">0</td> -->
-                                    <th id="row18_col2">18</th>
-                                    <td id="row18_col3">0</td>
-                                    <td id="row18_col4">0</td>
-                                    <td id="row18_col5">0</td>
-                                    <td id="row18_col6">0</td>
-                                    <td id="row18_col7">0</td>
-                                    <td id="row18_col8">2040</td>
-                                </tr>
-                                <tr>
-                                    <!-- <td id="row19_col1">0</td> -->
-                                    <th id="row19_col2">19</th>
-                                    <td id="row19_col3">0</td>
-                                    <td id="row19_col4">0</td>
-                                    <td id="row19_col5">0</td>
-                                    <td id="row19_col6">0</td>
-                                    <td id="row19_col7">0</td>
-                                    <td id="row19_col8">2041</td>
-                                </tr>
-                                <tr class="bg-warning">
-                                    <!-- <td id="row20_col1">0</td> -->
-                                    <th id="row20_col2">20</th>
-                                    <td id="row20_col3">0</td>
-                                    <td id="row20_col4">0</td>
-                                    <td id="row20_col5">0</td>
-                                    <td id="row20_col6">0</td>
-                                    <td id="row20_col7"></td>
-                                    <td id="row20_col8">2042</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- </div>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <div class="table-responsive">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr>
+                                            <!-- <th scope="col">Spread +7% QM Sell</th> -->
+                                            <th scope="col">Number of years saved</th>
+                                            <th scope="col">Qm Buy / LME if</th>
+                                            <th scope="col">Estimated Price of 15% Gold in Holding Inventory
+                                            </th>
+                                            <th scope="col">GAIN / LOSS 100% Gram Price Difference Gold Value in
+                                                the
+                                                CURRENT
+                                                year <minus>Previous</th>
+                                            <th scope="col">3.5% MF for 85% Received</th>
+                                            <th scope="col">Termination Value 15% Net cash value</th>
+                                            <th scope="col">Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <!-- <td id="row1_col1">0</td> -->
+                                            <th id="row1_col2">1</th>
+                                            <td id="row1_col3">0</td>
+                                            <td id="row1_col4">0</td>
+                                            <td id="row1_col5">0</td>
+                                            <td id="row1_col6">0</td>
+                                            <td id="row1_col7">0</td>
+                                            <td id="row1_col8">2023</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row2_col1">0</td> -->
+                                            <th id="row2_col2">2</th>
+                                            <td id="row2_col3">0</td>
+                                            <td id="row2_col4">0</td>
+                                            <td id="row2_col5">0</td>
+                                            <td id="row2_col6">0</td>
+                                            <td id="row2_col7">0</td>
+                                            <td id="row2_col8">2024</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row3_col1">0</td> -->
+                                            <th id="row3_col2">3</th>
+                                            <td id="row3_col3">0</td>
+                                            <td id="row3_col4">0</td>
+                                            <td id="row3_col5">0</td>
+                                            <td id="row3_col6">0</td>
+                                            <td id="row3_col7">0</td>
+                                            <td id="row3_col8">2025</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row4_col1">0</td> -->
+                                            <th id="row4_col2">4</th>
+                                            <td id="row4_col3">0</td>
+                                            <td id="row4_col4">0</td>
+                                            <td id="row4_col5">0</td>
+                                            <td id="row4_col6">0</td>
+                                            <td id="row4_col7">0</td>
+                                            <td id="row4_col8">2026</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <!-- <td id="row5_col1">0</td> -->
+                                            <th id="row5_col2">5</th>
+                                            <td id="row5_col3">0</td>
+                                            <td id="row5_col4">0</td>
+                                            <td id="row5_col5">0</td>
+                                            <td id="row5_col6">0</td>
+                                            <td id="row5_col7">0</td>
+                                            <td id="row5_col8">2027</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row6_col1">0</td> -->
+                                            <th id="row6_col2">6</th>
+                                            <td id="row6_col3">0</td>
+                                            <td id="row6_col4">0</td>
+                                            <td id="row6_col5">0</td>
+                                            <td id="row6_col6">0</td>
+                                            <td id="row6_col7">0</td>
+                                            <td id="row6_col8">2028</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row7_col1">0</td> -->
+                                            <th id="row7_col2">7</th>
+                                            <td id="row7_col3">0</td>
+                                            <td id="row7_col4">0</td>
+                                            <td id="row7_col5">0</td>
+                                            <td id="row7_col6">0</td>
+                                            <td id="row7_col7">0</td>
+                                            <td id="row7_col8">2029</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row8_col1">0</td> -->
+                                            <th id="row8_col2">8</th>
+                                            <td id="row8_col3">0</td>
+                                            <td id="row8_col4">0</td>
+                                            <td id="row8_col5">0</td>
+                                            <td id="row8_col6">0</td>
+                                            <td id="row8_col7">0</td>
+                                            <td id="row8_col8">2030</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row9_col1">0</td> -->
+                                            <th id="row9_col2">9</th>
+                                            <td id="row9_col3">0</td>
+                                            <td id="row9_col4">0</td>
+                                            <td id="row9_col5">0</td>
+                                            <td id="row9_col6">0</td>
+                                            <td id="row9_col7">0</td>
+                                            <td id="row9_col8">2031</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <!-- <td id="row10_col1">0</td> -->
+                                            <th id="row10_col2">10</th>
+                                            <td id="row10_col3">0</td>
+                                            <td id="row10_col4">0</td>
+                                            <td id="row10_col5">0</td>
+                                            <td id="row10_col6">0</td>
+                                            <td id="row10_col7">0</td>
+                                            <td id="row10_col8">2032</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row11_col1">0</td> -->
+                                            <th id="row11_col2">11</th>
+                                            <td id="row11_col3">0</td>
+                                            <td id="row11_col4">0</td>
+                                            <td id="row11_col5">0</td>
+                                            <td id="row11_col6">0</td>
+                                            <td id="row11_col7">0</td>
+                                            <td id="row11_col8">2033</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row12_col1">0</td> -->
+                                            <th id="row12_col2">12</th>
+                                            <td id="row12_col3">0</td>
+                                            <td id="row12_col4">0</td>
+                                            <td id="row12_col5">0</td>
+                                            <td id="row12_col6">0</td>
+                                            <td id="row12_col7">0</td>
+                                            <td id="row12_col8">2034</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row13_col1">0</td> -->
+                                            <th id="row13_col2">13</th>
+                                            <td id="row13_col3">0</td>
+                                            <td id="row13_col4">0</td>
+                                            <td id="row13_col5">0</td>
+                                            <td id="row13_col6">0</td>
+                                            <td id="row13_col7">0</td>
+                                            <td id="row13_col8">2035</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row14_col1">0</td> -->
+                                            <th id="row14_col2">14</th>
+                                            <td id="row14_col3">0</td>
+                                            <td id="row14_col4">0</td>
+                                            <td id="row14_col5">0</td>
+                                            <td id="row14_col6">0</td>
+                                            <td id="row14_col7">0</td>
+                                            <td id="row14_col8">2036</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <!-- <td id="row15_col1">0</td> -->
+                                            <th id="row15_col2">15</th>
+                                            <td id="row15_col3">0</td>
+                                            <td id="row15_col4">0</td>
+                                            <td id="row15_col5">0</td>
+                                            <td id="row15_col6">0</td>
+                                            <td id="row15_col7">0</td>
+                                            <td id="row15_col8">2037</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row16_col1">0</td> -->
+                                            <th id="row16_col2">16</th>
+                                            <td id="row16_col3">0</td>
+                                            <td id="row16_col4">0</td>
+                                            <td id="row16_col5">0</td>
+                                            <td id="row16_col6">0</td>
+                                            <td id="row16_col7">0</td>
+                                            <td id="row16_col8">2038</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row17_col1">0</td> -->
+                                            <th id="row17_col2">17</th>
+                                            <td id="row17_col3">0</td>
+                                            <td id="row17_col4">0</td>
+                                            <td id="row17_col5">0</td>
+                                            <td id="row17_col6">0</td>
+                                            <td id="row17_col7">0</td>
+                                            <td id="row17_col8">2039</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row18_col1">0</td> -->
+                                            <th id="row18_col2">18</th>
+                                            <td id="row18_col3">0</td>
+                                            <td id="row18_col4">0</td>
+                                            <td id="row18_col5">0</td>
+                                            <td id="row18_col6">0</td>
+                                            <td id="row18_col7">0</td>
+                                            <td id="row18_col8">2040</td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td id="row19_col1">0</td> -->
+                                            <th id="row19_col2">19</th>
+                                            <td id="row19_col3">0</td>
+                                            <td id="row19_col4">0</td>
+                                            <td id="row19_col5">0</td>
+                                            <td id="row19_col6">0</td>
+                                            <td id="row19_col7">0</td>
+                                            <td id="row19_col8">2041</td>
+                                        </tr>
+                                        <tr class="bg-warning">
+                                            <!-- <td id="row20_col1">0</td> -->
+                                            <th id="row20_col2">20</th>
+                                            <td id="row20_col3">0</td>
+                                            <td id="row20_col4">0</td>
+                                            <td id="row20_col5">0</td>
+                                            <td id="row20_col6">0</td>
+                                            <td id="row20_col7"></td>
+                                            <td id="row20_col8">2042</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- </div>
                         </div> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -590,34 +592,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <script>
-        var xValues = [2027, 2032, 2-37, 2042];
+        var xValues = [2027, 2032, 2 - 37, 2042];
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
             type: "line",
             data: {
                 labels: xValues,
                 datasets: [{
-                    data: [],
-                    borderColor: "red",
-                    fill: false
-                }, {
+                    label: '7%',
                     data: [1272.44, 2646.65, 4753.80, 7888.61],
                     borderColor: "blue",
+                    fill: false
+                }, {
+                    label: '?',
+                    data: [],
+                    borderColor: "red",
                     fill: false
                 }]
             },
             options: {
-                legend: { display: false }
+                legend: { display: true }
             }
         });
 
         const firstCalculate = () => {
-            let buy_val = document.getElementById("buy_val").value;
-            let incr_est = document.getElementById("incr_est").value;
-            let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
+
+            const x = document.getElementById("buy_val").value;
+            const y = document.getElementById("incr_est").value;
+            if (x == "" || x == 0 || x == null) {
+                document.getElementById("buy_val").focus();
+            } else if (y == "" || y == 0 || y == null) {
+                document.getElementById("incr_est").focus();
+            } else {
+                let buy_val = document.getElementById("buy_val").value;
+                let incr_est = document.getElementById("incr_est").value;
+                let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
+            }
         }
 
         const lastCalculate = () => {
+
+            const x = document.getElementById("sell_val").value;
+            if (x == "" || x == 0 || x == null) {
+                document.getElementById("incr_est").focus();
+            }
 
             let buy_val = document.getElementById("buy_val").value;
             let incr_est = document.getElementById("incr_est").value;
@@ -689,20 +707,31 @@
             const col5_data = [];
             const col6_data = [];
             const col7_data = [];
+
+            const col3_7data = [];
+            let temp7_col3 = buy_val;
+            const col4_7data = [];
+            const col5_7data = [];
+            const col6_7data = [];
+            const col7_7data = [];
             for (let i = 0; i < 20; i++) {
                 col3_data[i] = (parseFloat(temp_col3) + (parseFloat(temp_col3) * i_rate)).toFixed(2);
                 temp_col3 = col3_data[i];
-
                 col4_data[i] = (col3_data[i] * lock_gold).toFixed(2);
-
                 col5_data[i] = ((total_gold * col3_data[i]) - (total_gold * buy_val)).toFixed(2);
-
                 col6_data[i] = ((gca_cash * 0.035) * (i + 1)).toFixed(2);
-
                 col7_data[i] = ((parseFloat(col4_data[i]) + parseFloat(col5_data[i])) - parseFloat(col6_data[i])).toFixed(2);
 
-                // console.log(col7_data[i]);
+                col3_7data[i] = (parseFloat(temp7_col3) + (parseFloat(temp7_col3) * 0.07)).toFixed(2);
+                temp7_col3 = col3_7data[i];
+                col4_7data[i] = (col3_7data[i] * lock_gold).toFixed(2);
+                col5_7data[i] = ((total_gold * col3_7data[i]) - (total_gold * buy_val)).toFixed(2);
+                col6_7data[i] = ((gca_cash * 0.035) * (i + 1)).toFixed(2);
+                col7_7data[i] = ((parseFloat(col4_7data[i]) + parseFloat(col5_7data[i])) - parseFloat(col6_7data[i])).toFixed(2);
+
+                // console.log();
             }
+
             // Col-3 data on 20 years table
             document.getElementById("row1_col3").innerHTML = col3_data[0];
             document.getElementById("row2_col3").innerHTML = col3_data[1];
@@ -724,6 +753,7 @@
             document.getElementById("row18_col3").innerHTML = col3_data[17];
             document.getElementById("row19_col3").innerHTML = col3_data[18];
             document.getElementById("row20_col3").innerHTML = col3_data[19];
+
             // Col-4 data on 20 years table
             document.getElementById("row1_col4").innerHTML = col4_data[0];
             document.getElementById("row2_col4").innerHTML = col4_data[1];
@@ -745,6 +775,7 @@
             document.getElementById("row18_col4").innerHTML = col4_data[17];
             document.getElementById("row19_col4").innerHTML = col4_data[18];
             document.getElementById("row20_col4").innerHTML = col4_data[19];
+
             // Col-5 data on 20 years table
             document.getElementById("row1_col5").innerHTML = col5_data[0];
             document.getElementById("row2_col5").innerHTML = col5_data[1];
@@ -766,6 +797,7 @@
             document.getElementById("row18_col5").innerHTML = col5_data[17];
             document.getElementById("row19_col5").innerHTML = col5_data[18];
             document.getElementById("row20_col5").innerHTML = col5_data[19];
+
             // Col-6 data on 20 years table
             document.getElementById("row1_col6").innerHTML = col6_data[0];
             document.getElementById("row2_col6").innerHTML = col6_data[1];
@@ -787,6 +819,7 @@
             document.getElementById("row18_col6").innerHTML = col6_data[17];
             document.getElementById("row19_col6").innerHTML = col6_data[18];
             document.getElementById("row20_col6").innerHTML = col6_data[19];
+
             // Col-7 data on 20 years table
             document.getElementById("row1_col7").innerHTML = col7_data[0];
             document.getElementById("row2_col7").innerHTML = col7_data[1];
@@ -808,21 +841,22 @@
             document.getElementById("row18_col7").innerHTML = col7_data[17];
             document.getElementById("row19_col7").innerHTML = col7_data[18];
             document.getElementById("row20_col7").innerHTML = col7_data[19];
+
             // Col-7 data on 5/10/15/20 years table
             document.getElementById("5years").innerHTML = col7_data[4];
             document.getElementById("10years").innerHTML = col7_data[9];
             document.getElementById("15years").innerHTML = col7_data[14];
             document.getElementById("20years").innerHTML = col7_data[19];
 
-
-            let a1 = col7_data[4];
-            let a2 = col7_data[9];
-            let a3 = col7_data[14];
-            let a4 = col7_data[19];
-
             myChart.data.datasets[0].data = [col7_data[4], col7_data[9], col7_data[14], col7_data[19]];
-            myChart.data.datasets[1].data = [1272.44, 2646.65, 4753.80, 7888.61];
+            myChart.data.datasets[1].label = incr_est + "%";
+            myChart.data.datasets[1].data = [col7_7data[4], col7_7data[9], col7_7data[14], col7_7data[19]];
             myChart.update();
+
+            var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+            var collapseList = collapseElementList.map(function (collapseEl) {
+                return new bootstrap.Collapse(collapseEl)
+            })
 
             // console.log();
         }
