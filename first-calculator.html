@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Calculator - Azizi J</title>
+    <style>
+        .bg-style1 {
+            background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+        }
+
+        .bg-style {
+            /* background-image: url('https://images.pexels.com/photos/321452/pexels-photo-321452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+            background-image: url(bg-img.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body onload="dtlsDev();">
+    <header class="bg-style py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center text-white">
+                        <span class="display-3">Online Calculator</span>
+                        <br>
+                        <span class="lead p">by</span>
+                        <br>
+                        <a class="lead text-white" style="text-decoration: none;"
+                            href="https://sites.google.com/moe-dl.edu.my/cikguemas/">CikguEmas.Com</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section style="margin-top: -50px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-12"></div>
+                <div class="col-lg-8 col-12">
+                    <div class="card shadow border border-white border-5 rounded-0">
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <div class="col-auto"></div>
+                                            <label class="form-label">QM Buy / LME</label>
+                                            <div class="col-auto"></div>
+                                            <input type="number" class="form-control shadow-none rounded-0" id="qm_buy"
+                                                placeholder="56.19">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="col-auto"></div>
+                                        <div class="mb-3">
+                                            <label class="form-label">FX Rate (1 USD)</label>
+                                            <input type="number" class="form-control shadow-none rounded-0" id="fx_rate"
+                                                placeholder="4.476">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                <span class="me-4">QM Sell GAE 10x</span>
+                                                <strong class="text-primary">$</strong>
+                                                <strong class="text-primary" id="qm_sell"></strong>
+                                            </label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                <span class="me-4">or in MYR</span>
+                                                <strong class="text-primary">RM</strong>
+                                                <strong class="text-primary" id="in-rm"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Unit Request</label>
+                                            <input type="number" class="form-control shadow-none rounded-0"
+                                                id="unit_req" placeholder="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Upfront Payment</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="upfront-pay"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Tawarruq Finance (unit)</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4" id="tawarruq-fin"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Upfront 3.5% Management Fee</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="upfront-mgmt-fee"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12"></div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Total Payment via FPX</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="total-payment-fpx"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Gram Listed GAE 10x</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="gram-listed-gae"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Current GAE 10x Value</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="current-gae-value"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12"></div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                <span class="me-4">or in MYR</span>
+                                                <strong class="text-primary">RM</strong>
+                                                <strong class="text-primary" id="in-myr"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button" onclick="getCalculate();"
+                                            class="btn btn-primary shadow-none rounded-0">Calculate</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12"></div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-style mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 my-5 py-5"></div>
+            </div>
+        </div>
+    </section>
+    <section style="margin-top: -50px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-12"></div>
+                <div class="col-lg-8 col-12">
+                    <div class="card shadow border border-white border-5 rounded-0">
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="row mb-3">
+                                            <div class="col-auto w-50">
+                                                <label class="form-label mt-2">Prediction % Gain</label>
+                                            </div>
+                                            <div class="col-auto w-50">
+                                                <input type="number" class="form-control shadow-none rounded-0"
+                                                    id="prediction-gain" placeholder="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="row mb-3">
+                                            <div class="col-auto w-50">
+                                                <label class="form-label mt-2">Days Invested</label>
+                                            </div>
+                                            <div class="col-auto w-50">
+                                                <input type="number" class="form-control shadow-none rounded-0"
+                                                    id="days-invested" placeholder="150">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Future QM Buy / LME</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="future-qm"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Net Cash Out</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="net-cash-out"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Total Gain</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="total-gain"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-12"></div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">MF Refund (balance days)</label>
+                                            <label class="form-label">
+                                                <strong class="text-primary ms-4">RM</strong>
+                                                <strong class="text-primary" id="mf-refund"></strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="button" onclick="getPrediction();"
+                                            class="btn btn-primary shadow-none rounded-0"
+                                            id="btn-anime">Prediction</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12"></div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center mt-3">
+                        <span class="btn rounded-pill text-white px-5">2021 © by <a
+                                href="http://https://anupammondal.in">Anupam M</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const getCalculate = () => {
+            let qm_buy = parseFloat(document.getElementById("qm_buy").value);
+            let fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            let unit_req = parseFloat(document.getElementById("unit_req").value);
+            let qm_sell_gae = parseFloat((qm_buy * 0.03) + qm_buy).toFixed(2);
+            document.getElementById("qm_sell").innerHTML = qm_sell_gae;
+            let upfront_payment = parseFloat(250 * fx_rate * unit_req).toFixed(2);
+            document.getElementById("upfront-pay").innerHTML = upfront_payment;
+            let upfront_fee = parseFloat(((2250 * unit_req) * 0.035) * fx_rate).toFixed(2);
+            document.getElementById("upfront-mgmt-fee").innerHTML = upfront_fee;
+            let in_rm = parseFloat(qm_sell_gae * fx_rate).toFixed(2);
+            document.getElementById("in-rm").innerHTML = in_rm;
+            let total_payment = parseFloat(upfront_payment) + parseFloat(upfront_fee);
+            document.getElementById("total-payment-fpx").innerHTML = total_payment;
+            let gram_listed = parseFloat((2500 * unit_req) / qm_sell_gae).toFixed(3);
+            document.getElementById("gram-listed-gae").innerHTML = gram_listed;
+            let current_gae = parseFloat((gram_listed * qm_buy) - 2250).toFixed(2);
+            document.getElementById("current-gae-value").innerHTML = current_gae;
+            let tawarruq_finance = 9 * unit_req;
+            document.getElementById("tawarruq-fin").innerHTML = tawarruq_finance;
+            let in_myr = parseFloat(current_gae * fx_rate).toFixed(2);
+            document.getElementById("in-myr").innerHTML = in_myr;
+        }
+        const dtlsDev = () => {
+            const str1 = "Developed by - "
+            const dev = "Anupam Mondal";
+            const dev_url = "https://anupammondal.in";
+            console.log(str1, dev);
+            console.log(dev_url);
+        }
+        const getPrediction = () => {
+            let prediction_gain = parseInt(document.getElementById("prediction-gain").value);
+            let days_invested = parseInt(document.getElementById("days-invested").value);
+
+            let fx_rate = parseFloat(document.getElementById("fx_rate").value).toFixed(3);
+            let qm_sell_gae = parseFloat(document.getElementById("qm_sell").textContent);
+            let unit_req = parseInt(document.getElementById("unit_req").value);
+            let upfront_payment = parseFloat(document.getElementById("upfront-pay").textContent).toFixed(2);
+            let gram_listed = parseFloat(document.getElementById("gram-listed-gae").textContent).toFixed(4);
+
+            let future_qm = parseFloat(((prediction_gain / 100) * qm_sell_gae) + qm_sell_gae).toFixed(2);
+            document.getElementById("future-qm").innerHTML = future_qm;
+
+            let net_cash_out = parseFloat((gram_listed * future_qm) - (250 * 9 * unit_req)).toFixed(2);
+            document.getElementById("net-cash-out").innerHTML = net_cash_out;
+
+
+            let total_gain = parseInt((((gram_listed * future_qm) - (250 * 9 * unit_req)) * fx_rate) - (250 * fx_rate * unit_req)).toFixed(2);
+            document.getElementById("total-gain").innerHTML = total_gain;
+
+
+            let mf_refund = parseFloat((((2250 * unit_req) * 0.035) * fx_rate) - (((2250 * unit_req) * 0.035 / 365) * days_invested) * fx_rate).toFixed(2);
+            document.getElementById("mf-refund").innerHTML = mf_refund;
+            // console.log(gram_listed * future_qm);
+            // console.log(gram_listed, future_qm, 250, 9, unit_req, fx_rate, 250, fx_rate, unit_req);
+        }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script> -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
