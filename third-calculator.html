@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center text-white">
+                    <h1 class="text-center text-white" style="margin-bottom: 100px;">
                         <span class="display-3">Calculator</span>
                         <br>
                         <span class="lead p">by</span>
@@ -81,99 +81,158 @@
             </div>
         </div>
     </header>
-    <section style="margin-top: -50px;">
+    <section style="margin-top: -100px;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-5 col-md-4 col-12"></div>
-                <div class="col-lg-2 col-md-4 col-12">
-                    <div class="text-center text-warning bg-white rounded-circle shadow" id="brand-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor"
-                            class="bi bi-calculator-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
-                        </svg>
+                <div class="col-md-4 col-12"></div>
+                <div class="col-md-4 col-12">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <img class="img-fluid mx-auto d-block" src="brand-anim.webp" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-4 col-12"></div>
+                <div class="col-md-4 col-12"></div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">LME / QM buy</label>
+                                            <input type="number" class="form-control shadow-none" id="buy_val"
+                                                value="270.96">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">QM Sell</label>
+                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                                value="253.23">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">If my capital to do GCA Repeat</label>
+                                            <input type="number" class="form-control shadow-none" id="buy_val"
+                                                value="500">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">Gold value of Repeated GCA results</label>
+                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                                value="3114.18" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">GCA One Time [g]</label>
+                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                                value="1.56849" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">Repeated GCA method [g]</label>
+                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                                value="12.297" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <button type="button" onclick="firstCalculate()"
+                                            class="btn btn-primary shadow-none">Calculate</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">8%</th>
+                                        <th scope="col">LME future</th>
+                                        <th scope="col">NCO value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>5 Tahun</td>
+                                        <td>RM 354.53</td>
+                                        <td>RM 1403.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10 Tahun</td>
+                                        <td>RM 455.82</td>
+                                        <td>RM 2340.85</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15 Tahun</td>
+                                        <td>RM 557.12</td>
+                                        <td>RM 3277.71</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20 Tahun</td>
+                                        <td>RM 658.41</td>
+                                        <td>RM 4214.58</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-12">
-                    <div class="card bg-primary my-4">
+                <div class="col-12">
+                    <div class="card">
                         <div class="card-body">
-                            <div class="text-center text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                                    class="bi bi-1-circle-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z" />
-                                </svg>
-                            </div>
-                            <div class="text-center my-2">
-                                <a class="text-white stretched-link" href="first-calculator.html">Calculator</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-primary my-4">
-                        <div class="card-body">
-                            <div class="text-center text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                                    class="bi bi-2-circle-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z" />
-                                </svg>
-                            </div>
-                            <div class="text-center my-2">
-                                <a class="text-white stretched-link" href="gold-calculator.html">Calculator</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="card bg-success my-2">
-                        <div class="card-body py-5">
-                            <div class="text-center text-white my-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="currentColor"
-                                    class="bi bi-3-circle-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z" />
-                                </svg>
-                            </div>
-                            <div class="text-center my-2 h4">
-                                <a class="text-white stretched-link" href="">Calculator</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="card bg-primary my-4">
-                        <div class="card-body">
-                            <div class="text-center text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                                    class="bi bi-4-circle-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM7.519 5.057c-.886 1.418-1.772 2.838-2.542 4.265v1.12H8.85V12h1.26v-1.559h1.007V9.334H10.11V4.002H8.176c-.218.352-.438.703-.657 1.055ZM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218Z" />
-                                </svg>
-                            </div>
-                            <div class="text-center my-2">
-                                <a class="text-white stretched-link" href="">Calculator</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-primary my-4">
-                        <div class="card-body">
-                            <div class="text-center text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                                    class="bi bi-5-circle-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
-                                </svg>
-                            </div>
-                            <div class="text-center my-2">
-                                <a class="text-white stretched-link" href="">Calculator</a>
-                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <th scope="row">1</th>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
