@@ -106,15 +106,15 @@
                                 <div class="row">
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label">LME / QM buy</label>
-                                            <input type="number" class="form-control shadow-none" id="buy_val"
+                                            <label class="form-label">QM Sell</label>
+                                            <input type="number" class="form-control shadow-none" id="qm_sell"
                                                 value="270.96">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label">QM Sell</label>
-                                            <input type="number" class="form-control shadow-none" id="sell_val"
+                                            <label class="form-label">LME / QM buy</label>
+                                            <input type="number" class="form-control shadow-none" id="qm_buy"
                                                 value="253.23">
                                         </div>
                                     </div>
@@ -123,15 +123,15 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">If my capital to do GCA Repeat</label>
-                                            <input type="number" class="form-control shadow-none" id="buy_val"
-                                                value="500">
+                                            <input type="number" class="form-control shadow-none" id="gca_repeat"
+                                                value="5000">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Gold value of Repeated GCA results</label>
-                                            <input type="number" class="form-control shadow-none" id="sell_val"
-                                                value="3114.18" disabled>
+                                            <input type="number" class="form-control shadow-none" id="gca_results"
+                                                value="31141.81" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -139,15 +139,15 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">GCA One Time [g]</label>
-                                            <input type="number" class="form-control shadow-none" id="sell_val"
-                                                value="1.56849" disabled>
+                                            <input type="number" class="form-control shadow-none" id="gca_1time"
+                                                value="15.68491" disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Repeated GCA method [g]</label>
-                                            <input type="number" class="form-control shadow-none" id="sell_val"
-                                                value="12.297" disabled>
+                                            <input type="number" class="form-control shadow-none" id="repeated_gca"
+                                                value="122.9761" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -207,32 +207,34 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <th scope="row">1</th>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table text-center">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Rolling Capital</th>
+                                            <th scope="col">Gca Convert 85%</th>
+                                            <th scope="col">Lock 15%</th>
+                                            <th scope="col">15% Gram</th>
+                                            <th scope="col">Total Grams 100% Issued</th>
+                                            <th scope="col">MF</th>
+                                            <th scope="col">Base Price</th>
+                                            <th scope="col">Repetition</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <th scope="row">1</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,8 +259,18 @@
             const str1 = "Developed by - "
             const dev = "Anupam Mondal";
             const dev_url = "https://anupammondal.in";
-            console.log(str1, dev);
-            console.log(dev_url);
+            // console.log(str1, dev);
+            // console.log(dev_url);
+        }
+
+        const firstCalculate = () => {
+            let qm_sell = document.getElementById("qm_sell").value;
+            let qm_buy = document.getElementById("qm_buy").value;
+            let gca_repeat = document.getElementById("gca_repeat").value;
+            let gca_1time = ((gca_repeat * 0.85)/qm_sell).toFixed(5);
+            document.getElementById("gca_1time").value = gca_1time; 
+
+            console.log()
         }
     </script>
 
