@@ -164,10 +164,23 @@
                 <div class="col-lg-6 col-12">
                     <div class="card">
                         <div class="card-body">
+                            <form class="mb-3">
+                                <div class="row">
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <label class="form-label">Nco Estimation From <br />Repeated Gca Method
+                                            [8%]</label>
+                                    </div>
+                                </div>
+                            </form>
                             <table class="table text-center">
                                 <thead>
                                     <tr>
-                                        <th scope="col">8%</th>
+                                        <th scope="col" id="nco_estimation">
+                                            <input type="number" class="form-control shadow-none text-center border-0 mt-1"
+                                                value="8" id="nco_estimation">
+                                        </th>
                                         <th scope="col">LME future</th>
                                         <th scope="col">NCO value</th>
                                     </tr>
@@ -175,22 +188,22 @@
                                 <tbody>
                                     <tr>
                                         <td>5 Tahun</td>
-                                        <td>RM 354.53</td>
+                                        <td>RM <span id="lme_future5">354.53</span></td>
                                         <td>RM 1403.99</td>
                                     </tr>
                                     <tr>
                                         <td>10 Tahun</td>
-                                        <td>RM 455.82</td>
+                                        <td>RM <span id="lme_future10">455.82</span></td>
                                         <td>RM 2340.85</td>
                                     </tr>
                                     <tr>
                                         <td>15 Tahun</td>
-                                        <td>RM 557.12</td>
+                                        <td>RM <span id="lme_future15">557.12</span></td>
                                         <td>RM 3277.71</td>
                                     </tr>
                                     <tr>
                                         <td>20 Tahun</td>
-                                        <td>RM 658.41</td>
+                                        <td>RM <span id="lme_future20">658.41</span></td>
                                         <td>RM 4214.58</td>
                                     </tr>
                                 </tbody>
@@ -267,10 +280,22 @@
             let qm_sell = document.getElementById("qm_sell").value;
             let qm_buy = document.getElementById("qm_buy").value;
             let gca_repeat = document.getElementById("gca_repeat").value;
-            let gca_1time = ((gca_repeat * 0.85)/qm_sell).toFixed(5);
-            document.getElementById("gca_1time").value = gca_1time; 
+            let gca_1time = ((gca_repeat * 0.85) / qm_sell).toFixed(5);
+            document.getElementById("gca_1time").value = gca_1time;
 
-            console.log()
+            let nco_estimation = document.getElementById("nco_estimation").value;
+            let lme_future5 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 5)).toFixed(2);
+            let lme_future10 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 10)).toFixed(2);
+            let lme_future15 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 15)).toFixed(2);
+            let lme_future20 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 20)).toFixed(2);
+            document.getElementById("lme_future5").innerHTML = lme_future5;
+            document.getElementById("lme_future10").innerHTML = lme_future10;
+            document.getElementById("lme_future15").innerHTML = lme_future15;
+            document.getElementById("lme_future20").innerHTML = lme_future20;
+
+            let lock_15 = parseFloat(gca_repeat*0.15);
+            let gram_15 = parseFloat(gca_repeat/qm_sell);
+            console.log(qm_sell)
         }
     </script>
 
