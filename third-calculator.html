@@ -236,8 +236,8 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th>1</th>
-                                            <td>Mark</td>
+                                            <td>RM<span id="rolling_capital"></span></td>
+                                            <td>RM<span id="gca_85"></span></td>
                                             <td>RM<span id="lock_15"></span></td>
                                             <td><span id="gram_15"></span>g</td>
                                             <td>Otto</td>
@@ -293,11 +293,17 @@
             document.getElementById("lme_future15").innerHTML = lme_future15;
             document.getElementById("lme_future20").innerHTML = lme_future20;
 
+            
+            let gca_85 = parseFloat(gca_repeat*0.85);
             let lock_15 = parseFloat(gca_repeat*0.15);
+            let rolling_capital = (gca_85+lock_15);
             let gram_15 = parseFloat(lock_15/qm_sell).toFixed(4);
+
+            document.getElementById("rolling_capital").innerHTML = rolling_capital;
+            document.getElementById("gca_85").innerHTML = gca_85;
             document.getElementById("lock_15").innerHTML = lock_15;
             document.getElementById("gram_15").innerHTML = gram_15;
-            console.log(lock_15)
+            console.log(gca_85 + lock_15)
         }
     </script>
 
