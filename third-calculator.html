@@ -238,9 +238,9 @@
                                         <tr>
                                             <th>1</th>
                                             <td>Mark</td>
+                                            <td>RM<span id="lock_15"></span></td>
+                                            <td><span id="gram_15"></span>g</td>
                                             <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>Mark</td>
                                             <td>Otto</td>
                                             <td>@mdo</td>
                                             <th scope="row">1</th>
@@ -294,8 +294,10 @@
             document.getElementById("lme_future20").innerHTML = lme_future20;
 
             let lock_15 = parseFloat(gca_repeat*0.15);
-            let gram_15 = parseFloat(gca_repeat/qm_sell);
-            console.log(qm_sell)
+            let gram_15 = parseFloat(lock_15/qm_sell).toFixed(4);
+            document.getElementById("lock_15").innerHTML = lock_15;
+            document.getElementById("gram_15").innerHTML = gram_15;
+            console.log(lock_15)
         }
     </script>
 
