@@ -242,7 +242,7 @@
                                             <td><span id="gram_15"></span>g</td>
                                             <td><span id="gram_100"></span>g</td>
                                             <td>RM<span id="mf3_5"></span></td>
-                                            <td>@mdo</td>
+                                            <td>RM<span id="base_price"></span></td>
                                             <th scope="row">1</th>
                                         </tr>
                                     </tbody>
@@ -298,8 +298,9 @@
             let lock_15 = parseFloat(gca_repeat*0.15);
             let rolling_capital = (gca_85+lock_15);
             let gram_15 = parseFloat(lock_15/qm_sell).toFixed(4);
-            let gram_100 = (gca_85+lock_15);
+            let gram_100 = ((gca_85+lock_15)/qm_sell).toFixed(4);
             let mf3_5 = parseFloat(gca_85*0.035).toFixed(2);
+            let base_price = (gram_100*qm_buy).toFixed(2);
 
             document.getElementById("rolling_capital").innerHTML = rolling_capital;
             document.getElementById("gca_85").innerHTML = gca_85;
@@ -307,8 +308,9 @@
             document.getElementById("gram_15").innerHTML = gram_15;
             document.getElementById("gram_100").innerHTML = gram_100;
             document.getElementById("mf3_5").innerHTML = mf3_5;
+            document.getElementById("base_price").innerHTML = base_price;
             
-            console.log(mf3_5);
+            console.log(base_price);
         }
     </script>
 
