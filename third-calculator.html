@@ -107,15 +107,15 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">QM Sell [RM]</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_sell"
-                                                value="270.96">
+                                            <input type="number" class="form-control shadow-none" id="qm_sell" value="0"
+                                                placeholder="270.96">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">LME / QM buy [RM]</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_buy"
-                                                value="253.23">
+                                            <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
+                                                placeholder="253.23">
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Gold value of Repeated GCA results</label>
                                             <input type="number" class="form-control shadow-none" id="gca_results"
-                                                value="31141.81" disabled>
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">GCA One Time [g]</label>
                                             <input type="number" class="form-control shadow-none" id="gca_1time"
-                                                value="15.68491" disabled>
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -163,14 +163,22 @@
                 </div>
                 <div class="col-lg-6 col-12">
                     <div class="card">
-                        <div class="card-body">
-                            <p class="text-center">Nco Estimation From Repeated Gca Method [%]</p>
-                            <table class="table text-center">
+                        <div class="card-body pb-2">
+                            <!-- <p class="text-center">Nco Estimation From Repeated Gca Method [%]</p> -->
+                            <div class="row g-3">
+                                <div class="col-auto w-50">
+                                    <label class="col-form-label float-end">Yearly Increment %</label>
+                                </div>
+                                <div class="col-auto w-50">
+                                    <input type="number" value="0" id="nco_estimation" style="width: 80px;"
+                                        class="form-control shadow-none text-center float-start">
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                            <table class="table text-center mb-0">
                                 <thead>
                                     <tr>
                                         <th scope="col">
-                                            <input type="number" value="8" id="nco_estimation" style="width: 80px;"
-                                                class="form-control shadow-none text-center d-block border-0 mx-auto mt-1">
                                         </th>
                                         <th scope="col">LME future</th>
                                         <th scope="col">NCO value</th>
@@ -179,23 +187,28 @@
                                 <tbody>
                                     <tr>
                                         <td>5 Tahun</td>
-                                        <td>RM <span id="lme_future5">354.53</span></td>
-                                        <td>RM <span id="nco_value5">1403.99</span></td>
+                                        <td>RM <span id="lme_future5">0</span></td>
+                                        <td>RM <span id="nco_value5">0</span></td>
                                     </tr>
                                     <tr>
                                         <td>10 Tahun</td>
-                                        <td>RM <span id="lme_future10">455.82</span></td>
-                                        <td>RM <span id="nco_value10">2340.85</span></td>
+                                        <td>RM <span id="lme_future10">0</span></td>
+                                        <td>RM <span id="nco_value10">0</span></td>
                                     </tr>
                                     <tr>
                                         <td>15 Tahun</td>
-                                        <td>RM <span id="lme_future15">557.12</span></td>
-                                        <td>RM <span id="nco_value15">3277.71</span></td>
+                                        <td>RM <span id="lme_future15">0</span></td>
+                                        <td>RM <span id="nco_value15">0</span></td>
                                     </tr>
                                     <tr>
                                         <td>20 Tahun</td>
-                                        <td>RM <span id="lme_future20">658.41</span></td>
-                                        <td>RM <span id="nco_value20">4214.58</span></td>
+                                        <td>RM <span id="lme_future20">0</span></td>
+                                        <td>RM <span id="nco_value20">0</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Jumlah MF</th>
+                                        <th scope="col">RM <span id="net_mf3_5">0</span></th>
+                                        <th scope="col">RM <span id="net_base_price">0</span></th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -264,7 +277,6 @@
             let qm_buy = document.getElementById("qm_buy").value;
             let gca_repeat = document.getElementById("gca_repeat").value;
             let gca_1time = ((gca_repeat * 0.85) / qm_sell).toFixed(5);
-            // let gca_results = ();
             document.getElementById("gca_1time").value = gca_1time;
 
             let nco_estimation = (document.getElementById("nco_estimation").value / 100);
@@ -281,6 +293,9 @@
             let temp_rollingcapital = 0;
             let repeatedgca = 0;
             let gca_results = 0;
+            let netgram15 = 0;
+            let netmf = 0;
+            let netbaseprice = 0;
             const gca85 = [];
             const lock15 = [];
             const rollingcapital = [];
@@ -306,12 +321,8 @@
                 temp_counter = temp_counter + 1;
 
                 if (temp_rollingcapital < 150) {
-
-                    // console.log("Repetition " + temp_counter);
-
                     break;
                 }
-                // let col1 = "RM" + rollingcapital[i] " ";
 
                 let table = document.getElementById("myTable");
                 let row = table.insertRow(-1);
@@ -330,16 +341,41 @@
                 col5.innerHTML = gram100[i];
                 col6.innerHTML = mf35[i];
                 col7.innerHTML = baseprice[i];
-                col8.innerHTML = i+1;
+                col8.innerHTML = i + 1;
                 repeatedgca += parseFloat(gram100[i])
-                gcaresults = (repeatedgca/qm_buy).toFixed(2);
-                // console.log(rollingcapital[i], temp_counter);
-
+                netgram15 += parseFloat(gram15[i])
+                netmf += parseFloat(mf35[i])
+                netbaseprice += parseFloat(baseprice[i])
+                gcaresults = (repeatedgca * qm_buy).toFixed(2);
+                ncovalue5 = (netgram15);
             }
 
-            document.getElementById("repeated_gca").value = repeatedgca;
+            document.getElementById("repeated_gca").value = (repeatedgca).toFixed(2);
             document.getElementById("gca_results").value = gcaresults;
-                console.log(gcaresults);
+            document.getElementById("net_mf3_5").innerHTML = (netmf).toFixed(2);
+            document.getElementById("net_base_price").innerHTML = (netbaseprice).toFixed(2);
+            const ncoval5 = (parseFloat((netgram15 * parseFloat(lme_future5)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future5)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 5)));
+            const ncoval10 = (parseFloat((netgram15 * parseFloat(lme_future10)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future10)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 10)));
+            const ncoval15 = (parseFloat((netgram15 * parseFloat(lme_future15)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future15)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 15)));
+            const ncoval20 = (parseFloat((netgram15 * parseFloat(lme_future20)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future20)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 20)));
+            document.getElementById("nco_value5").innerHTML = ncoval5;
+            document.getElementById("nco_value10").innerHTML = ncoval10;
+            document.getElementById("nco_value15").innerHTML = ncoval15;
+            document.getElementById("nco_value20").innerHTML = (ncoval20).toFixed(2);
+
+            // console.log(netgram15, lme_future5, repeatedgca, lme_future5, netbaseprice, netmf, 5);
+
+            // console.log((netgram15 * parseFloat(lme_future5)).toFixed(2));
+
+            // console.log(((parseFloat(repeatedgca) * parseFloat(lme_future5)).toFixed(2)));
+
+            // console.log(parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future5)) - parseFloat(netbaseprice)).toFixed(2));
+
+            // console.log(netmf * 5);
+
+            // console.log(parseFloat((netgram15 * parseFloat(lme_future5)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future5)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 5)));
+
+            // console.log(ncoval20);
 
 
             // let gca_85 = parseFloat(gca_repeat * 0.85);
