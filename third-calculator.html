@@ -106,14 +106,14 @@
                                 <div class="row">
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label">QM Sell</label>
+                                            <label class="form-label">QM Sell [RM]</label>
                                             <input type="number" class="form-control shadow-none" id="qm_sell"
                                                 value="270.96">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label">LME / QM buy</label>
+                                            <label class="form-label">LME / QM buy [RM]</label>
                                             <input type="number" class="form-control shadow-none" id="qm_buy"
                                                 value="253.23">
                                         </div>
@@ -122,7 +122,7 @@
                                 <div class="row">
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label">If my capital to do GCA Repeat</label>
+                                            <label class="form-label">If my capital to do GCA Repeat [RM]</label>
                                             <input type="number" class="form-control shadow-none" id="gca_repeat"
                                                 value="5000">
                                         </div>
@@ -164,22 +164,13 @@
                 <div class="col-lg-6 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form class="mb-3">
-                                <div class="row">
-                                </div>
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <label class="form-label">Nco Estimation From <br />Repeated Gca Method
-                                            [8%]</label>
-                                    </div>
-                                </div>
-                            </form>
+                            <p class="text-center">Nco Estimation From Repeated Gca Method [%]</p>
                             <table class="table text-center">
                                 <thead>
                                     <tr>
-                                        <th scope="col" id="nco_estimation">
-                                            <input type="number" class="form-control shadow-none text-center border-0 mt-1"
-                                                value="8" id="nco_estimation">
+                                        <th scope="col">
+                                            <input type="number" value="8" id="nco_estimation" style="width: 80px;"
+                                                class="form-control shadow-none text-center d-block border-0 mx-auto mt-1">
                                         </th>
                                         <th scope="col">LME future</th>
                                         <th scope="col">NCO value</th>
@@ -234,9 +225,11 @@
                                             <th scope="col">Repetition</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>RM<span id="rolling_capital"></span></td>
+                                    <tbody id="myTable">
+                                        <!-- <tr>
+                                            <td>
+                                                <p id="rolling_capital"></p>
+                                            </td>
                                             <td>RM<span id="gca_85"></span></td>
                                             <td>RM<span id="lock_15"></span></td>
                                             <td><span id="gram_15"></span>g</td>
@@ -244,7 +237,7 @@
                                             <td>RM<span id="mf3_5"></span></td>
                                             <td>RM<span id="base_price"></span></td>
                                             <th scope="row">1</th>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -277,40 +270,126 @@
         }
 
         const firstCalculate = () => {
+            const row_counter = 25;
+
             let qm_sell = document.getElementById("qm_sell").value;
             let qm_buy = document.getElementById("qm_buy").value;
             let gca_repeat = document.getElementById("gca_repeat").value;
             let gca_1time = ((gca_repeat * 0.85) / qm_sell).toFixed(5);
+            // let gca_results = ();
             document.getElementById("gca_1time").value = gca_1time;
 
-            let nco_estimation = document.getElementById("nco_estimation").value;
-            let lme_future5 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 5)).toFixed(2);
-            let lme_future10 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 10)).toFixed(2);
-            let lme_future15 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 15)).toFixed(2);
-            let lme_future20 = (parseFloat(qm_buy) + (parseFloat(qm_buy * 0.08) * 20)).toFixed(2);
+            let nco_estimation = (document.getElementById("nco_estimation").value / 100);
+            let lme_future5 = (parseFloat(qm_buy) + (parseFloat(qm_buy * nco_estimation) * 5)).toFixed(2);
+            let lme_future10 = (parseFloat(qm_buy) + (parseFloat(qm_buy * nco_estimation) * 10)).toFixed(2);
+            let lme_future15 = (parseFloat(qm_buy) + (parseFloat(qm_buy * nco_estimation) * 15)).toFixed(2);
+            let lme_future20 = (parseFloat(qm_buy) + (parseFloat(qm_buy * nco_estimation) * 20)).toFixed(2);
             document.getElementById("lme_future5").innerHTML = lme_future5;
             document.getElementById("lme_future10").innerHTML = lme_future10;
             document.getElementById("lme_future15").innerHTML = lme_future15;
             document.getElementById("lme_future20").innerHTML = lme_future20;
 
-            
-            let gca_85 = parseFloat(gca_repeat*0.85);
-            let lock_15 = parseFloat(gca_repeat*0.15);
-            let rolling_capital = (gca_85+lock_15);
-            let gram_15 = parseFloat(lock_15/qm_sell).toFixed(4);
-            let gram_100 = ((gca_85+lock_15)/qm_sell).toFixed(4);
-            let mf3_5 = parseFloat(gca_85*0.035).toFixed(2);
-            let base_price = (gram_100*qm_buy).toFixed(2);
+            let temp_counter = 0;
+            let temp_rollingcapital = 0;
+            const gca85 = [];
+            const lock15 = [];
+            const rollingcapital = [];
+            const gram15 = [];
+            const gram100 = [];
+            const mf35 = [];
+            const baseprice = [];
+            let temp_gca85 = gca_repeat;
+            let temp_lock15 = gca_repeat;
+            for (let i = 0; i < 30; i++) {
 
-            document.getElementById("rolling_capital").innerHTML = rolling_capital;
-            document.getElementById("gca_85").innerHTML = gca_85;
-            document.getElementById("lock_15").innerHTML = lock_15;
-            document.getElementById("gram_15").innerHTML = gram_15;
-            document.getElementById("gram_100").innerHTML = gram_100;
-            document.getElementById("mf3_5").innerHTML = mf3_5;
-            document.getElementById("base_price").innerHTML = base_price;
-            
-            console.log(base_price);
+                gca85[i] = parseFloat(temp_gca85 * 0.85).toFixed(2);
+                lock15[i] = parseFloat(temp_gca85 * 0.15).toFixed(2);
+                temp_gca85 = gca85[i];
+                temp_lock15 = lock15[i];
+                rollingcapital[i] = (parseFloat(gca85[i]) + parseFloat(lock15[i])).toFixed(2);
+                gram15[i] = (lock15[i] / qm_sell).toFixed(4);
+                gram100[i] = (rollingcapital[i] / qm_sell).toFixed(4);
+                mf35[i] = parseFloat(gca85[i] * 0.035).toFixed(2);
+                baseprice[i] = parseFloat(gram100[i] * qm_buy).toFixed(2);
+
+                temp_rollingcapital = rollingcapital[i];
+                temp_counter = temp_counter + 1;
+
+                // var table = document.getElementById("myTable");
+                // var row = table.insertRow(0);
+                // var cell1 = row.insertCell(0);
+                // var cell2 = row.insertCell(1);
+                // cell1.innerHTML = "NEW CELL1";
+                // cell2.innerHTML = "NEW CELL2";
+
+                let table = document.getElementById("myTable");
+                let row = table.insertRow(-1);
+                let col1 = row.insertCell(-1);
+                let col2 = row.insertCell(-1);
+                let col3 = row.insertCell(-1);
+                let col4 = row.insertCell(-1);
+                let col5 = row.insertCell(-1);
+                let col6 = row.insertCell(-1);
+                let col7 = row.insertCell(-1);
+                let col8 = row.insertCell(-1);
+                col3.innerHTML = lock15[i];
+                col2.innerHTML = gca85[i];
+                col1.innerHTML = rollingcapital[i];
+                col4.innerHTML = gram15[i];
+                col5.innerHTML = gram100[i];
+                col6.innerHTML = mf35[i];
+                col7.innerHTML = baseprice[i];
+                col8.innerHTML = i+1;
+
+                if (temp_rollingcapital < 150) {
+
+                    console.log("Repetition " + temp_counter);
+
+                    break;
+                }
+                // let col1 = "RM" + rollingcapital[i] " ";
+
+                console.log(rollingcapital[i], temp_counter);
+            }
+
+
+            // let gca_85 = parseFloat(gca_repeat * 0.85);
+            // let lock_15 = parseFloat(gca_repeat * 0.15);
+            // let rolling_capital = (gca_85 + lock_15);
+            // let gram_15 = parseFloat(lock_15 / qm_sell).toFixed(4);
+            // let gram_100 = ((gca_85 + lock_15) / qm_sell).toFixed(4);
+            // let mf3_5 = parseFloat(gca_85 * 0.035).toFixed(2);
+            // let base_price = (gram_100 * qm_buy).toFixed(2);
+
+            // document.getElementById("rolling_capital").innerHTML = rolling_capital;
+            // document.getElementById("gca_85").innerHTML = gca_85;
+            // document.getElementById("lock_15").innerHTML = lock_15;
+            // document.getElementById("gram_15").innerHTML = gram_15;
+            // document.getElementById("gram_100").innerHTML = gram_100;
+            // document.getElementById("mf3_5").innerHTML = mf3_5;
+            // document.getElementById("base_price").innerHTML = base_price;
+
+
+            // var table = document.getElementById("myTable");
+            // var row = table.insertRow(-1);
+            // var cell1 = row.insertCell(0);
+            // var cell2 = row.insertCell(1);
+            // var cell3 = row.insertCell(2);
+            // var cell4 = row.insertCell(3);
+            // var cell5 = row.insertCell(4);
+            // var cell6 = row.insertCell(5);
+            // var cell7 = row.insertCell(6);
+            // var cell8 = row.insertCell(7);
+            // cell1.innerHTML = "Data 1";
+            // cell2.innerHTML = "Data 2";
+            // cell3.innerHTML = "Data 3";
+            // cell4.innerHTML = "Data 4";
+            // cell5.innerHTML = "Data 5";
+            // cell6.innerHTML = "Data 6";
+            // cell7.innerHTML = "Data 7";
+            // cell8.innerHTML = "Data 8";
+
+            // console.log(nco_estimation);
         }
     </script>
 
