@@ -315,12 +315,13 @@
                 temp_rollingcapital = rollingcapital[i];
                 temp_counter = temp_counter + 1;
 
-                // var table = document.getElementById("myTable");
-                // var row = table.insertRow(0);
-                // var cell1 = row.insertCell(0);
-                // var cell2 = row.insertCell(1);
-                // cell1.innerHTML = "NEW CELL1";
-                // cell2.innerHTML = "NEW CELL2";
+                if (temp_rollingcapital < 150) {
+
+                    console.log("Repetition " + temp_counter);
+
+                    break;
+                }
+                // let col1 = "RM" + rollingcapital[i] " ";
 
                 let table = document.getElementById("myTable");
                 let row = table.insertRow(-1);
@@ -340,14 +341,6 @@
                 col6.innerHTML = mf35[i];
                 col7.innerHTML = baseprice[i];
                 col8.innerHTML = i+1;
-
-                if (temp_rollingcapital < 150) {
-
-                    console.log("Repetition " + temp_counter);
-
-                    break;
-                }
-                // let col1 = "RM" + rollingcapital[i] " ";
 
                 console.log(rollingcapital[i], temp_counter);
             }
