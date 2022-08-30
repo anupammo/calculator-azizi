@@ -147,7 +147,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Repeated GCA method [g]</label>
                                             <input type="number" class="form-control shadow-none" id="repeated_gca"
-                                                value="122.9761" disabled>
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -280,6 +280,7 @@
             let temp_counter = 0;
             let temp_rollingcapital = 0;
             let repeatedgca = 0;
+            let gca_results = 0;
             const gca85 = [];
             const lock15 = [];
             const rollingcapital = [];
@@ -331,12 +332,14 @@
                 col7.innerHTML = baseprice[i];
                 col8.innerHTML = i+1;
                 repeatedgca += parseFloat(gram100[i])
+                gcaresults = (repeatedgca/qm_buy).toFixed(2);
                 // console.log(rollingcapital[i], temp_counter);
 
             }
 
-            document.getElementById("gca_results").value = repeatedgca;
-                console.log(repeatedgca);
+            document.getElementById("repeated_gca").value = repeatedgca;
+            document.getElementById("gca_results").value = gcaresults;
+                console.log(gcaresults);
 
 
             // let gca_85 = parseFloat(gca_repeat * 0.85);
