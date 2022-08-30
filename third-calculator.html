@@ -124,7 +124,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">If my capital to do GCA Repeat [RM]</label>
                                             <input type="number" class="form-control shadow-none" id="gca_repeat"
-                                                value="5000">
+                                                value="0">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -226,18 +226,6 @@
                                         </tr>
                                     </thead>
                                     <tbody id="myTable">
-                                        <!-- <tr>
-                                            <td>
-                                                <p id="rolling_capital"></p>
-                                            </td>
-                                            <td>RM<span id="gca_85"></span></td>
-                                            <td>RM<span id="lock_15"></span></td>
-                                            <td><span id="gram_15"></span>g</td>
-                                            <td><span id="gram_100"></span>g</td>
-                                            <td>RM<span id="mf3_5"></span></td>
-                                            <td>RM<span id="base_price"></span></td>
-                                            <th scope="row">1</th>
-                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -291,6 +279,7 @@
 
             let temp_counter = 0;
             let temp_rollingcapital = 0;
+            let repeatedgca = 0;
             const gca85 = [];
             const lock15 = [];
             const rollingcapital = [];
@@ -317,7 +306,7 @@
 
                 if (temp_rollingcapital < 150) {
 
-                    console.log("Repetition " + temp_counter);
+                    // console.log("Repetition " + temp_counter);
 
                     break;
                 }
@@ -341,9 +330,13 @@
                 col6.innerHTML = mf35[i];
                 col7.innerHTML = baseprice[i];
                 col8.innerHTML = i+1;
+                repeatedgca += parseFloat(gram100[i])
+                // console.log(rollingcapital[i], temp_counter);
 
-                console.log(rollingcapital[i], temp_counter);
             }
+
+            document.getElementById("gca_results").value = repeatedgca;
+                console.log(repeatedgca);
 
 
             // let gca_85 = parseFloat(gca_repeat * 0.85);
