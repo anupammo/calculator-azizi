@@ -228,6 +228,7 @@
                                 <table class="table text-center">
                                     <thead>
                                         <tr>
+                                            <th scope="col">Repetition</th>
                                             <th scope="col">Rolling Capital</th>
                                             <th scope="col">Gca Convert 85%</th>
                                             <th scope="col">Lock 15%</th>
@@ -235,7 +236,6 @@
                                             <th scope="col">Total Grams 100% Issued</th>
                                             <th scope="col">MF</th>
                                             <th scope="col">Base Price</th>
-                                            <th scope="col">Repetition</th>
                                         </tr>
                                     </thead>
                                     <tbody id="myTable">
@@ -318,6 +318,7 @@
 
                 let table = document.getElementById("myTable");
                 let row = table.insertRow(-1);
+                let col8 = row.insertCell(-1);
                 let col1 = row.insertCell(-1);
                 let col2 = row.insertCell(-1);
                 let col3 = row.insertCell(-1);
@@ -325,7 +326,6 @@
                 let col5 = row.insertCell(-1);
                 let col6 = row.insertCell(-1);
                 let col7 = row.insertCell(-1);
-                let col8 = row.insertCell(-1);
                 col3.innerHTML = lock15[i];
                 col2.innerHTML = gca85[i];
                 col1.innerHTML = rollingcapital[i];
@@ -350,63 +350,10 @@
             const ncoval10 = (parseFloat((netgram15 * parseFloat(lme_future10)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future10)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 10)));
             const ncoval15 = (parseFloat((netgram15 * parseFloat(lme_future15)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future15)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 15)));
             const ncoval20 = (parseFloat((netgram15 * parseFloat(lme_future20)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future20)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 20)));
-            document.getElementById("nco_value5").innerHTML = ncoval5;
-            document.getElementById("nco_value10").innerHTML = ncoval10;
-            document.getElementById("nco_value15").innerHTML = ncoval15;
+            document.getElementById("nco_value5").innerHTML = ncoval5.toFixed(2);
+            document.getElementById("nco_value10").innerHTML = ncoval10.toFixed(2);
+            document.getElementById("nco_value15").innerHTML = ncoval15.toFixed(2);
             document.getElementById("nco_value20").innerHTML = (ncoval20).toFixed(2);
-
-            // console.log(netgram15, lme_future5, repeatedgca, lme_future5, netbaseprice, netmf, 5);
-
-            // console.log((netgram15 * parseFloat(lme_future5)).toFixed(2));
-
-            // console.log(((parseFloat(repeatedgca) * parseFloat(lme_future5)).toFixed(2)));
-
-            // console.log(parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future5)) - parseFloat(netbaseprice)).toFixed(2));
-
-            // console.log(netmf * 5);
-
-            // console.log(parseFloat((netgram15 * parseFloat(lme_future5)).toFixed(2)) + ((parseFloat((parseFloat(repeatedgca) * parseFloat(lme_future5)) - parseFloat(netbaseprice)).toFixed(2)) - (netmf * 5)));
-
-            // console.log(ncoval20);
-
-
-            // let gca_85 = parseFloat(gca_repeat * 0.85);
-            // let lock_15 = parseFloat(gca_repeat * 0.15);
-            // let rolling_capital = (gca_85 + lock_15);
-            // let gram_15 = parseFloat(lock_15 / qm_sell).toFixed(4);
-            // let gram_100 = ((gca_85 + lock_15) / qm_sell).toFixed(4);
-            // let mf3_5 = parseFloat(gca_85 * 0.035).toFixed(2);
-            // let base_price = (gram_100 * qm_buy).toFixed(2);
-
-            // document.getElementById("rolling_capital").innerHTML = rolling_capital;
-            // document.getElementById("gca_85").innerHTML = gca_85;
-            // document.getElementById("lock_15").innerHTML = lock_15;
-            // document.getElementById("gram_15").innerHTML = gram_15;
-            // document.getElementById("gram_100").innerHTML = gram_100;
-            // document.getElementById("mf3_5").innerHTML = mf3_5;
-            // document.getElementById("base_price").innerHTML = base_price;
-
-
-            // var table = document.getElementById("myTable");
-            // var row = table.insertRow(-1);
-            // var cell1 = row.insertCell(0);
-            // var cell2 = row.insertCell(1);
-            // var cell3 = row.insertCell(2);
-            // var cell4 = row.insertCell(3);
-            // var cell5 = row.insertCell(4);
-            // var cell6 = row.insertCell(5);
-            // var cell7 = row.insertCell(6);
-            // var cell8 = row.insertCell(7);
-            // cell1.innerHTML = "Data 1";
-            // cell2.innerHTML = "Data 2";
-            // cell3.innerHTML = "Data 3";
-            // cell4.innerHTML = "Data 4";
-            // cell5.innerHTML = "Data 5";
-            // cell6.innerHTML = "Data 6";
-            // cell7.innerHTML = "Data 7";
-            // cell8.innerHTML = "Data 8";
-
-            // console.log(nco_estimation);
         }
         const dtlsDev = () => {
             const str1 = "Developed by - "
