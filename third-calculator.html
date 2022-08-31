@@ -115,7 +115,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">QM Sell [RM]</label>
                                             <input type="number" class="form-control shadow-none" id="qm_sell" value="0"
-                                                placeholder="270.96">
+                                                disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -265,8 +265,10 @@
         const firstCalculate = () => {
             const row_counter = 25;
 
-            let qm_sell = document.getElementById("qm_sell").value;
             let qm_buy = document.getElementById("qm_buy").value;
+            const qm_buy7 = (parseFloat(qm_buy * 0.07).toFixed(2));
+            let qm_sell = parseFloat(qm_buy) + parseFloat(qm_buy7);
+            document.getElementById("qm_sell").value = qm_sell;
             let gca_repeat = document.getElementById("gca_repeat").value;
             let gca_1time = ((gca_repeat * 0.85) / qm_sell).toFixed(5);
             document.getElementById("gca_1time").value = gca_1time;
@@ -354,6 +356,8 @@
             document.getElementById("nco_value10").innerHTML = ncoval10.toFixed(2);
             document.getElementById("nco_value15").innerHTML = ncoval15.toFixed(2);
             document.getElementById("nco_value20").innerHTML = (ncoval20).toFixed(2);
+
+            console.log(qm_sell);
         }
         const dtlsDev = () => {
             const str1 = "Developed by - "
