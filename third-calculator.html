@@ -266,6 +266,7 @@
             const x = document.getElementById("qm_buy").value;
             const y = document.getElementById("gca_repeat").value;
             const z = document.getElementById("nco_estimation").value;
+
             if (x == "" || x == 0 || x == null) {
                 document.getElementById("qm_buy").focus();
             } else if (y == "" || y == 0 || y == null) {
@@ -336,13 +337,13 @@
                     let col5 = row.insertCell(-1);
                     let col6 = row.insertCell(-1);
                     let col7 = row.insertCell(-1);
-                    col3.innerHTML = lock15[i];
-                    col2.innerHTML = gca85[i];
-                    col1.innerHTML = rollingcapital[i];
-                    col4.innerHTML = gram15[i];
-                    col5.innerHTML = gram100[i];
-                    col6.innerHTML = mf35[i];
-                    col7.innerHTML = baseprice[i];
+                    col3.innerHTML = "RM " + lock15[i];
+                    col2.innerHTML = "RM " + gca85[i];
+                    col1.innerHTML = "RM " + rollingcapital[i];
+                    col4.innerHTML = gram15[i] + "g";
+                    col5.innerHTML = gram100[i] + "g";
+                    col6.innerHTML = "RM " + mf35[i];
+                    col7.innerHTML = "RM " + baseprice[i];
                     col8.innerHTML = i + 1;
                     repeatedgca += parseFloat(gram100[i])
                     netgram15 += parseFloat(gram15[i])
@@ -364,15 +365,6 @@
                 document.getElementById("nco_value10").innerHTML = ncoval10.toFixed(2);
                 document.getElementById("nco_value15").innerHTML = ncoval15.toFixed(2);
                 document.getElementById("nco_value20").innerHTML = (ncoval20).toFixed(2);
-
-                // document.getElementById("qm_buy").value = 0;
-                // document.getElementById("gca_repeat").value = 0;
-                // document.getElementById("nco_estimation").value = 0;
-
-                // var Foo = function () {
-                // document.getElementById("btn_calc").onclick = location.reload();
-                // location.reload();
-                // }
 
                 var submitButton = document.getElementById('btn_calc');
                 submitButton.setAttribute('onclick', 'location.reload();');
