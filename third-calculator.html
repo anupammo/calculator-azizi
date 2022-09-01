@@ -366,13 +366,12 @@
                 document.getElementById("nco_value15").innerHTML = ncoval15.toFixed(2);
                 document.getElementById("nco_value20").innerHTML = (ncoval20).toFixed(2);
 
-                var submitButton = document.getElementById('btn_calc');
-                submitButton.setAttribute('onclick', 'location.reload();');
+                document.getElementById('btn_calc').innerHTML = "Reset";
+                document.getElementById('btn_calc').setAttribute('onclick', 'reloadValid()')
             }
-
-            var Boo = function () {
-                alert("test");
-            }
+        }
+        const reloadValid = () => {
+            location.reload (alert("You need to insert fresh value for Calculation !!"));
         }
         const dtlsDev = () => {
             const str1 = "Developed by - "
