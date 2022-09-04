@@ -64,7 +64,7 @@
     </style>
 </head>
 
-<body onload="dtlsDev();">
+<body onload="">
     <header class="bg-style py-5">
         <div class="container">
             <div class="row">
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-auto">
-                                        <button type="button" id="btn_calc" onclick="firstCalculate()"
+                                        <button type="button" id="btn_calc" onclick="firstStage()"
                                             class="btn btn-primary shadow-none">Calculate</button>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                                 placeholder="100.00">
                                         </div>
                                         <div class="mb-3">
-                                            <button type="button" id="btn_calc"
+                                            <button type="button" id="" onclick="secondStage()"
                                                 class="btn btn-primary shadow-none mt-4">Calculate</button>
                                         </div>
                                     </div>
@@ -170,10 +170,6 @@
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-auto">
                                     </div>
                                 </div>
                             </form>
@@ -213,7 +209,7 @@
                                                 placeholder="0.01621">
                                         </div>
                                         <div class="mb-3">
-                                            <button type="button" id="btn_calc"
+                                            <button type="button" id="btn_calc" onclick="lastStage()"
                                                 class="btn btn-primary shadow-none mt-5">Calculate</button>
                                         </div>
                                     </div>
@@ -251,6 +247,19 @@
     </footer>
 
     <script>
+        const firstStage = () => {
+            const usd_lme = parseFloat(document.getElementById("usd_lme").value);
+            const fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            console.log(usd_lme, fx_rate, usd_lme + fx_rate);
+        }
+        const secondStage = () => {
+            const cash_val = parseFloat(document.getElementById("cash_val").value);
+            console.log(cash_val);
+        }
+        const lastStage = () => {
+            const gram_val = parseFloat(document.getElementById("gram_val").value);
+            console.log(gram_val);
+        }
         const dtlsDev = () => {
             const str1 = "Developed by - "
             const dev = "Anupam Mondal";
