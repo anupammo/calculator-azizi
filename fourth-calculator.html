@@ -28,7 +28,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <title>Calculator 3 - Azizi J</title>
     <style>
@@ -64,7 +65,7 @@
     </style>
 </head>
 
-<body onload="">
+<body onload="dtlsDev()">
     <header class="bg-style py-5">
         <div class="container">
             <div class="row">
@@ -99,8 +100,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-2 col-12"></div>
-                <div class="col-lg-6 col-md-8 col-12">
+                <div class="col-lg-6 col-12">
                     <div class="card my-4">
                         <div class="card-body">
                             <form>
@@ -108,15 +108,15 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">USD LME</label>
-                                            <input type="number" class="form-control shadow-none" id="usd_lme" value="55.06"
-                                                placeholder="55.06">
+                                            <input type="number" class="form-control shadow-none" id="usd_lme"
+                                                value="55.06" placeholder="55.06">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">FX Rate</label>
-                                            <input type="number" class="form-control shadow-none" id="fx_rate" value="4.47"
-                                                placeholder="4.47">
+                                            <input type="number" class="form-control shadow-none" id="fx_rate"
+                                                value="4.47" placeholder="4.47">
                                         </div>
                                     </div>
                                 </div>
@@ -143,8 +143,17 @@
                                     </div>
                                 </div>
                             </form>
+                            <hr>
+                            <p class="text-center">
+                                <span class="text-primary">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                                QM Buy/LME x 1.07
+                            </p>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 col-12">
                     <div class="card my-4">
                         <div class="card-body">
                             <form>
@@ -152,12 +161,8 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Cash</label>
-                                            <input type="number" class="form-control shadow-none" id="cash_val" value="100.00"
-                                                placeholder="100.00">
-                                        </div>
-                                        <div class="mb-3">
-                                            <button type="button" id="" onclick="secondStage()"
-                                                class="btn btn-primary shadow-none mt-4">Calculate</button>
+                                            <input type="number" class="form-control shadow-none" id="cash_val"
+                                                value="100" placeholder="100">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -166,15 +171,32 @@
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
+                                    </div>
+                                    <div class="col-auto w-50">
                                         <div class="mb-3">Net Cash Out</label>
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
                                     </div>
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <button type="button" id="" onclick="secondStage()"
+                                                class="btn btn-primary shadow-none mt-4">Calculate</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
+                            <hr>
+                            <p class="text-center">
+                                <span class="text-primary">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                                NCO = Gold x QM Buy / LME
+                            </p>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 col-12">
                     <div class="card my-4">
                         <div class="card-body">
                             <form>
@@ -195,9 +217,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="mb-3">
+                                            <button type="button" id="" onclick=""
+                                                class="btn btn-primary shadow-none">Calculate</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
+                            <hr>
+                            <p class="text-center">
+                                <span class="text-primary">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                                Cash x 85%
+                            </p>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 col-12">
                     <div class="card my-4">
                         <div class="card-body">
                             <form>
@@ -205,12 +244,8 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Gram [g]</label>
-                                            <input type="number" class="form-control shadow-none" id="gram_val" value="0.01621"
-                                                placeholder="0.01621">
-                                        </div>
-                                        <div class="mb-3">
-                                            <button type="button" id="btn_calc" onclick="lastStage()"
-                                                class="btn btn-primary shadow-none mt-5">Calculate</button>
+                                            <input type="number" class="form-control shadow-none" id="gram_val"
+                                                value="0.01621" placeholder="0.01621">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -219,17 +254,31 @@
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
+                                    </div>
+                                    <div class="col-auto w-50">
                                         <div class="mb-3">Available GCA from Current Gold[91%]</label>
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
                                     </div>
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <button type="button" id="btn_calc" onclick="lastStage()"
+                                                class="btn btn-primary shadow-none mt-5">Calculate</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
+                            <hr>
+                            <p class="text-center">
+                                <span class="text-primary">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                                Available GC = Gold x 91%
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-2 col-12"></div>
             </div>
         </div>
     </section>
@@ -250,15 +299,38 @@
         const firstStage = () => {
             const usd_lme = parseFloat(document.getElementById("usd_lme").value);
             const fx_rate = parseFloat(document.getElementById("fx_rate").value);
-            console.log(usd_lme, fx_rate, usd_lme + fx_rate);
+            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+            // console.log(qm_buy, qm_sell);
         }
         const secondStage = () => {
+            const usd_lme = parseFloat(document.getElementById("usd_lme").value);
+            const fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
             const cash_val = parseFloat(document.getElementById("cash_val").value);
-            console.log(cash_val);
+            let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
+            let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+            let cash8_5 = (cash_val * 0.85);
+            let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
+            // console.log(net_gram, net_cash);
         }
         const lastStage = () => {
+            const usd_lme = parseFloat(document.getElementById("usd_lme").value);
+            const fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+            const cash_val = parseFloat(document.getElementById("cash_val").value);
+            let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
+            let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+            let cash8_5 = (cash_val * 0.85);
+            let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
+            // console.log(cash8_5, hold_inv);
+
             const gram_val = parseFloat(document.getElementById("gram_val").value);
-            console.log(gram_val);
+            let nco_val = parseFloat((gram_val * qm_buy).toFixed(2));
+            let gca_gold = parseFloat(((gram_val * qm_buy) * 0.91).toFixed(2));
+            // console.log(nco_val, gca_gold);
         }
         const dtlsDev = () => {
             const str1 = "Developed by - "
