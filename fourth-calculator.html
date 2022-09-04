@@ -108,15 +108,15 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">USD LME</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
-                                                placeholder="253.23">
+                                            <input type="number" class="form-control shadow-none" id="usd_lme" value="55.06"
+                                                placeholder="55.06">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">FX Rate</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
-                                                placeholder="253.23">
+                                            <input type="number" class="form-control shadow-none" id="fx_rate" value="4.47"
+                                                placeholder="4.47">
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">QM buy LME</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_sell" value="0"
+                                            <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
                                                 disabled="">
                                         </div>
                                     </div>
@@ -152,8 +152,8 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Cash</label>
-                                            <input type="number" class="form-control shadow-none" id="" value="0"
-                                                placeholder="253.23">
+                                            <input type="number" class="form-control shadow-none" id="cash_val" value="100.00"
+                                                placeholder="100.00">
                                         </div>
                                         <div class="mb-3">
                                             <button type="button" id="btn_calc"
@@ -188,14 +188,14 @@
                                             <label class="form-label">Direct GCA from Cash [85%]. We <br />get Cash to
                                                 our Bank Account</label>
                                             <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
-                                                placeholder="253.23">
+                                                disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label my-3">Holding Inventory</label>
                                             <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
-                                                placeholder="253.23">
+                                                disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -209,12 +209,12 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Gram [g]</label>
-                                            <input type="number" class="form-control shadow-none" id="" value="0"
-                                                placeholder="253.23">
+                                            <input type="number" class="form-control shadow-none" id="gram_val" value="0.01621"
+                                                placeholder="0.01621">
                                         </div>
                                         <div class="mb-3">
                                             <button type="button" id="btn_calc"
-                                                class="btn btn-primary shadow-none mt-4">Calculate</button>
+                                                class="btn btn-primary shadow-none mt-5">Calculate</button>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -223,14 +223,10 @@
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
-                                        <div class="mb-3">Available GCA from Current Gold [91%]</label>
+                                        <div class="mb-3">Available GCA from Current Gold[91%]</label>
                                             <input type="number" class="form-control shadow-none" id="" value="0"
                                                 disabled>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-auto">
                                     </div>
                                 </div>
                             </form>
@@ -254,7 +250,15 @@
         </div>
     </footer>
 
-    <script></script>
+    <script>
+        const dtlsDev = () => {
+            const str1 = "Developed by - "
+            const dev = "Anupam Mondal";
+            const dev_url = "https://anupammondal.in";
+            console.log(str1, dev);
+            console.log(dev_url);
+        }
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
