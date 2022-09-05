@@ -168,13 +168,13 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Gram</label>
-                                            <input type="number" class="form-control shadow-none" id="" value="0"
+                                            <input type="number" class="form-control shadow-none" id="net_gram" value="0"
                                                 disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">Net Cash Out</label>
-                                            <input type="number" class="form-control shadow-none" id="" value="0"
+                                            <input type="number" class="form-control shadow-none" id="net_cash" value="0"
                                                 disabled>
                                         </div>
                                     </div>
@@ -205,14 +205,14 @@
                                         <div class="mb-3">
                                             <label class="form-label">Direct GCA from Cash [85%]. We <br />get Cash to
                                                 our Bank Account</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
+                                            <input type="number" class="form-control shadow-none" id="cash8_5" value="0"
                                                 disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label my-3">Holding Inventory</label>
-                                            <input type="number" class="form-control shadow-none" id="qm_buy" value="0"
+                                            <input type="number" class="form-control shadow-none" id="hold_inv" value="0"
                                                 disabled>
                                         </div>
                                     </div>
@@ -220,7 +220,7 @@
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="mb-3">
-                                            <button type="button" id="" onclick=""
+                                            <button type="button" id="" onclick="thirdStage()"
                                                 class="btn btn-primary shadow-none">Calculate</button>
                                         </div>
                                     </div>
@@ -251,13 +251,13 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">NCO</label>
-                                            <input type="number" class="form-control shadow-none" id="" value="0"
+                                            <input type="number" class="form-control shadow-none" id="nco_val" value="0"
                                                 disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">Available GCA from Current Gold[91%]</label>
-                                            <input type="number" class="form-control shadow-none" id="" value="0"
+                                            <input type="number" class="form-control shadow-none" id="gca_gold" value="0"
                                                 disabled>
                                         </div>
                                     </div>
@@ -294,13 +294,14 @@
             </div>
         </div>
     </footer>
-
     <script>
         const firstStage = () => {
             const usd_lme = parseFloat(document.getElementById("usd_lme").value);
             const fx_rate = parseFloat(document.getElementById("fx_rate").value);
             let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
             let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+            document.getElementById("qm_buy").value = qm_buy;
+            document.getElementById("qm_sell").value = qm_sell;
             // console.log(qm_buy, qm_sell);
         }
         const secondStage = () => {
@@ -311,8 +312,22 @@
             const cash_val = parseFloat(document.getElementById("cash_val").value);
             let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
             let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+            document.getElementById("net_gram").value = net_gram;
+            document.getElementById("net_cash").value = net_cash;
+            // console.log(net_gram, net_cash);
+        }
+        const thirdStage = () => {
+            const usd_lme = parseFloat(document.getElementById("usd_lme").value);
+            const fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+            const cash_val = parseFloat(document.getElementById("cash_val").value);
+            let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
+            let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
             let cash8_5 = (cash_val * 0.85);
             let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
+            document.getElementById("cash8_5").value = cash8_5;
+            document.getElementById("hold_inv").value = hold_inv;
             // console.log(net_gram, net_cash);
         }
         const lastStage = () => {
@@ -330,6 +345,8 @@
             const gram_val = parseFloat(document.getElementById("gram_val").value);
             let nco_val = parseFloat((gram_val * qm_buy).toFixed(2));
             let gca_gold = parseFloat(((gram_val * qm_buy) * 0.91).toFixed(2));
+            document.getElementById("nco_val").value = nco_val;
+            document.getElementById("gca_gold").value = gca_gold;
             // console.log(nco_val, gca_gold);
         }
         const dtlsDev = () => {
