@@ -108,15 +108,15 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">USD LME</label>
-                                            <input type="number" class="form-control shadow-none" id="usd_lme"
-                                                value="55.06" placeholder="55.06">
+                                            <input type="number" class="form-control shadow-none" id="usd_lme" value="0"
+                                                placeholder="55.06">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">FX Rate</label>
-                                            <input type="number" class="form-control shadow-none" id="fx_rate"
-                                                value="4.47" placeholder="4.47">
+                                            <input type="number" class="form-control shadow-none" id="fx_rate" value="0"
+                                                placeholder="4.47">
                                         </div>
                                     </div>
                                 </div>
@@ -162,20 +162,20 @@
                                         <div class="mb-3">
                                             <label class="form-label">Cash</label>
                                             <input type="number" class="form-control shadow-none" id="cash_val"
-                                                value="100" placeholder="100">
+                                                value="0" placeholder="100">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label">Gram</label>
-                                            <input type="number" class="form-control shadow-none" id="net_gram" value="0"
-                                                disabled>
+                                            <input type="number" class="form-control shadow-none" id="net_gram"
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">Net Cash Out</label>
-                                            <input type="number" class="form-control shadow-none" id="net_cash" value="0"
-                                                disabled>
+                                            <input type="number" class="form-control shadow-none" id="net_cash"
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -212,8 +212,8 @@
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
                                             <label class="form-label my-3">Holding Inventory</label>
-                                            <input type="number" class="form-control shadow-none" id="hold_inv" value="0"
-                                                disabled>
+                                            <input type="number" class="form-control shadow-none" id="hold_inv"
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Gram [g]</label>
                                             <input type="number" class="form-control shadow-none" id="gram_val"
-                                                value="0.01621" placeholder="0.01621">
+                                                value="0" placeholder="0.01621">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -257,8 +257,8 @@
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">Available GCA from Current Gold[91%]</label>
-                                            <input type="number" class="form-control shadow-none" id="gca_gold" value="0"
-                                                disabled>
+                                            <input type="number" class="form-control shadow-none" id="gca_gold"
+                                                value="0" disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -296,58 +296,86 @@
     </footer>
     <script>
         const firstStage = () => {
-            const usd_lme = parseFloat(document.getElementById("usd_lme").value);
-            const fx_rate = parseFloat(document.getElementById("fx_rate").value);
-            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
-            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
-            document.getElementById("qm_buy").value = qm_buy;
-            document.getElementById("qm_sell").value = qm_sell;
-            // console.log(qm_buy, qm_sell);
+            let usd_lme = parseFloat(document.getElementById("usd_lme").value);
+            let fx_rate = parseFloat(document.getElementById("fx_rate").value);
+            if (usd_lme == "" || usd_lme == 0 || isNaN(usd_lme)) {
+                document.getElementById("usd_lme").focus();
+            } else if (fx_rate == "" || fx_rate == 0 || isNaN(fx_rate)) {
+                document.getElementById("fx_rate").focus();
+            } else {
+                let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+                let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+                document.getElementById("qm_buy").value = qm_buy;
+                document.getElementById("qm_sell").value = qm_sell;
+            }
         }
         const secondStage = () => {
             const usd_lme = parseFloat(document.getElementById("usd_lme").value);
             const fx_rate = parseFloat(document.getElementById("fx_rate").value);
-            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
-            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
             const cash_val = parseFloat(document.getElementById("cash_val").value);
-            let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
-            let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
-            document.getElementById("net_gram").value = net_gram;
-            document.getElementById("net_cash").value = net_cash;
-            // console.log(net_gram, net_cash);
+            if (usd_lme == "" || usd_lme == 0 || isNaN(usd_lme)) {
+                document.getElementById("usd_lme").focus();
+            } else if (fx_rate == "" || fx_rate == 0 || isNaN(fx_rate)) {
+                document.getElementById("fx_rate").focus();
+            } else if (cash_val == "" || cash_val == 0 || isNaN(cash_val)) {
+                document.getElementById("cash_val").focus();
+            } else {
+                let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+                let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+                let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
+                let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+                document.getElementById("net_gram").value = net_gram;
+                document.getElementById("net_cash").value = net_cash;
+            }
         }
         const thirdStage = () => {
             const usd_lme = parseFloat(document.getElementById("usd_lme").value);
             const fx_rate = parseFloat(document.getElementById("fx_rate").value);
-            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
-            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
             const cash_val = parseFloat(document.getElementById("cash_val").value);
-            let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
-            let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
-            let cash8_5 = (cash_val * 0.85);
-            let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
-            document.getElementById("cash8_5").value = cash8_5;
-            document.getElementById("hold_inv").value = hold_inv;
-            // console.log(net_gram, net_cash);
+            if (usd_lme == "" || usd_lme == 0 || isNaN(usd_lme)) {
+                document.getElementById("usd_lme").focus();
+            } else if (fx_rate == "" || fx_rate == 0 || isNaN(fx_rate)) {
+                document.getElementById("fx_rate").focus();
+            } else if (cash_val == "" || cash_val == 0 || isNaN(cash_val)) {
+                document.getElementById("cash_val").focus();
+            } else {
+                let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+                let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+                let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
+                let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+                let cash8_5 = (cash_val * 0.85);
+                let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
+                document.getElementById("cash8_5").value = cash8_5;
+                document.getElementById("hold_inv").value = hold_inv;
+            }
         }
         const lastStage = () => {
             const usd_lme = parseFloat(document.getElementById("usd_lme").value);
             const fx_rate = parseFloat(document.getElementById("fx_rate").value);
-            let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
-            let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
             const cash_val = parseFloat(document.getElementById("cash_val").value);
-            let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
-            let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
-            let cash8_5 = (cash_val * 0.85);
-            let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
-            // console.log(cash8_5, hold_inv);
-
             const gram_val = parseFloat(document.getElementById("gram_val").value);
-            let nco_val = parseFloat((gram_val * qm_buy).toFixed(2));
-            let gca_gold = parseFloat(((gram_val * qm_buy) * 0.91).toFixed(2));
-            document.getElementById("nco_val").value = nco_val;
-            document.getElementById("gca_gold").value = gca_gold;
-            // console.log(nco_val, gca_gold);
+            if (usd_lme == "" || usd_lme == 0 || isNaN(usd_lme)) {
+                document.getElementById("usd_lme").focus();
+            } else if (fx_rate == "" || fx_rate == 0 || isNaN(fx_rate)) {
+                document.getElementById("fx_rate").focus();
+            } else if (cash_val == "" || cash_val == 0 || isNaN(cash_val)) {
+                document.getElementById("cash_val").focus();
+            } else if (gram_val == "" || gram_val == 0 || isNaN(gram_val)) {
+                document.getElementById("gram_val").focus();
+            } else {
+                let qm_buy = parseFloat((usd_lme * fx_rate).toFixed(2));
+                let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
+                let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
+                let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+                let cash8_5 = (cash_val * 0.85);
+                let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
+                let nco_val = parseFloat((gram_val * qm_buy).toFixed(2));
+                let gca_gold = parseFloat(((gram_val * qm_buy) * 0.91).toFixed(2));
+                document.getElementById("cash8_5").value = cash8_5;
+                document.getElementById("hold_inv").value = hold_inv;
+                document.getElementById("nco_val").value = nco_val;
+                document.getElementById("gca_gold").value = gca_gold;
+            }
         }
         const dtlsDev = () => {
             const str1 = "Developed by - "
