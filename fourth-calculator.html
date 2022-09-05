@@ -162,7 +162,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Cash</label>
                                             <input type="number" class="form-control shadow-none" id="cash_val"
-                                                value="0" placeholder="100">
+                                                value="0" placeholder="1000">
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
@@ -203,16 +203,31 @@
                                 <div class="row">
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label">Direct GCA from Cash [85%]. We <br />get Cash to
-                                                our Bank Account</label>
-                                            <input type="number" class="form-control shadow-none" id="cash8_5" value="0"
+                                            <label class="form-label">Cash</label>
+                                            <input type="number" class="form-control shadow-none" id="disp_cash" value="0"
                                                 disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto w-50">
                                         <div class="mb-3">
-                                            <label class="form-label my-3">Holding Inventory</label>
+                                            <label class="form-label">Cash back 85%</label>
+                                            <input type="number" class="form-control shadow-none" id="cash8_5" value="0"
+                                                disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">Holding Inventory</label>
                                             <input type="number" class="form-control shadow-none" id="hold_inv"
+                                                value="0" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto w-50">
+                                        <div class="mb-3">
+                                            <label class="form-label">Lock 15%</label>
+                                            <input type="number" class="form-control shadow-none" id="lock_15"
                                                 value="0" disabled>
                                         </div>
                                     </div>
@@ -324,6 +339,8 @@
                 let qm_sell = parseFloat((qm_buy * 1.07).toFixed(2));
                 let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
                 let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
+                document.getElementById("qm_buy").value = qm_buy;
+                document.getElementById("qm_sell").value = qm_sell;
                 document.getElementById("net_gram").value = net_gram;
                 document.getElementById("net_cash").value = net_cash;
             }
@@ -344,8 +361,15 @@
                 let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
                 let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
                 let cash8_5 = (cash_val * 0.85);
+                let lock_15 = (cash_val * 0.15);
                 let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
+                document.getElementById("qm_buy").value = qm_buy;
+                document.getElementById("qm_sell").value = qm_sell;
+                document.getElementById("net_gram").value = net_gram;
+                document.getElementById("net_cash").value = net_cash;
+                document.getElementById("disp_cash").value = cash_val;
                 document.getElementById("cash8_5").value = cash8_5;
+                document.getElementById("lock_15").value = lock_15;
                 document.getElementById("hold_inv").value = hold_inv;
             }
         }
@@ -368,10 +392,17 @@
                 let net_gram = parseFloat((cash_val / qm_sell).toFixed(5));
                 let net_cash = parseFloat((net_gram * qm_buy).toFixed(2));
                 let cash8_5 = (cash_val * 0.85);
+                let lock_15 = (cash_val * 0.15);
                 let hold_inv = parseFloat((cash_val / qm_sell).toFixed(4));
                 let nco_val = parseFloat((gram_val * qm_buy).toFixed(2));
                 let gca_gold = parseFloat(((gram_val * qm_buy) * 0.91).toFixed(2));
+                document.getElementById("qm_buy").value = qm_buy;
+                document.getElementById("qm_sell").value = qm_sell;
+                document.getElementById("net_gram").value = net_gram;
+                document.getElementById("net_cash").value = net_cash;
+                document.getElementById("disp_cash").value = cash_val;
                 document.getElementById("cash8_5").value = cash8_5;
+                document.getElementById("lock_15").value = lock_15;
                 document.getElementById("hold_inv").value = hold_inv;
                 document.getElementById("nco_val").value = nco_val;
                 document.getElementById("gca_gold").value = gca_gold;
