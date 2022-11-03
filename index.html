@@ -58,8 +58,23 @@
             /* background-image: url('https://images.pexels.com/photos/321452/pexels-photo-321452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
             background-image: url(bg-img.jpeg);
             background-size: cover;
-            background-position: center;
+            /* background-position: center; */
             background-repeat: no-repeat;
+            background-position: top;
+            animation-name: example;
+            animation-duration: 10s;
+            /* animation-delay: 1s; */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0% {
+                background-position: bottom;
+            }
+
+            100% {
+                background-position: center;
+            }
         }
     </style>
 </head>
@@ -172,7 +187,7 @@
                                 </svg>
                             </div>
                             <div class="text-center my-2">
-                                <a class="text-white stretched-link" href="">Calculator</a>
+                                <a class="text-white stretched-link" href="">Coming soon ..</a>
                             </div>
                         </div>
                     </div>
