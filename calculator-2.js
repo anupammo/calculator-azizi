@@ -2,11 +2,6 @@
 
 var xValues = [2027, 2032, 2037, 2042];
 const ctx = document.getElementById('myChart');
-const str1 = "Developed by - "
-const dev = "Anupam Mondal";
-const dev_url = "https://anupammondal.in";
-console.log(str1, dev);
-console.log(dev_url);
 const myChart = new Chart(ctx, {
     type: "line",
     data: {
@@ -27,7 +22,13 @@ const myChart = new Chart(ctx, {
         legend: { display: true }
     }
 });
-
+const dtlsDev = () => {
+    const str1 = "Developed by - ";
+    const dev = "Anupam Mondal";
+    const dev_url = "https://anupammondal.in";
+    console.log(str1, dev);
+    console.log(dev_url);
+}
 const firstCalculate = () => {
 
     const x = document.getElementById("buy_val").value;
@@ -302,3 +303,4 @@ const lastCalculate = () => {
     })
 
 }
+document.body.onload = dtlsDev;
