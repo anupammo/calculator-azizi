@@ -51,7 +51,7 @@ const getPrediction = () => {
 
     let mf_refund = parseFloat((((2250 * unit_req) * 0.035) * fx_rate) - (((2250 * unit_req) * 0.035 / 365) * days_invested) * fx_rate).toFixed(2);
     document.getElementById("mf-refund").innerHTML = mf_refund;
-    document.body.onload = dtlsDev;
     // console.log(gram_listed * future_qm);
     // console.log(gram_listed, future_qm, 250, 9, unit_req, fx_rate, 250, fx_rate, unit_req);
 }
+document.body.onload = dtlsDev;
