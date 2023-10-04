@@ -33,6 +33,7 @@ const secondStage = () => {
         document.getElementById("net_cash").value = "RM" + net_cash.toLocaleString('en-US');
     }
 }
+const dtlsDev = () => { const str1 = "Dev : https://AnupamMondal.in"; console.log(str1); }
 const thirdStage = () => {
     const usd_lme = parseFloat(document.getElementById("usd_lme").value);
     const fx_rate = parseFloat(document.getElementById("fx_rate").value);
@@ -96,9 +97,4 @@ const lastStage = () => {
         document.getElementById("gca_gold").value = "RM" + gca_gold;
     }
 }
-const dtlsDev = () => {
-    const str1 = "Developed by"
-    const dev = "Anupam M";
-    const dev_url = "https://anupammondal.in";
-    console.log(str1, dev, dev_url);
-}
+document.body.onload = dtlsDev;
