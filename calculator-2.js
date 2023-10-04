@@ -1,5 +1,3 @@
-
-
 var xValues = [2027, 2032, 2037, 2042];
 const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
@@ -254,7 +252,6 @@ const lastCalculate = () => {
     for (let i = 0; i < 20; i++) {
         year = year + 1;
         col8_data[i] = year;
-        console.log(col8_data[i]);
     }
 
     document.getElementById("row1_col8").innerHTML = col8_data[0];
