@@ -21,13 +21,8 @@ const getCalculate = () => {
     let in_myr = parseFloat(current_gae * fx_rate).toFixed(2);
     document.getElementById("in-myr").innerHTML = in_myr;
 }
-const dtlsDev = () => {
-    const str1 = "Developed by - "
-    const dev = "Anupam Mondal";
-    const dev_url = "https://anupammondal.in";
-    console.log(str1, dev);
-    console.log(dev_url);
-}
+
+const dtlsDev = () => { const str1 = "Dev : https://AnupamMondal.in"; console.log(str1); }
 const getPrediction = () => {
     let prediction_gain = parseInt(document.getElementById("prediction-gain").value);
     let days_invested = parseInt(document.getElementById("days-invested").value);

@@ -21,14 +21,8 @@ const myChart = new Chart(ctx, {
     options: {
         legend: { display: true }
     }
-});
-const dtlsDev = () => {
-    const str1 = "Developed by - ";
-    const dev = "Anupam Mondal";
-    const dev_url = "https://anupammondal.in";
-    console.log(str1, dev);
-    console.log(dev_url);
-}
+})
+const dtlsDev = () => { const str1 = "Dev : https://AnupamMondal.in"; console.log(str1); }
 const firstCalculate = () => {
 
     const x = document.getElementById("buy_val").value;
@@ -43,7 +37,6 @@ const firstCalculate = () => {
         let sell_val = document.getElementById("sell_val").value = parseFloat(buy_val * 1.07).toFixed(2);
     }
 }
-
 const lastCalculate = () => {
 
     const x = document.getElementById("sell_val").value;

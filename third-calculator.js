@@ -107,13 +107,7 @@ const firstCalculate = () => {
         document.getElementById('btn_calc').setAttribute('onclick', 'reloadValid()');
     }
 }
-const dtlsDev = () => {
-    const str1 = "Developed by - ";
-    const dev = "Anupam Mondal";
-    const dev_url = "https://anupammondal.in";
-    console.log(str1, dev);
-    console.log(dev_url);
-}
+const dtlsDev = () => { const str1 = "Dev : https://AnupamMondal.in"; console.log(str1); }
 const reloadValid = () => {
     location.reload (alert("You need to insert fresh value for Calculation !!"));
 }
