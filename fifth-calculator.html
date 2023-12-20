@@ -73,7 +73,7 @@
     </style>
 </head>
 
-<body onload="">
+<body onload="stepOne()">
     <header class="parallax bg-style pb-5">
         <nav class="navbar navbar-expand-lg navbar-dark mb-5">
             <div class="container">
@@ -132,15 +132,19 @@
             <div class="row">
                 <div class="col-md-4 col-12"></div>
                 <div class="col-md-4 col-12">
-                    <div class="card my-3">
+                    <div class="card bg-primary my-3">
                         <div class="card-body">
                             <form action="" class="my-4">
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text" class="form-control shadow-none" placeholder="%" value="8">
+                                        <label class="form-label text-white">Growth Rate %</label>
+                                        <input type="text" class="form-control shadow-none" placeholder="8" value="8"
+                                            id="gold-growth">
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control shadow-none" placeholder="%" value="3">
+                                        <label class="form-label text-white">Inflation Rate %</label>
+                                        <input type="text" class="form-control shadow-none" placeholder="3" value="3"
+                                            id="inflation-rate">
                                     </div>
                                 </div>
                             </form>
@@ -156,11 +160,11 @@
                     <div class="card shadow-none mb-3">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table lead fs-6">
+                                <table class="table lead fs-6" id="ftbl">
                                     <thead>
                                         <tr>
                                             <th scope="col">Year</th>
-                                            <th scope="col">2003</th>
+                                            <th scope="col">2023</th>
                                             <th scope="col">2024</th>
                                             <th scope="col">2025</th>
                                             <th scope="col">2026</th>
@@ -171,40 +175,40 @@
                                         <tr>
                                             <th scope="row">Gold Spot Price</th>
                                             <td>$
-                                                <input type="text" class="form-control shadow-none border-0 w-25 d-inline" value="64.20">
+                                                <input type="text" id="goldSpotPrice" value="64.20" style="width:80px;"
+                                                    class="form-control shadow-none d-inline border-0 p-0">
                                             </td>
-                                            <!-- <td class="bg-warning">$64.200</td> -->
-                                            <td>$69.34</td>
-                                            <td>RM4.821</td>
-                                            <td>RM334.30</td>
-                                            <td>RM357.70</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">USD - MYR FX Rate</th>
-                                            <!-- <td class="bg-warning">RM4.681</td> -->
                                             <td>RM
-                                                <input type="text" class="form-control shadow-none border-0 w-25 d-inline" value="64.20">
+                                                <input type="text" id="fxrateUsdMyr" value="4.681" style="width:80px;"
+                                                    class="form-control shadow-none d-inline border-0 p-0">
                                             </td>
-                                            <td>$74.88</td>
-                                            <td>RM4.966</td>
-                                            <td>RM371.87</td>
-                                            <td>RM397.91</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">QM BUY - RM</th>
-                                            <td>RM300.52</td>
-                                            <td>$80.87</td>
-                                            <td>RM5.115</td>
-                                            <td>RM413.67</td>
-                                            <td>RM442.63</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">QM SELL - RM</th>
-                                            <td>RM321.56</td>
-                                            <td>$87.34</td>
-                                            <td>RM5.269</td>
-                                            <td>RM460.17</td>
-                                            <td>RM492.38</td>
+                                            <th scope="row" class="border-0">QM SELL - RM</th>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -485,7 +489,6 @@
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
     <script src="fifth-calculator.js"></script>
-
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script> -->
