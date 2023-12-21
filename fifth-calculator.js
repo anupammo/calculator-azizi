@@ -54,4 +54,66 @@ function stepOne() {
 
     // Console output
     // console.log("Hi");
+    let sb1, sb2, sb3, sb4, sb5, sb6, sb7, sb8, sb9, sb10, sb11, sb12;
+    let hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8, hb9, hb10, hb11, hb12;
+    let nilai1, nilai2, nilai3, nilai4, nilai5, nilai6, nilai7, nilai8, nilai9, nilai10, nilai11, nilai12;
+    let vfs1, vfs2, vfs3, vfs4, vfs5, vfs6, vfs7, vfs8, vfs9, vfs10, vfs11, vfs12;
+    let hg1, hg2, hg3, hg4, hg5, hg6, hg7, hg8, hg9, hg10, hg11, hg12;
+    let mfone1, mfone2, mfone3, mfone4, mfone5, mfone6, mfone7, mfone8, mfone9, mfone10, mfone11, mfone12;
+    let mftwo1, mftwo2, mftwo3, mftwo4, mftwo5, mftwo6, mftwo7, mftwo8, mftwo9, mftwo10, mftwo11, mftwo12;
+    let mft1, mft2, mft3, mft4, mft5, mft6, mft7, mft8, mft9, mft10, mft11, mft12;
+    let mffour1, mffour2, mffour3, mffour4, mffour5, mffour6, mffour7, mffour8, mffour9, mffour10, mffour11, mffour12;
+    let mffive1, mffive2, mffive3, mffive4, mffive5, mffive6, mffive7, mffive8, mffive9, mffive10, mffive11, mffive12;
+    let mftotal1, mftotal2, mftotal3, mftotal4, mftotal5, mftotal6, mftotal7, mftotal8, mftotal9, mftotal10, mftotal11, mftotal12;
+    let np1, np2, np3, np4, np5, np6, np7, np8, np9, np10, np11, np12;
+    let gain1, gain2, gain3, gain4, gain5, gain6, gain7, gain8, gain9, gain10, gain11, gain12;
+    let tgain1, tgain2, tgain3, tgain4, tgain5, tgain6, tgain7, tgain8, tgain9, tgain10, tgain11, tgain12;
+    const stbl = document.getElementById("stbl");
+    const mfr = .035;
+    const p85 = .85;
+    const p9 = .09;
+    sb1 = parseInt(document.getElementById("month1").value);
+    hb1 = (sb1 / qmSellRM2023);
+    stbl.rows[4].cells[2].innerHTML = (hb1).toFixed(4) + "g";
+
+    nilai1 = (sb1 * p85);
+    stbl.rows[4].cells[3].innerHTML = "RM" + (nilai1);
+
+    vfs1 = (sb1 - nilai1);
+    stbl.rows[4].cells[4].innerHTML = "RM" + (vfs1);
+
+    hg1 = (hb1 * p9);
+    stbl.rows[4].cells[5].innerHTML = (hg1).toFixed(4) + "g";
+
+    mfone1 = (((nilai1 * mfr) / 12) * 12);
+    stbl.rows[4].cells[6].innerHTML = "RM" + (mfone1).toFixed(0);
+
+    mftwo1 = (nilai1 * mfr);
+    stbl.rows[4].cells[7].innerHTML = "RM" + (mftwo1).toFixed(0);
+
+    mft1 = (nilai1 * mfr);
+    stbl.rows[4].cells[8].innerHTML = "RM" + (mft1).toFixed(0);
+
+    mffour1 = (nilai1 * mfr);
+    stbl.rows[4].cells[9].innerHTML = "RM" + (mffour1).toFixed(0);
+
+    mffive1 = (nilai1 * mfr);
+    stbl.rows[4].cells[10].innerHTML = "RM" + (mffive1).toFixed(0);
+
+    mftotal1 = (mfone1 + mftwo1 + mft1 + mffour1 + mffive1);
+    stbl.rows[4].cells[11].innerHTML = "RM" + (mftotal1).toFixed(0);
+
+    np1 = (hg1 * qmBuyRM2027);
+    stbl.rows[4].cells[12].innerHTML = "RM" + (np1).toFixed(2);
+
+    gain1 = ((hb1 * qmBuyRM2027) - nilai1);
+    stbl.rows[4].cells[13].innerHTML = "RM" + (gain1).toFixed(2);
+
+    tgain1 = ((np1 + gain1) - mftotal1);
+    stbl.rows[4].cells[14].innerHTML = "RM" + (tgain1).toFixed(2);
+
+
+    // Console output
+    console.log('https://nivesguru.in');
+    console.log('https://anupammondal.in');
 }
