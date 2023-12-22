@@ -132,21 +132,26 @@
             <div class="row">
                 <div class="col-md-4 col-12"></div>
                 <div class="col-md-4 col-12">
-                    <div class="card bg-primary my-3">
+                    <div class="card border-warning my-3">
                         <div class="card-body">
-                            <form action="" class="my-4">
+                            <form action="">
                                 <div class="row">
                                     <div class="col">
-                                        <label class="form-label text-white">Growth Rate %</label>
-                                        <input type="text" class="form-control shadow-none" placeholder="8" value="8"
-                                            id="gold-growth" onchange="clickOne()">
+                                        <label class="form-label">Growth Rate %</label>
+                                        <input type="text" class="form-control shadow-none bg-warning" placeholder="8"
+                                            value="8" id="gold-growth" onchange="clickOne()">
                                     </div>
                                     <div class="col">
-                                        <label class="form-label text-white">Inflation Rate %</label>
-                                        <input type="text" class="form-control shadow-none" placeholder="3" value="3"
-                                            id="inflation-rate" onchange="clickTwo()">
+                                        <label class="form-label">Inflation Rate %</label>
+                                        <input type="text" class="form-control shadow-none bg-warning" placeholder="3"
+                                            value="3" id="inflation-rate" onchange="clickTwo()">
                                     </div>
                                 </div>
+                                <!-- <div class="text-center">
+                                    <button type="button" id="btn1" onclick="clickOne()"
+                                        class="btn rounded-pill btn-outline-success px-4 mt-4">KIRA
+                                        ANGGARAN</button>
+                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -174,9 +179,9 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row">Gold Spot Price</th>
-                                            <td>$
-                                                <input type="text" id="goldSpotPrice" value="64.20" style="width:80px;"
-                                                    class="form-control shadow-none d-inline border-0 p-0">
+                                            <td class="bg-warning rounded">$
+                                                <input type="text" id="goldSpotPrice" value="64.20" style="width:70px;"
+                                                    class="form-control shadow-none d-inline bg-warning rounded border-0 p-0">
                                             </td>
                                             <td></td>
                                             <td></td>
@@ -185,9 +190,9 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">USD - MYR FX Rate</th>
-                                            <td>RM
-                                                <input type="text" id="fxrateUsdMyr" value="4.681" style="width:80px;"
-                                                    class="form-control shadow-none d-inline border-0 p-0">
+                                            <td class="bg-warning rounded">RM
+                                                <input type="text" id="fxrateUsdMyr" value="4.681" style="width:70px;"
+                                                    class="form-control shadow-none d-inline bg-warning border-0 p-0">
                                             </td>
                                             <td></td>
                                             <td></td>
@@ -213,6 +218,11 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <!-- <div class="text-center">
+                                <button type="button" id="btn2" onclick="clickTwo()"
+                                    class="btn rounded-pill btn-outline-success px-4 mt-3">KIRA
+                                    ANGGARAN</button>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -233,28 +243,28 @@
                                             <th scope="col" rowspan="4">NILAI CONVERT 85%</th>
                                             <th scope="col" rowspan="4">Value Force Saving</th>
                                             <th scope="col" rowspan="3">9% in holding</th>
-                                            <th scope="col" colspan="5" class="text-center">Year</th>
+                                            <th scope="col" colspan="5" class="text-center d-none">Year</th>
                                         </tr>
                                         <tr>
-                                            <th scope="col">1</th>
-                                            <th scope="col">2</th>
-                                            <th scope="col">3</th>
-                                            <th scope="col">4</th>
-                                            <th scope="col">5</th>
+                                            <th scope="col" class="d-none">1</th>
+                                            <th scope="col" class="d-none">2</th>
+                                            <th scope="col" class="d-none">3</th>
+                                            <th scope="col" class="d-none">4</th>
+                                            <th scope="col" class="d-none">5</th>
                                         </tr>
                                         <tr>
-                                            <th scope="col" colspan="5" class="text-center">MF</th>
-                                            <th scope="col">MF</th>
+                                            <th scope="col" colspan="5" class="text-center d-none">MF</th>
+                                            <th scope="col" class="d-none">MF</th>
                                             <th scope="col" colspan="2">GOLD Value</th>
                                         </tr>
                                         <tr>
                                             <th scope="col">GOLD</th>
-                                            <th scope="col">3.5%</th>
-                                            <th scope="col">3.5%</th>
-                                            <th scope="col">3.5%</th>
-                                            <th scope="col">3.5%</th>
-                                            <th scope="col">3.5%</th>
-                                            <th scope="col">Total</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col">MF Total</th>
                                             <th scope="col" rowspan="2">9% new price</th>
                                             <th scope="col" rowspan="2">91% Gain</th>
                                             <th scope="col" rowspan="4">9% + Gain</th>
@@ -263,19 +273,19 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row">1</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month1" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -284,19 +294,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month2" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -305,19 +315,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">3</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month3" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -326,19 +336,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">4</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month4" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -347,19 +357,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">5</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month5" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -368,19 +378,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">6</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month6" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -389,19 +399,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">7</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month7" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -410,19 +420,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">8</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month8" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -431,19 +441,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">9</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month9" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -452,19 +462,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">10</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month10" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -473,19 +483,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">11</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month11" value="1000"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -494,19 +504,72 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">12</th>
-                                            <td class="row">
+                                            <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
                                                 <input type="text" id="month12" value="0"
-                                                    class="col form-control shadow-none border-0 p-0">
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
+                                        </tr>
+                                        <tr class="bg-light">
+                                            <th scope="row"></th>
+                                            <td class="bg-light"></td>
+                                            <td class="bg-light"></td>
+                                            <td class="bg-light"></td>
+                                            <td></td>
+                                            <td class="bg-light"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
+                                            <td class="bg-light"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" id="btn3" onclick="clickThree()"
+                                    class="btn rounded-pill btn-outline-success px-4 mt-3">KIRA ANGGARAN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table lead fs-6" id="tblt">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Simpanan Setahun</th>
+                                            <th scope="col">Convert (85 %)</th>
+                                            <th scope="col">Convert (15 %)</th>
+                                            <th scope="col">Jumlah Convert 5T</th>
+                                            <th scope="col">Simpanan Paksa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -514,21 +577,18 @@
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row"></th>
-                                            <td class="bg-light"></td>
-                                            <td class="bg-light"></td>
-                                            <td class="bg-light"></td>
+                                            <th scope="col">Jumlah Gram Sebulan</th>
                                             <td></td>
-                                            <td class="bg-light"></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <th scope="col"></th>
+                                            <th scope="col">Jumlah MF (5 Tahun)</th>
+                                            <th scope="col">Jumlah Gram</th>
+                                        </tr>
+                                        <tr>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td class="bg-light"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -543,77 +603,35 @@
                 <div class="col-12">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table" id="tblt">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Simpanan Setahun</th>
-                                        <th scope="col">Convert (85 %)</th>
-                                        <th scope="col">Convert (15 %)</th>
-                                        <th scope="col">Jumlah Convert 5T</th>
-                                        <th scope="col">Simpanan Paksa</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Jumlah Gram Sebulan</th>
-                                        <td></td>
-                                        <th scope="col"></th>
-                                        <th scope="col">Jumlah MF (5 Tahun)</th>
-                                        <th scope="col">Jumlah Gram</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table" id="tblf">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" colspan="4" class="text-center">comparison bank vs qm</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Quantum Metal force saving</td>
-                                        <td></td>
-                                        <td>for 12 month and wait 5 years</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Value saving</td>
-                                        <td></td>
-                                        <td>for 12 month only, then wait 5 years</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Perbezaan Nilai Simpanan :</td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table lead fs-6" id="tblf">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" colspan="4" class="text-center">comparison bank vs qm</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Quantum Metal force saving</td>
+                                            <td></td>
+                                            <td>for 12 month and wait 5 years</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Value saving</td>
+                                            <td></td>
+                                            <td>for 12 month only, then wait 5 years</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Perbezaan Nilai Simpanan :</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

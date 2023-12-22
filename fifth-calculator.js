@@ -439,17 +439,17 @@ function stepOne() {
 }
 
 
-function clickOne() {
-    stepOne();
-}
-
-function clickTwo() {
-    stepOne();
-}
-
-// function clickThree() {
+// function clickOne() {
 //     stepOne();
 // }
+
+// function clickTwo() {
+//     stepOne();
+// }
+
+function clickThree() {
+    stepOne();
+}
 
 // function clickFour() {
 //     stepOne();
