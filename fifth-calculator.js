@@ -437,3 +437,20 @@ function stepOne() {
     console.log('https://nivesguru.in');
     console.log('https://anupammondal.in');
 }
+
+
+function clickOne() {
+    stepOne();
+}
+
+function clickTwo() {
+    stepOne();
+}
+
+// function clickThree() {
+//     stepOne();
+// }
+
+// function clickFour() {
+//     stepOne();
+// }
