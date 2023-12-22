@@ -6,7 +6,7 @@ function stepOne() {
     let qmBuyRM2023, qmBuyRM2024, qmBuyRM2025, qmBuyRM2026, qmBuyRM2027;
     let qmSellRM2023, qmSellRM2024, qmSellRM2025, qmSellRM2026, qmSellRM2027;
     const qmSellval = 1.07;
-
+    // Table One
     const ftbl = document.getElementById("ftbl");
     goldGrowth = parseFloat(document.getElementById("gold-growth").value);
     inflationRate = parseFloat(document.getElementById("inflation-rate").value);
@@ -51,9 +51,7 @@ function stepOne() {
     ftbl.rows[4].cells[4].innerHTML = "RM " + (qmSellRM2026).toFixed(2);
     qmSellRM2027 = (qmBuyRM2027 * qmSellval);
     ftbl.rows[4].cells[5].innerHTML = "RM " + (qmSellRM2027).toFixed(2);
-
-    // Console output
-    // console.log("Hi");
+    // Table Two
     let sb1, sb2, sb3, sb4, sb5, sb6, sb7, sb8, sb9, sb10, sb11, sb12;
     let hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8, hb9, hb10, hb11, hb12;
     let nilai1, nilai2, nilai3, nilai4, nilai5, nilai6, nilai7, nilai8, nilai9, nilai10, nilai11, nilai12;
@@ -74,16 +72,16 @@ function stepOne() {
     const p9 = .09;
     sb1 = parseInt(document.getElementById("month1").value);
     sb2 = parseInt(document.getElementById("month2").value);
-    sb3 = parseInt(document.getElementById("month2").value);
-    sb4 = parseInt(document.getElementById("month2").value);
-    sb5 = parseInt(document.getElementById("month2").value);
-    sb6 = parseInt(document.getElementById("month2").value);
-    sb7 = parseInt(document.getElementById("month2").value);
-    sb8 = parseInt(document.getElementById("month2").value);
-    sb9 = parseInt(document.getElementById("month2").value);
-    sb10 = parseInt(document.getElementById("month2").value);
-    sb11 = parseInt(document.getElementById("month2").value);
-    sb12 = parseInt(document.getElementById("month2").value);
+    sb3 = parseInt(document.getElementById("month3").value);
+    sb4 = parseInt(document.getElementById("month4").value);
+    sb5 = parseInt(document.getElementById("month5").value);
+    sb6 = parseInt(document.getElementById("month5").value);
+    sb7 = parseInt(document.getElementById("month7").value);
+    sb8 = parseInt(document.getElementById("month8").value);
+    sb9 = parseInt(document.getElementById("month9").value);
+    sb10 = parseInt(document.getElementById("month10").value);
+    sb11 = parseInt(document.getElementById("month11").value);
+    sb12 = parseInt(document.getElementById("month12").value);
     // Coloumn : Saving 
     hb1 = (sb1 / qmSellRM2023);
     stbl.rows[4].cells[2].innerHTML = (hb1).toFixed(4) + "g";
@@ -137,27 +135,27 @@ function stepOne() {
     // Coloumn : NILAI CONVERT 85% 
     vfs1 = (sb1 - nilai1);
     stbl.rows[4].cells[4].innerHTML = "RM" + (vfs1);
-    vfs2 = (sb2 - nilai1);
+    vfs2 = (sb2 - nilai2);
     stbl.rows[5].cells[4].innerHTML = "RM" + (vfs2);
-    vfs3 = (sb3 - nilai1);
+    vfs3 = (sb3 - nilai3);
     stbl.rows[6].cells[4].innerHTML = "RM" + (vfs3);
-    vfs4 = (sb4 - nilai1);
+    vfs4 = (sb4 - nilai4);
     stbl.rows[7].cells[4].innerHTML = "RM" + (vfs4);
-    vfs5 = (sb5 - nilai1);
+    vfs5 = (sb5 - nilai5);
     stbl.rows[8].cells[4].innerHTML = "RM" + (vfs5);
-    vfs6 = (sb6 - nilai1);
+    vfs6 = (sb6 - nilai6);
     stbl.rows[9].cells[4].innerHTML = "RM" + (vfs6);
-    vfs7 = (sb7 - nilai1);
+    vfs7 = (sb7 - nilai7);
     stbl.rows[10].cells[4].innerHTML = "RM" + (vfs7);
-    vfs8 = (sb8 - nilai1);
+    vfs8 = (sb8 - nilai8);
     stbl.rows[11].cells[4].innerHTML = "RM" + (vfs8);
-    vfs9 = (sb9 - nilai1);
+    vfs9 = (sb9 - nilai9);
     stbl.rows[12].cells[4].innerHTML = "RM" + (vfs9);
-    vfs10 = (sb10 - nilai1);
+    vfs10 = (sb10 - nilai10);
     stbl.rows[13].cells[4].innerHTML = "RM" + (vfs10);
-    vfs11 = (sb11 - nilai1);
+    vfs11 = (sb11 - nilai11);
     stbl.rows[14].cells[4].innerHTML = "RM" + (vfs11);
-    vfs12 = (sb12 - nilai1);
+    vfs12 = (sb12 - nilai12);
     stbl.rows[15].cells[4].innerHTML = "RM" + (vfs12);
     // Coloumn : 9% in holding GOLD
     hg1 = (hb1 * p9);
@@ -187,27 +185,27 @@ function stepOne() {
     // Coloumn : MF 3.5% Year 1
     mfone1 = (((nilai1 * mfr) / 12) * 12);
     stbl.rows[4].cells[6].innerHTML = "RM" + (mfone1).toFixed(0);
-    mfone2 = (((nilai2 * mfr) / 12) * 12);
+    mfone2 = (((nilai2 * mfr) / 12) * 11);
     stbl.rows[5].cells[6].innerHTML = "RM" + (mfone2).toFixed(0);
-    mfone3 = (((nilai3 * mfr) / 12) * 12);
+    mfone3 = (((nilai3 * mfr) / 12) * 10);
     stbl.rows[6].cells[6].innerHTML = "RM" + (mfone3).toFixed(0);
-    mfone4 = (((nilai4 * mfr) / 12) * 12);
+    mfone4 = (((nilai4 * mfr) / 12) * 9);
     stbl.rows[7].cells[6].innerHTML = "RM" + (mfone4).toFixed(0);
-    mfone5 = (((nilai5 * mfr) / 12) * 12);
+    mfone5 = (((nilai5 * mfr) / 12) * 8);
     stbl.rows[8].cells[6].innerHTML = "RM" + (mfone5).toFixed(0);
-    mfone6 = (((nilai6 * mfr) / 12) * 12);
+    mfone6 = (((nilai6 * mfr) / 12) * 7);
     stbl.rows[9].cells[6].innerHTML = "RM" + (mfone6).toFixed(0);
-    mfone7 = (((nilai7 * mfr) / 12) * 12);
+    mfone7 = (((nilai7 * mfr) / 12) * 6);
     stbl.rows[10].cells[6].innerHTML = "RM" + (mfone7).toFixed(0);
-    mfone8 = (((nilai8 * mfr) / 12) * 12);
+    mfone8 = (((nilai8 * mfr) / 12) * 5);
     stbl.rows[11].cells[6].innerHTML = "RM" + (mfone8).toFixed(0);
-    mfone9 = (((nilai9 * mfr) / 12) * 12);
+    mfone9 = (((nilai9 * mfr) / 12) * 4);
     stbl.rows[12].cells[6].innerHTML = "RM" + (mfone9).toFixed(0);
-    mfone10 = (((nilai10 * mfr) / 12) * 12);
+    mfone10 = (((nilai10 * mfr) / 12) * 3);
     stbl.rows[13].cells[6].innerHTML = "RM" + (mfone10).toFixed(0);
-    mfone11 = (((nilai11 * mfr) / 12) * 12);
+    mfone11 = (((nilai11 * mfr) / 12) * 2);
     stbl.rows[14].cells[6].innerHTML = "RM" + (mfone11).toFixed(0);
-    mfone12 = (((nilai12 * mfr) / 12) * 12);
+    mfone12 = (((nilai12 * mfr) / 12) * 1);
     stbl.rows[15].cells[6].innerHTML = "RM" + (mfone12).toFixed(0);
     // Coloumn : MF 3.5% Year 2
     mftwo1 = (nilai1 * mfr);
@@ -409,6 +407,30 @@ function stepOne() {
     stbl.rows[14].cells[14].innerHTML = "RM" + (tgain11).toFixed(2);
     tgain12 = ((np12 + gain12) - mftotal12);
     stbl.rows[15].cells[14].innerHTML = "RM" + (tgain12).toFixed(2);
+
+
+    stbl.rows[16].cells[1].innerHTML = "RM" + (sb1 + sb2 + sb3 + sb4 + sb5 + sb6 + sb7 + sb8 + sb9 + sb10 + sb11 + sb12);
+    stbl.rows[16].cells[2].innerHTML = (hb1 + hb2 + hb3 + hb4 + hb5 + hb6 + hb7 + hb8 + hb9 + hb10 + hb11 + hb12).toFixed(4) + "g";
+    stbl.rows[16].cells[3].innerHTML = "RM" + (nilai1 + nilai2 + nilai3 + nilai4 + nilai5 + nilai6 + nilai7 + nilai8 + nilai9 + nilai10 + nilai11 + nilai12);
+    stbl.rows[16].cells[5].innerHTML = (hg1 + hg2 + hg3 + hg4 + hg5 + hg6 + hg7 + hg8 + hg9 + hg10 + hg11 + hg12).toFixed(4) + "g";
+    stbl.rows[16].cells[14].innerHTML = "RM" + (tgain1 + tgain2 + tgain3 + tgain4 + tgain5 + tgain6 + tgain7 + tgain8 + tgain9 + tgain10 + tgain11 + tgain12).toFixed(2);
+
+    const tblt = document.getElementById("tblt");
+    tblt.rows[1].cells[0].innerHTML = "RM" + (sb1 + sb2 + sb3 + sb4 + sb5 + sb6 + sb7 + sb8 + sb9 + sb10 + sb11 + sb12).toFixed(2);
+    tblt.rows[1].cells[1].innerHTML = "RM" + (nilai1);
+    tblt.rows[1].cells[2].innerHTML = "RM" + (sb1 - nilai1);
+    tblt.rows[1].cells[3].innerHTML = "RM" + (sb1 + sb2 + sb3 + sb4 + sb5 + sb6 + sb7 + sb8 + sb9 + sb10 + sb11 + sb12).toFixed(0);
+    tblt.rows[1].cells[4].innerHTML = "RM" + (vfs1 + vfs2 + vfs3 + vfs4 + vfs5 + vfs6 + vfs7 + vfs8 + vfs9 + vfs10 + vfs11 + vfs12).toFixed(2);
+    tblt.rows[3].cells[0].innerHTML = (nilai1) + "g";
+    tblt.rows[3].cells[3].innerHTML = "RM" + (mftotal1 + mftotal2 + mftotal3 + mftotal4 + mftotal5 + mftotal6 + mftotal7 + mftotal8 + mftotal9 + mftotal10 + mftotal11 + mftotal12).toFixed(0);
+    tblt.rows[3].cells[4].innerHTML = (hb1 + hb2 + hb3 + hb4 + hb5 + hb6 + hb7 + hb8 + hb9 + hb10 + hb11 + hb12).toFixed(4) + "g";
+
+    const tblf = document.getElementById("tblf");
+    tblf.rows[1].cells[1].innerHTML = "RM" + (sb1 - nilai1);
+    tblf.rows[1].cells[3].innerHTML = "RM" + (tgain1 + tgain2 + tgain3 + tgain4 + tgain5 + tgain6 + tgain7 + tgain8 + tgain9 + tgain10 + tgain11 + tgain12).toFixed(2);
+    tblf.rows[2].cells[1].innerHTML = "RM" + (sb1 - nilai1);
+    tblf.rows[2].cells[3].innerHTML = "RM" + ((sb1 - nilai1) * 12).toFixed(2);
+    tblf.rows[3].cells[3].innerHTML = "RM" + (((tgain1 + tgain2 + tgain3 + tgain4 + tgain5 + tgain6 + tgain7 + tgain8 + tgain9 + tgain10 + tgain11 + tgain12))-((sb1 - nilai1) * 12)).toFixed(2);
 
 
     // Console output
