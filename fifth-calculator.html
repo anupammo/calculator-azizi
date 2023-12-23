@@ -139,7 +139,7 @@
                                     <div class="col">
                                         <label class="form-label">Growth Rate %</label>
                                         <input type="text" class="form-control shadow-none bg-warning" placeholder="8"
-                                            value="8" id="gold-growth" onchange="clickOne()">
+                                            value="8" id="gold-growth" onchange="stepOne()">
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Inflation Rate %</label>
@@ -148,7 +148,7 @@
                                     </div>
                                 </div>
                                 <!-- <div class="text-center">
-                                    <button type="button" id="btn1" onclick="clickOne()"
+                                    <button type="button" id="btn1" onclick="stepOne()"
                                         class="btn rounded-pill btn-outline-success px-4 mt-4">KIRA
                                         ANGGARAN</button>
                                 </div> -->
@@ -181,6 +181,7 @@
                                             <th scope="row">Gold Spot Price</th>
                                             <td class="bg-warning rounded">$
                                                 <input type="text" id="goldSpotPrice" value="64.20" style="width:70px;"
+                                                    onclick="stepOne()"
                                                     class="form-control shadow-none d-inline bg-warning rounded border-0 p-0">
                                             </td>
                                             <td></td>
@@ -192,6 +193,7 @@
                                             <th scope="row">USD - MYR FX Rate</th>
                                             <td class="bg-warning rounded">RM
                                                 <input type="text" id="fxrateUsdMyr" value="4.681" style="width:70px;"
+                                                    onclick="stepOne()"
                                                     class="form-control shadow-none d-inline bg-warning border-0 p-0">
                                             </td>
                                             <td></td>
@@ -275,7 +277,7 @@
                                             <th scope="row">1</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month1" value="1000"
+                                                <input type="text" id="month1" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -296,7 +298,7 @@
                                             <th scope="row">2</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month2" value="1000"
+                                                <input type="text" id="month2" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -317,7 +319,7 @@
                                             <th scope="row">3</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month3" value="1000"
+                                                <input type="text" id="month3" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -338,7 +340,7 @@
                                             <th scope="row">4</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month4" value="1000"
+                                                <input type="text" id="month4" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -359,7 +361,7 @@
                                             <th scope="row">5</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month5" value="1000"
+                                                <input type="text" id="month5" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -380,7 +382,7 @@
                                             <th scope="row">6</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month6" value="1000"
+                                                <input type="text" id="month6" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -401,7 +403,7 @@
                                             <th scope="row">7</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month7" value="1000"
+                                                <input type="text" id="month7" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -422,7 +424,7 @@
                                             <th scope="row">8</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month8" value="1000"
+                                                <input type="text" id="month8" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -443,7 +445,7 @@
                                             <th scope="row">9</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month9" value="1000"
+                                                <input type="text" id="month9" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -464,7 +466,7 @@
                                             <th scope="row">10</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month10" value="1000"
+                                                <input type="text" id="month10" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -485,7 +487,7 @@
                                             <th scope="row">11</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month11" value="1000"
+                                                <input type="text" id="month11" value="1000" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -506,7 +508,7 @@
                                             <th scope="row">12</th>
                                             <td class="row bg-warning rounded">
                                                 <span class="col text-end px-0">RM</span>
-                                                <input type="text" id="month12" value="0"
+                                                <input type="text" id="month12" value="0" onclick="stepOne()" 
                                                     class="col form-control shadow-none bg-warning border-0 p-0">
                                             </td>
                                             <td class="ps-3"></td>
@@ -545,7 +547,8 @@
                             </div>
                             <div class="text-center">
                                 <button type="button" id="btn3" onclick="stepOne()"
-                                    class="btn btn-outline-success rounded-pill shadow-none px-4 mt-3">KIRA ANGGARAN</button>
+                                    class="btn btn-outline-success rounded-pill shadow-none px-4 mt-3">KIRA
+                                    ANGGARAN</button>
                             </div>
                         </div>
                     </div>
