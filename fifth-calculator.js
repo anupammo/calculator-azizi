@@ -430,14 +430,13 @@ function stepOne() {
     tblf.rows[1].cells[3].innerHTML = "RM" + (tgain1 + tgain2 + tgain3 + tgain4 + tgain5 + tgain6 + tgain7 + tgain8 + tgain9 + tgain10 + tgain11 + tgain12).toFixed(2);
     tblf.rows[2].cells[1].innerHTML = "RM" + (sb1 - nilai1);
     tblf.rows[2].cells[3].innerHTML = "RM" + ((sb1 - nilai1) * 12).toFixed(2);
-    tblf.rows[3].cells[3].innerHTML = "RM" + (((tgain1 + tgain2 + tgain3 + tgain4 + tgain5 + tgain6 + tgain7 + tgain8 + tgain9 + tgain10 + tgain11 + tgain12))-((sb1 - nilai1) * 12)).toFixed(2);
+    tblf.rows[3].cells[3].innerHTML = "RM" + (((tgain1 + tgain2 + tgain3 + tgain4 + tgain5 + tgain6 + tgain7 + tgain8 + tgain9 + tgain10 + tgain11 + tgain12)) - ((sb1 - nilai1) * 12)).toFixed(2);
 
 
     // Console output
     console.log('https://nivesguru.in');
     console.log('https://anupammondal.in');
 }
-
 
 // function clickOne() {
 //     stepOne();
@@ -447,10 +446,12 @@ function stepOne() {
 //     stepOne();
 // }
 
-function clickThree() {
-    stepOne();
-}
+// function clickThree() {
+//     stepOne();
+// }
 
 // function clickFour() {
 //     stepOne();
 // }
+
+document.addEventListener('DOMContentLoaded', stepOne);
