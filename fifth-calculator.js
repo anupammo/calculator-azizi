@@ -438,5 +438,5 @@ function stepOne() {
     console.log('https://anupammondal.in');
 }
 
-document.addEventListener('DOMContentLoaded', stepOne);
-// document.body.onload = stepOne;
+// document.addEventListener('DOMContentLoaded', stepOne);
+document.body.onload = stepOne;
