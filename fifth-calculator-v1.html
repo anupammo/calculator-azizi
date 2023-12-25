@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="ms">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Gold Calculator - Azizi J</title>
+    <style>
+        /* .bg-style {
+            background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+        } */
+
+        .bg-style {
+            /* background-image: url('https://images.pexels.com/photos/321452/pexels-photo-321452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+            background-image: url(bg-img.jpeg);
+            background-size: cover;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            background-position: top;
+            animation-name: example;
+            animation-duration: 10s;
+            /* animation-delay: 1s; */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0% {
+                background-position: bottom;
+            }
+
+            100% {
+                background-position: center;
+            }
+        }
+
+        h1 span,
+        h1 a {
+            font-weight: 700 !important;
+            text-shadow: #000 0px 0px 15px;
+        }
+
+        .parallax {
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="parallax bg-style pb-5">
+        <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+            <div class="container">
+                <a class="navbar-brand" href="./">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        <path fill-rule="evenodd"
+                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    Home
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Calculators
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="first-calculator">Calculator 1</a></li>
+                                <li><a class="dropdown-item" href="gold-calculator">Calculator 2</a></li>
+                                <li><a class="dropdown-item" href="third-calculator">Calculator 3</a></li>
+                                <li><a class="dropdown-item" href="fourth-calculator">Calculator 4</a></li>
+                                <li><a class="dropdown-item" href="fifth-calculator">Calculator 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center text-white">
+                        <span class="display-3 font-bolder">Anggaran Nilai 15% NC0 dari
+                            Kemudahan GCA</span>
+                        <br>
+                        <span class="lead p">Solusi Pemulihan Ekonomi Keluarga</span>
+                        <br>
+                        <a class="lead text-white" style="text-decoration: none;"
+                            href="https://sites.google.com/moe-dl.edu.my/cikguemas/">Disediakan oleh CikguEmas.Com</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section style="margin-top: -50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12"></div>
+                <div class="col-md-4 col-12">
+                    <div class="card border-warning my-3">
+                        <div class="card-body">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="form-label">Growth Rate %</label>
+                                        <input type="text" class="form-control shadow-none bg-warning" placeholder="8"
+                                            value="8" id="gold-growth" onchange="stepOne()">
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Inflation Rate %</label>
+                                        <input type="text" class="form-control shadow-none bg-warning" placeholder="3"
+                                            value="3" id="inflation-rate" onchange="clickTwo()">
+                                    </div>
+                                </div>
+                                <!-- <div class="text-center">
+                                    <button type="button" id="btn1" onchange="stepOne()"
+                                        class="btn rounded-pill btn-outline-success px-4 mt-4">KIRA
+                                        ANGGARAN</button>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow-none mb-3">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table lead border-0 fs-6" id="ftbl">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Year</th>
+                                            <th scope="col">2023</th>
+                                            <th scope="col">2024</th>
+                                            <th scope="col">2025</th>
+                                            <th scope="col">2026</th>
+                                            <th scope="col">2027</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Gold Spot Price</th>
+                                            <td class="bg-warning rounded">$
+                                                <input type="text" id="goldSpotPrice" value="64.20" style="width:70px;"
+                                                    onchange="stepOne()"
+                                                    class="form-control shadow-none d-inline bg-warning rounded border-0 p-0">
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">USD - MYR FX Rate</th>
+                                            <td class="bg-warning rounded">RM
+                                                <input type="text" id="fxrateUsdMyr" value="4.681" style="width:70px;"
+                                                    onchange="stepOne()"
+                                                    class="form-control shadow-none d-inline bg-warning border-0 p-0">
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">QM BUY - RM</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="border-0">QM SELL - RM</th>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                            <td class="border-0"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <div class="text-center">
+                                <button type="button" id="btn2" onclick="clickTwo()"
+                                    class="btn rounded-pill btn-outline-success px-4 mt-3">KIRA
+                                    ANGGARAN</button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow-none mb-3">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table lead border-0 fs-6" id="stbl">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" rowspan="4">Month</th>
+                                            <th scope="col" rowspan="4">Saving</th>
+                                            <th scope="col" rowspan="4">100% holding</th>
+                                            <th scope="col" rowspan="4">NILAI CONVERT 85%</th>
+                                            <th scope="col" rowspan="4">Value Force Saving</th>
+                                            <th scope="col" rowspan="3">9% in holding</th>
+                                            <th scope="col" colspan="5" class="text-center d-none">Year</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" class="d-none">1</th>
+                                            <th scope="col" class="d-none">2</th>
+                                            <th scope="col" class="d-none">3</th>
+                                            <th scope="col" class="d-none">4</th>
+                                            <th scope="col" class="d-none">5</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="5" class="text-center d-none">MF</th>
+                                            <th scope="col" class="d-none">MF</th>
+                                            <th scope="col" colspan="2">GOLD Value</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">GOLD</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col" class="d-none">3.5%</th>
+                                            <th scope="col">MF Total</th>
+                                            <th scope="col" rowspan="2">9% new price</th>
+                                            <th scope="col" rowspan="2">91% Gain</th>
+                                            <th scope="col" rowspan="4">9% + Gain</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month1"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month2"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month3"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month4"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month5"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month6"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month7"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">8</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month8"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">9</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month9"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">10</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month10"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">11</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month11"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">12</th>
+                                            <td class="row bg-warning rounded">
+                                                <span class="col text-end px-0">RM</span>
+                                                <input type="text" id="month12"value="1000" onchange="stepOne()" 
+                                                    class="col form-control shadow-none bg-warning border-0 p-0">
+                                            </td>
+                                            <td class="ps-3"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="bg-light">
+                                            <th scope="row"></th>
+                                            <td class="bg-light"></td>
+                                            <td class="bg-light"></td>
+                                            <td class="bg-light"></td>
+                                            <td></td>
+                                            <td class="bg-light"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td class="d-none"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bg-light"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" id="btn3" onclick="stepOne()"
+                                    class="btn btn-outline-success rounded-pill shadow-none px-4 mt-3">KIRA
+                                    ANGGARAN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table lead border-0 fs-6" id="tblt">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Simpanan Setahun</th>
+                                            <th scope="col">Convert (85 %)</th>
+                                            <th scope="col">Convert (15 %)</th>
+                                            <th scope="col">Jumlah Convert 5T</th>
+                                            <th scope="col">Simpanan Paksa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Jumlah Gram Sebulan</th>
+                                            <td></td>
+                                            <th scope="col"></th>
+                                            <th scope="col">Jumlah MF (5 Tahun)</th>
+                                            <th scope="col">Jumlah Gram</th>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table lead border-0 fs-6" id="tblf">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" colspan="4" class="text-center">comparison bank vs qm</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Quantum Metal force saving</td>
+                                            <td></td>
+                                            <td>for 12 month and wait 5 years</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Value saving</td>
+                                            <td></td>
+                                            <td>for 12 month only, then wait 5 years</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Perbezaan Nilai Simpanan :</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center mt-3">
+                        <span class="btn rounded-pill text-white px-5">2021 © by <a
+                                href="https://anupammondal.in">Anupam M</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/anupammo/calculator-azizi@main/fifth-calculator.js"></script>
+
+</body>
+
+</html>
