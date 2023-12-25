@@ -420,7 +420,7 @@ function stepOne() {
     tblt.rows[1].cells[0].innerHTML = "RM" + (sb1 + sb2 + sb3 + sb4 + sb5 + sb6 + sb7 + sb8 + sb9 + sb10 + sb11 + sb12).toFixed(2);
     tblt.rows[1].cells[1].innerHTML = "RM" + (nilai1);
     tblt.rows[1].cells[2].innerHTML = "RM" + (sb1 - nilai1);
-    tblt.rows[1].cells[3].innerHTML = "RM" + (sb1 + sb2 + sb3 + sb4 + sb5 + sb6 + sb7 + sb8 + sb9 + sb10 + sb11 + sb12).toFixed(0);
+    tblt.rows[1].cells[3].innerHTML = "RM" + (nilai1 + nilai2 + nilai3 + nilai4 + nilai5 + nilai6 + nilai7 + nilai8 + nilai9 + nilai10 + nilai11 + nilai12).toFixed(0);
     tblt.rows[1].cells[4].innerHTML = "RM" + (vfs1 + vfs2 + vfs3 + vfs4 + vfs5 + vfs6 + vfs7 + vfs8 + vfs9 + vfs10 + vfs11 + vfs12).toFixed(2);
     tblt.rows[3].cells[0].innerHTML = (nilai1) + "g";
     tblt.rows[3].cells[3].innerHTML = "RM" + (mftotal1 + mftotal2 + mftotal3 + mftotal4 + mftotal5 + mftotal6 + mftotal7 + mftotal8 + mftotal9 + mftotal10 + mftotal11 + mftotal12).toFixed(0);
