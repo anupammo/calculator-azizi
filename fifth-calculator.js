@@ -75,7 +75,7 @@ function stepOne() {
     sb3 = parseInt(document.getElementById("month3").value);
     sb4 = parseInt(document.getElementById("month4").value);
     sb5 = parseInt(document.getElementById("month5").value);
-    sb6 = parseInt(document.getElementById("month5").value);
+    sb6 = parseInt(document.getElementById("month6").value);
     sb7 = parseInt(document.getElementById("month7").value);
     sb8 = parseInt(document.getElementById("month8").value);
     sb9 = parseInt(document.getElementById("month9").value);
@@ -84,6 +84,7 @@ function stepOne() {
     sb12 = parseInt(document.getElementById("month12").value);
     // Coloumn : Saving 
     hb1 = (sb1 / qmSellRM2023);
+    console.log(sb1, qmSellRM2023);
     stbl.rows[4].cells[2].innerHTML = (hb1).toFixed(4) + "g";
     hb2 = (sb2 / qmSellRM2023);
     stbl.rows[5].cells[2].innerHTML = (hb2).toFixed(4) + "g";
@@ -134,29 +135,29 @@ function stepOne() {
     stbl.rows[15].cells[3].innerHTML = "RM" + (nilai12);
     // Coloumn : NILAI CONVERT 85% 
     vfs1 = (sb1 - nilai1);
-    stbl.rows[4].cells[4].innerHTML = "RM" + (vfs1);
+    stbl.rows[4].cells[4].innerHTML = "RM" + (vfs1).toFixed(1);
     vfs2 = (sb2 - nilai2);
-    stbl.rows[5].cells[4].innerHTML = "RM" + (vfs2);
+    stbl.rows[5].cells[4].innerHTML = "RM" + (vfs2).toFixed(1);
     vfs3 = (sb3 - nilai3);
-    stbl.rows[6].cells[4].innerHTML = "RM" + (vfs3);
+    stbl.rows[6].cells[4].innerHTML = "RM" + (vfs3).toFixed(1);
     vfs4 = (sb4 - nilai4);
-    stbl.rows[7].cells[4].innerHTML = "RM" + (vfs4);
+    stbl.rows[7].cells[4].innerHTML = "RM" + (vfs4).toFixed(1);
     vfs5 = (sb5 - nilai5);
-    stbl.rows[8].cells[4].innerHTML = "RM" + (vfs5);
+    stbl.rows[8].cells[4].innerHTML = "RM" + (vfs5).toFixed(1);
     vfs6 = (sb6 - nilai6);
-    stbl.rows[9].cells[4].innerHTML = "RM" + (vfs6);
+    stbl.rows[9].cells[4].innerHTML = "RM" + (vfs6).toFixed(1);
     vfs7 = (sb7 - nilai7);
-    stbl.rows[10].cells[4].innerHTML = "RM" + (vfs7);
+    stbl.rows[10].cells[4].innerHTML = "RM" + (vfs7).toFixed(1);
     vfs8 = (sb8 - nilai8);
-    stbl.rows[11].cells[4].innerHTML = "RM" + (vfs8);
+    stbl.rows[11].cells[4].innerHTML = "RM" + (vfs8).toFixed(1);
     vfs9 = (sb9 - nilai9);
-    stbl.rows[12].cells[4].innerHTML = "RM" + (vfs9);
+    stbl.rows[12].cells[4].innerHTML = "RM" + (vfs9).toFixed(1);
     vfs10 = (sb10 - nilai10);
-    stbl.rows[13].cells[4].innerHTML = "RM" + (vfs10);
+    stbl.rows[13].cells[4].innerHTML = "RM" + (vfs10).toFixed(1);
     vfs11 = (sb11 - nilai11);
-    stbl.rows[14].cells[4].innerHTML = "RM" + (vfs11);
+    stbl.rows[14].cells[4].innerHTML = "RM" + (vfs11).toFixed(1);
     vfs12 = (sb12 - nilai12);
-    stbl.rows[15].cells[4].innerHTML = "RM" + (vfs12);
+    stbl.rows[15].cells[4].innerHTML = "RM" + (vfs12).toFixed(1);
     // Coloumn : 9% in holding GOLD
     hg1 = (hb1 * p9);
     stbl.rows[4].cells[5].innerHTML = (hg1).toFixed(4) + "g";
@@ -438,5 +439,4 @@ function stepOne() {
     console.log('https://anupammondal.in');
 }
 
-// document.addEventListener('DOMContentLoaded', stepOne);
 document.body.onload = stepOne;
