@@ -30,6 +30,10 @@
 
     <title>Gold Calculator - Azizi J</title>
     <style>
+        .tradingview-widget-copyright a span {
+            display: none;
+        }
+
         /* .bg-style {
             background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
         } */
@@ -75,6 +79,52 @@
 
 <body>
     <header class="parallax bg-style pb-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 px-0">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/"
+                                rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on
+                                    TradingView</span></a></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                                {
+                                    "symbols": [
+                                        {
+                                            "description": "Gold",
+                                            "proName": "COMEX:GC1!"
+                                        },
+                                        {
+                                            "description": "Silver",
+                                            "proName": "COMEX:SI1!"
+                                        },
+                                        {
+                                            "description": "Platinum",
+                                            "proName": "NYMEX:PL1!"
+                                        },
+                                        {
+                                            "description": "Copper",
+                                            "proName": "COMEX:HG1!"
+                                        },
+                                        {
+                                            "description": "Palladium",
+                                            "proName": "NYMEX:PA1!"
+                                        }
+                                    ],
+                                        "showSymbolLogo": true,
+                                            "isTransparent": false,
+                                                "displayMode": "adaptive",
+                                                    "colorTheme": "light",
+                                                        "locale": "in"
+                                }
+                            </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark mb-5">
             <div class="container">
                 <a class="navbar-brand" href="./">
@@ -139,12 +189,12 @@
                                 <div class="mb-3">
                                     <label class="form-label">LME Current Price</label>
                                     <input type="text" class="form-control shadow-none bg-warning" placeholder="8"
-                                        value="63" id="gold-growth" onchange="stepOne()">
+                                        value="63" id="lme-cprice" onchange="lmeCPrice()">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Masukkan FX Rate USD/MYR</label>
                                     <input type="text" class="form-control shadow-none bg-warning" placeholder="3"
-                                        value="4.708" id="inflation-rate" onchange="clickTwo()">
+                                        value="4.708" id="fx-rate" onchange="fxRate()">
                                 </div>
                             </form>
                         </div>
@@ -158,7 +208,7 @@
                 <div class="col-md-6 col-12">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="tbl1">
                                 <tbody>
                                     <tr>
                                         <td>PRODUK GAE 5x</td>
@@ -186,11 +236,15 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="tbl2">
                                 <tbody>
                                     <tr>
-                                        <td>Unit Bought</td>
-                                        <td>1</td>
+                                        <!-- <td>Unit Bought</td>
+                                        <td>1</td> -->
+                                        <td colspan="2">
+                                            <label for="customRange1" class="form-label">Unit Bought</label>
+                                            <input type="range" class="form-range" id="customRange1">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Price for 1 Unit GAE 5X (USD)</td>
@@ -216,11 +270,11 @@
                                         <td colspan="2">Value Facility</td>
                                     </tr>
                                     <tr>
-                                        <td>QM  Facility for 1 Unit GAE5x (USD)</td>
+                                        <td>QM Facility for 1 Unit GAE5x (USD)</td>
                                         <td>$100.00</td>
                                     </tr>
                                     <tr>
-                                        <td>QM  Facility bough Unit GAE5x (USD)</td>
+                                        <td>QM Facility bough Unit GAE5x (USD)</td>
                                         <td>$100.00</td>
                                     </tr>
                                     <tr>
@@ -347,32 +401,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>First</td>
-                                        <td>Last</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -391,7 +419,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/anupammo/calculator-azizi@main/fifth-calculator-v3.js"></script>
+    <script>
+        function lmeCPrice() {
+            getValue();
+        }
+        function fxRate() {
+            getValue();
+        }
+        function getValue() {
+            let lmecprice = document.getElementById('lme-cprice').value;
+            let fxrate = document.getElementById('fx-rate').value;
+            // Table One
+            const tbl1 = document.getElementById("tbl1");
+            let spread4p = parseFloat((((lmecprice * fxrate) / 100) * 4).toFixed(2));
+            let qmsell = parseFloat((lmecprice * 1.03).toFixed(2));
+            let produkgae5x = (qmsell - lmecprice).toFixed(2);
+            let qmBuy = parseFloat((lmecprice * fxrate).toFixed(2));
+            let qmSellSpread = parseFloat(((lmecprice * fxrate) + spread4p).toFixed(2));
+            tbl1.rows[1].cells[1].innerHTML = "RM" + spread4p;
+            tbl1.rows[2].cells[1].innerHTML = "$" + qmsell;
+            tbl1.rows[0].cells[1].innerHTML = "$" + produkgae5x;
+            tbl1.rows[3].cells[1].innerHTML = "$" + qmBuy;
+            tbl1.rows[4].cells[1].innerHTML = "RM" + qmSellSpread;
+            // console.log(spread4p+1);
+            // console.log(lmecprice, fxrate);
+        }
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/anupammo/calculator-azizi@main/fifth-calculator-v3.js"></script> -->
 
 </body>
 
