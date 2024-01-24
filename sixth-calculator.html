@@ -239,16 +239,24 @@
                             <table class="table" id="tbl2">
                                 <tbody>
                                     <tr>
-                                        <!-- <td>Unit Bought</td>
-                                        <td>1</td> -->
                                         <td colspan="2">
-                                            <label for="customRange1" class="form-label">Unit Bought</label>
-                                            <input type="range" class="form-range" id="customRange1">
+                                            <p><strong id="disp-unit">1</strong> Unit Bought</p>
+                                            <input type="range" class="form-range" id="unit-bought" min="1" max="30"
+                                                step="1" value="1" onchange="unitBought()">
+                                            <div class="row">
+                                                <span class="col">1</span>
+                                                <span class="text-end col">30</span>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Price for 1 Unit GAE 5X (USD)</td>
-                                        <td>$25.00</td>
+                                        <td>
+                                            <span class="d-inline">$</span>
+                                            <input type="text" class="form-control shadow-none d-inline border-0"
+                                                style="padding: 3px 0px; width: 40px;" placeholder="25"
+                                                value="25.00" id="unit-price" onchange="unitPrice()">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Price for bought unit GAE 5x (USD)</td>
@@ -426,9 +434,15 @@
         function fxRate() {
             getValue();
         }
+        function unitBought() {
+            getValue();
+        }
         function getValue() {
             let lmecprice = document.getElementById('lme-cprice').value;
             let fxrate = document.getElementById('fx-rate').value;
+            let unitbought = document.getElementById('unit-bought').value;
+            document.getElementById('disp-unit').innerHTML = unitbought;
+            let unitprice = document.getElementById('unit-price').value;
             // Table One
             const tbl1 = document.getElementById("tbl1");
             let spread4p = parseFloat((((lmecprice * fxrate) / 100) * 4).toFixed(2));
@@ -441,8 +455,14 @@
             tbl1.rows[0].cells[1].innerHTML = "$" + produkgae5x;
             tbl1.rows[3].cells[1].innerHTML = "$" + qmBuy;
             tbl1.rows[4].cells[1].innerHTML = "RM" + qmSellSpread;
+            // Table Two
+            const tbl2 = document.getElementById("tbl2");
+            let unitcost = (unitprice * unitbought).toFixed(2);
+            let apayment = (unitbought * fxrate).toFixed(2);
+            tbl2.rows[2].cells[1].innerHTML = "$" + unitcost;
+            tbl2.rows[3].cells[1].innerHTML = "RM" + apayment;
             // console.log(spread4p+1);
-            // console.log(lmecprice, fxrate);
+            console.log(lmecprice, fxrate, unitbought, unitcost);
         }
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/anupammo/calculator-azizi@main/fifth-calculator-v3.js"></script> -->
