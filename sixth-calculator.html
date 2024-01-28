@@ -254,8 +254,8 @@
                                         <td>
                                             <span class="d-inline">$</span>
                                             <input type="text" class="form-control shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 40px;" placeholder="25"
-                                                value="25.00" id="unit-price" onchange="unitPrice()">
+                                                style="padding: 3px 0px; width: 40px;" placeholder="25" value="25.00"
+                                                id="unit-price" onchange="unitPrice()">
                                         </td>
                                     </tr>
                                     <tr>
@@ -272,14 +272,19 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="tbl3">
                                 <tbody>
                                     <tr>
                                         <td colspan="2">Value Facility</td>
                                     </tr>
                                     <tr>
                                         <td>QM Facility for 1 Unit GAE5x (USD)</td>
-                                        <td>$100.00</td>
+                                        <td>
+                                            <span class="d-inline">$</span>
+                                            <input type="text" class="form-control shadow-none d-inline border-0"
+                                                style="padding: 3px 0px; width: 50px;" placeholder="100" value="100.00"
+                                                id="qm-price" onchange="qmPrice()">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>QM Facility bough Unit GAE5x (USD)</td>
@@ -295,7 +300,7 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="tbl4">
                                 <tbody>
                                     <tr class="bg-warning">
                                         <td colspan="2">2. MANAGEMENT FEE 3.5% UPFRONT</td>
@@ -318,7 +323,7 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="tbl5">
                                 <tbody>
                                     <tr>
                                         <td class="fw-bold">VALUE GAE 5X (USD)</td>
@@ -340,7 +345,7 @@
                 <div class="col-md-6 col-12">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="tbl6">
                                 <tbody>
                                     <tr>
                                         <td class="bg-warning fw-bold" colspan="2">FUTURE TERMINATION TARGET</td>
@@ -351,11 +356,21 @@
                                     </tr>
                                     <tr>
                                         <td>Future FX Rate</td>
-                                        <td class="bg-danger text-white">RM4.601</td>
+                                        <td class="border border-danger">
+                                            <span class="d-inline">RM</span>
+                                            <input type="text" class="form-control shadow-none d-inline border-0"
+                                                style="padding: 3px 0px; width: 50px;" placeholder="4.601" value="4.601"
+                                                id="future-fx" onchange="futureFx()">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">increment USD GAIN FROM BUY</td>
-                                        <td class="bg-danger text-white">$3.00</td>
+                                        <td class="border border-danger">
+                                            <span class="d-inline">$</span>
+                                            <input type="text" class="form-control shadow-none d-inline border-0"
+                                                style="padding: 3px 0px; width: 50px;" placeholder="3.00" value="3.00"
+                                                id="usd-gain" onchange="usdGain()">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>increment USD GAIN FROM BUY</td>
@@ -363,11 +378,16 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <table class="table">
+                            <table class="table" id="tbl7">
                                 <tbody>
                                     <tr>
                                         <td class="fw-bold">Daily Waiting</td>
-                                        <td class="bg-danger text-white">90</td>
+                                        <td class="border border-danger">
+                                            <span class="d-inline">$</span>
+                                            <input type="text" class="form-control shadow-none d-inline border-0"
+                                                style="padding: 3px 0px; width: 50px;" placeholder="90" value="90"
+                                                id="daily-waiting" onchange="dailyWaiting()">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="fw-bold">Fee to Date</td>
@@ -375,7 +395,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <table class="table">
+                            <table class="table" id="tbl8">
                                 <tbody>
                                     <tr>
                                         <td class="fw-bold text-primary">Net Cash Out QM (Future)</td>
@@ -387,7 +407,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <table class="table">
+                            <table class="table" id="tbl9">
                                 <tbody>
                                     <tr>
                                         <td class="bg-warning fw-bold" colspan="2">TERMINATE TO FLOATING ACC</td>
@@ -437,12 +457,28 @@
         function unitBought() {
             getValue();
         }
+        function qmPrice() {
+            getValue();
+        }
+        function futureFx() {
+            getValue();
+        }
+        function usdGain() {
+            getValue();
+        }
+        function dailyWaiting() {
+            getValue();
+        }
         function getValue() {
             let lmecprice = document.getElementById('lme-cprice').value;
             let fxrate = document.getElementById('fx-rate').value;
             let unitbought = document.getElementById('unit-bought').value;
+            let qmprice = document.getElementById('qm-price').value;
             document.getElementById('disp-unit').innerHTML = unitbought;
             let unitprice = document.getElementById('unit-price').value;
+            let futurefx = document.getElementById('futurefx').value;
+            let usdgain = document.getElementById('usdgain').value;
+            let dailywaiting = document.getElementById('dailywaiting').value;
             // Table One
             const tbl1 = document.getElementById("tbl1");
             let spread4p = parseFloat((((lmecprice * fxrate) / 100) * 4).toFixed(2));
@@ -461,6 +497,46 @@
             let apayment = (unitbought * fxrate).toFixed(2);
             tbl2.rows[2].cells[1].innerHTML = "$" + unitcost;
             tbl2.rows[3].cells[1].innerHTML = "RM" + apayment;
+            // Table Three
+            const tbl3 = document.getElementById("tbl3");
+            let qmbought = (qmprice * unitbought).toFixed(2);
+            let totalgae = (qmbought * fxrate).toFixed(2);
+            tbl3.rows[2].cells[1].innerHTML = "$" + qmbought;
+            tbl3.rows[3].cells[1].innerHTML = "RM" + totalgae;
+            // Table Four
+            const tbl4 = document.getElementById("tbl4");
+            let gae35 = ((qmbought * 3.5) / 100).toFixed(2);
+            let bconverted = (gae35 * fxrate).toFixed(2);
+            let mfqm = (gae35 / 365).toFixed(2);
+            tbl4.rows[1].cells[1].innerHTML = "$" + gae35;
+            tbl4.rows[2].cells[1].innerHTML = "RM" + bconverted;
+            tbl4.rows[3].cells[1].innerHTML = "$" + mfqm;
+            // Table Five
+            const tbl5 = document.getElementById("tbl5");
+            let valuegae = ((unitcost * 5) * unitcost).toFixed(2);
+            let totalgold = (valuegae / qmsell).toFixed(2);
+            let netcash = ((totalgold * lmecprice) - qmbought).toFixed(2);
+            tbl5.rows[1].cells[1].innerHTML = "$" + valuegae;
+            tbl5.rows[2].cells[1].innerHTML = totalgold + "g";
+            tbl5.rows[3].cells[1].innerHTML = "$" + netcash;
+            // Table Six
+            const tbl6 = document.getElementById("tbl6");
+            let lmeprice = (usdgain + lmecprice).toFixed(2);
+            let lmepercent = ((lmeprice - lmecprice) / lmecprice).toFixed(2);
+            tbl6.rows[1].cells[1].innerHTML = "$" + lmeprice;
+            tbl6.rows[4].cells[1].innerHTML = "$" + lmepercent;
+            // Table Seven
+            const tbl7 = document.getElementById("tbl7");
+            feetodate = (dailywaiting * mfqm).toFixed(2);
+            tbl7.rows[1].cells[1].innerHTML = "$" + feetodate;
+            // Table Eight
+            const tbl8 = document.getElementById("tbl8");
+            let netcashout = ((totalgold * futurefx) - qmbought).toFixed(2);
+            tbl8.rows[1].cells[1].innerHTML = "$" + netcashout;
+            tbl8.rows[2].cells[1].innerHTML = "$" + netcashout;
+            // Table Nine
+            const tbl9 = document.getElementById("tbl9");
+            terminateusd = (netcashout - netcashout).toFixed(2);
             // console.log(spread4p+1);
             console.log(lmecprice, fxrate, unitbought, unitcost);
         }
