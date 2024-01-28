@@ -536,7 +536,12 @@
             tbl8.rows[2].cells[1].innerHTML = "$" + netcashout;
             // Table Nine
             const tbl9 = document.getElementById("tbl9");
-            terminateusd = (netcashout - netcashout).toFixed(2);
+            let terminateusd = (netcashout - netcashout).toFixed(2);
+            let terminatemyr = (terminateusd - futurefx).toFixed(2);
+            let profit = (terminatemyr - apayment).toFixed(2);
+            tbl9.rows[1].cells[1].innerHTML = "$" + terminateusd;
+            tbl9.rows[1].cells[1].innerHTML = "RM" + terminatemyr;
+            tbl9.rows[1].cells[1].innerHTML = "RM" + profit;
             // console.log(spread4p+1);
             console.log(lmecprice, fxrate, unitbought, unitcost);
         }
