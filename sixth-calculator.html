@@ -256,7 +256,7 @@
                                             <input type="text"
                                                 class="form-control bg-warning shadow-none d-inline border-0"
                                                 style="padding: 3px 0px; width: 60px;" placeholder="25" value="25"
-                                                id="unit-price" onchange="unitPrice()">
+                                                id="unit-price" disabled>
                                         </td>
                                     </tr>
                                     <tr>
@@ -283,7 +283,7 @@
                                             <input type="text"
                                                 class="form-control bg-warning shadow-none d-inline border-0"
                                                 style="padding: 3px 0px; width: 50px;" placeholder="100" value="100.00"
-                                                id="qm-price" onchange="qmPrice()">
+                                                id="qm-price" disabled>
                                         </td>
                                     </tr>
                                     <tr>
@@ -542,12 +542,12 @@
         function unitBought() {
             getValue();
         }
-        function unitPrice() {
-            getValue();
-        }
-        function qmPrice() {
-            getValue();
-        }
+        // function unitPrice() {
+        //     getValue();
+        // }
+        // function qmPrice() {
+        //     getValue();
+        // }
         function futureFx() {
             getValue();
         }
