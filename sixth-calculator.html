@@ -206,235 +206,271 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table" id="tbl1">
-                                <tbody>
-                                    <tr>
-                                        <td>PRODUK GAE 5x</td>
-                                        <td>$1.89</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Spread 4%</td>
-                                        <td>RM11.86</td>
-                                    </tr>
-                                    <tr>
-                                        <td>QM Sell (USD)</td>
-                                        <td>$64.89</td>
-                                    </tr>
-                                    <tr>
-                                        <td>QM Buy / LME (RM)</td>
-                                        <td>RM296.60</td>
-                                    </tr>
-                                    <tr>
-                                        <td>QM Sell (RM) + spread</td>
-                                        <td>RM308.47</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button shadow-none collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                    aria-controls="collapseOne"></button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <table class="table" id="tbl1">
+                                        <tbody>
+                                            <tr>
+                                                <td>PRODUK GAE 5x</td>
+                                                <td class="text-end">$1.89</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Spread 4%</td>
+                                                <td class="text-end">RM11.86</td>
+                                            </tr>
+                                            <tr>
+                                                <td>QM Sell (USD)</td>
+                                                <td class="text-end">$64.89</td>
+                                            </tr>
+                                            <tr>
+                                                <td>QM Buy / LME (RM)</td>
+                                                <td class="text-end">RM296.60</td>
+                                            </tr>
+                                            <tr>
+                                                <td>QM Sell (RM) + spread</td>
+                                                <td class="text-end">RM308.47</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table" id="tbl2">
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2">
-                                            <p><strong id="disp-unit">1</strong> Unit Bought</p>
-                                            <input type="range" class="form-range" id="unit-bought" min="1" max="30"
-                                                step="1" value="1" onchange="unitBought()">
-                                            <div class="row">
-                                                <span class="col">1</span>
-                                                <span class="text-end col">30</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Price for 1 Unit GAE 5X (USD)</td>
-                                        <td class="bg-warning">
-                                            <span class="d-inline">$</span>
-                                            <input type="text"
-                                                class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 60px;" placeholder="25" value="25"
-                                                id="unit-price" disabled>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Price for bought unit GAE 5x (USD)</td>
-                                        <td>$25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>A- Payment GAE 5X (RM)</td>
-                                        <td>RM117.70</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="true"
+                                    aria-controls="collapseTwo"></button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <table class="table" id="tbl2">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <p><strong id="disp-unit">1</strong> Unit Bought</p>
+                                                    <input type="range" class="form-range" id="unit-bought" min="1"
+                                                        max="30" step="1" value="1" onchange="unitBought()">
+                                                    <div class="row">
+                                                        <span class="col">1</span>
+                                                        <span class="text-end col">30</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Price for 1 Unit GAE 5X (USD)</td>
+                                                <td class="bg-warning">
+                                                    <span class="d-inline">$</span>
+                                                    <input type="text"
+                                                        class="form-control bg-warning shadow-none d-inline border-0"
+                                                        style="padding: 3px 0px; width: 60px;" placeholder="25"
+                                                        value="25" id="unit-price" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Price for bought unit GAE 5x (USD)</td>
+                                                <td class="text-end">$25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>A- Payment GAE 5X (RM)</td>
+                                                <td class="text-end">RM117.70</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-header bg-warning py-3">Value Facility</div>
-                        <div class="card-body">
-                            <table class="table" id="tbl3">
-                                <tbody>
-                                    <tr>
-                                        <td>QM Facility for 1 Unit GAE5x (USD)</td>
-                                        <td class="bg-warning">
-                                            <span class="d-inline">$</span>
-                                            <input type="text"
-                                                class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 50px;" placeholder="100" value="100.00"
-                                                id="qm-price" disabled>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>QM Facility bough Unit GAE5x (USD)</td>
-                                        <td>$100.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TOTAL GAE 5X value in (RM)</td>
-                                        <td>RM470</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-header bg-warning py-3">Management Fee 3.5% Upfront</div>
-                        <div class="card-body">
-                            <table class="table" id="tbl4">
-                                <tbody>
-                                    <tr>
-                                        <td>3.5% from Facility GAE5x / yearly (USD)</td>
-                                        <td>$3.50</td>
-                                    </tr>
-                                    <tr>
-                                        <td>B - Converted MF yearly (RM)</td>
-                                        <td>RM16.48</td>
-                                    </tr>
-                                    <tr>
-                                        <td>MF QM daily</td>
-                                        <td>$0.01</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table" id="tbl5">
-                                <tbody>
-                                    <tr>
-                                        <td>VALUE GAE 5X (USD)</td>
-                                        <td>$125.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total GOLD in QM GAE 5x LIST</td>
-                                        <td>1.92634g</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Net Cash Out (Current QM BUY)</td>
-                                        <td>$21.36</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button shadow-none collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree"></button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="bg-warning rounded">
+                                        <p class="p-3">Value Facility</p>
+                                    </div>
+                                    <table class="table" id="tbl3">
+                                        <tbody>
+                                            <tr>
+                                                <td>QM Facility for 1 Unit GAE5x (USD)</td>
+                                                <td class="bg-warning">
+                                                    <span class="d-inline">$</span>
+                                                    <input type="text"
+                                                        class="form-control bg-warning shadow-none d-inline border-0"
+                                                        style="padding: 3px 0px; width: 50px;" placeholder="100"
+                                                        value="100.00" id="qm-price" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>QM Facility bough Unit GAE5x (USD)</td>
+                                                <td class="text-end">$100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>TOTAL GAE 5X value in (RM)</td>
+                                                <td class="text-end">RM470</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="bg-warning rounded">
+                                        <p class="p-3">Management Fee 3.5% Upfront</p>
+                                    </div>
+                                    <table class="table" id="tbl4">
+                                        <tbody>
+                                            <tr>
+                                                <td>3.5% from Facility GAE5x / yearly (USD)</td>
+                                                <td class="text-end">$3.50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B - Converted MF yearly (RM)</td>
+                                                <td class="text-end">RM16.48</td>
+                                            </tr>
+                                            <tr>
+                                                <td>MF QM daily</td>
+                                                <td class="text-end">$0.01</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table" id="tbl5">
+                                        <tbody>
+                                            <tr>
+                                                <td>VALUE GAE 5X (USD)</td>
+                                                <td class="text-end">$125.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total GOLD in QM GAE 5x LIST</td>
+                                                <td class="text-end">1.92634g</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Net Cash Out (Current QM BUY)</td>
+                                                <td class="text-end">$21.36</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
-                    <div class="card mb-3">
-                        <div class="card-header bg-warning py-3">Future Termination Target</div>
-                        <div class="card-body">
-                            <table class="table" id="tbl6">
-                                <tbody>
-                                    <tr>
-                                        <td>Future FX Rate</td>
-                                        <td class="bg-warning">
-                                            <span class="d-inline">RM</span>
-                                            <input type="text"
-                                                class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 50px;" value="4.708" id="future-fx"
-                                                onchange="futureFx()">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>increment USD GAIN FROM BUY</td>
-                                        <td class="bg-warning">
-                                            <span class="d-inline">$</span>
-                                            <input type="text"
-                                                class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 50px;" value="3.00" id="usd-gain"
-                                                onchange="usdGain()">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>LME FUTURE PRICE</td>
-                                        <td>$66</td>
-                                    </tr>
-                                    <tr>
-                                        <td>LME PERCENT INCREMENT</td>
-                                        <td>4.76%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="accordion" id="accordionExample1">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button shadow-none collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour"></button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample1">
+                                <div class="accordion-body">
+                                    <div class="bg-warning rounded">
+                                        <p class="p-3">Future Termination Target</p>
+                                    </div>
+                                    <table class="table mt-5" id="tbl6">
+                                        <tbody>
+                                            <tr>
+                                                <td>Future FX Rate</td>
+                                                <td class="bg-warning">
+                                                    <span class="d-inline">RM</span>
+                                                    <input type="text"
+                                                        class="form-control bg-warning shadow-none d-inline border-0"
+                                                        style="padding: 3px 0px; width: 50px;" value="4.708"
+                                                        id="future-fx" onchange="futureFx()">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>increment USD GAIN FROM BUY</td>
+                                                <td class="bg-warning">
+                                                    <span class="d-inline">$</span>
+                                                    <input type="text"
+                                                        class="form-control bg-warning shadow-none d-inline border-0"
+                                                        style="padding: 3px 0px; width: 50px;" value="3.00"
+                                                        id="usd-gain" onchange="usdGain()">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>LME FUTURE PRICE</td>
+                                                <td class="text-end">$66</td>
+                                            </tr>
+                                            <tr>
+                                                <td>LME PERCENT INCREMENT</td>
+                                                <td class="text-end">4.76%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table mt-5" id="tbl7">
+                                        <tbody>
+                                            <tr>
+                                                <td>Daily Waiting</td>
+                                                <td class="bg-warning">
+                                                    <span class="d-inline">$</span>
+                                                    <input type="text"
+                                                        class="form-control bg-warning shadow-none d-inline border-0"
+                                                        style="padding: 3px 0px; width: 50px;" value="90"
+                                                        id="daily-waiting" onchange="dailyWaiting()">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fee to Date</td>
+                                                <td class="text-end">$0.86</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table mt-5" id="tbl8">
+                                        <tbody>
+                                            <tr>
+                                                <td>Net Cash Out QM (Future)</td>
+                                                <td class="text-end">$27.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Terminate</td>
+                                                <td class="text-end">$27.14</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table" id="tbl7">
-                                <tbody>
-                                    <tr>
-                                        <td>Daily Waiting</td>
-                                        <td class="bg-warning">
-                                            <span class="d-inline">$</span>
-                                            <input type="text"
-                                                class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 50px;" value="90"
-                                                id="daily-waiting" onchange="dailyWaiting()">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fee to Date</td>
-                                        <td>$0.86</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <table class="table" id="tbl8">
-                                <tbody>
-                                    <tr>
-                                        <td>Net Cash Out QM (Future)</td>
-                                        <td>$27.14</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total Terminate</td>
-                                        <td>$27.14</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-header bg-warning py-3">Terminate to Floating A/c</div>
-                        <div class="card-body">
-                            <table class="table" id="tbl9">
-                                <tbody>
-                                    <tr>
-                                        <td>USD</td>
-                                        <td>$26.28</td>
-                                    </tr>
-                                    <tr>
-                                        <td>MYR</td>
-                                        <td>RM120.89</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Profit?</td>
-                                        <td>RM3.19</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="true"
+                                    aria-controls="collapseFive"></button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample1">
+                                <div class="accordion-body">
+                                    <div class="bg-warning rounded">
+                                        <p class="p-3">Terminate to Floating A/c</p>
+                                    </div>
+                                    <table class="table" id="tbl9">
+                                        <tbody>
+                                            <tr>
+                                                <td>USD</td>
+                                                <td class="text-end">$26.28</td>
+                                            </tr>
+                                            <tr>
+                                                <td>MYR</td>
+                                                <td class="text-end">RM120.89</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Profit?</td>
+                                                <td class="text-end">RM3.19</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
