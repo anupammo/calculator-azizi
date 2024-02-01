@@ -352,7 +352,7 @@
                                             <span class="d-inline">RM</span>
                                             <input type="text"
                                                 class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 50px;" value="4.601" id="future-fx"
+                                                style="padding: 3px 0px; width: 50px;" value="4.708" id="future-fx"
                                                 onchange="futureFx()">
                                         </td>
                                     </tr>
@@ -368,11 +368,11 @@
                                     </tr>
                                     <tr>
                                         <td>LME FUTURE PRICE</td>
-                                        <td>$66.00</td>
+                                        <td>$66</td>
                                     </tr>
                                     <tr>
-                                        <td>increment USD GAIN FROM BUY</td>
-                                        <td>$4.76%</td>
+                                        <td>LME PERCENT INCREMENT</td>
+                                        <td>4.76%</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -388,7 +388,7 @@
                                             <span class="d-inline">$</span>
                                             <input type="text"
                                                 class="form-control bg-warning shadow-none d-inline border-0"
-                                                style="padding: 3px 0px; width: 50px;" placeholder="90" value="90"
+                                                style="padding: 3px 0px; width: 50px;" value="90"
                                                 id="daily-waiting" onchange="dailyWaiting()">
                                         </td>
                                     </tr>
@@ -463,7 +463,7 @@
             let qmprice = document.getElementById('qm-price').value;
             let unitbought = document.getElementById('unit-bought').value;
             document.getElementById('disp-unit').innerHTML = unitbought;
-            let unitprice = document.getElementById('unit-price').value;
+            let unitprice = parseInt(document.getElementById('unit-price').value);
             let futurefx = document.getElementById('future-fx').value;
             let usdgain = document.getElementById('usd-gain').value;
             let dailywaiting = document.getElementById('daily-waiting').value;
@@ -482,7 +482,7 @@
             // Table Two
             const tbl2 = document.getElementById("tbl2");
             let unitcost = (unitprice * unitbought);
-            let apayment = (unitbought * fxrate).toFixed(2);
+            let apayment = (unitcost * fxrate).toFixed(2);
             tbl2.rows[2].cells[1].innerHTML = "$" + unitcost;
             tbl2.rows[3].cells[1].innerHTML = "RM" + apayment;
             // Table Three
@@ -501,36 +501,36 @@
             tbl4.rows[2].cells[1].innerHTML = "$" + mfqm;
             // Table Five
             const tbl5 = document.getElementById("tbl5");
-            let valuegae = ((unitcost * 5) * unitcost).toFixed(2);
-            let totalgold = (valuegae / qmsell).toFixed(2);
+            let valuegae = ((unitprice * 5) * unitbought).toFixed(2);
+            let totalgold = (valuegae / qmsell).toFixed(5);
             let netcash = ((totalgold * lmecprice) - qmbought).toFixed(2);
             tbl5.rows[0].cells[1].innerHTML = "$" + valuegae;
             tbl5.rows[1].cells[1].innerHTML = totalgold + "g";
             tbl5.rows[2].cells[1].innerHTML = "$" + netcash;
             // Table Six
             const tbl6 = document.getElementById("tbl6");
-            let lmeprice = (usdgain + lmecprice);
+            let lmeprice = (parseInt(usdgain) + parseInt(lmecprice));
             let lmepercent = ((lmeprice - lmecprice) / lmecprice).toFixed(2);
             tbl6.rows[2].cells[1].innerHTML = "$" + lmeprice;
-            tbl6.rows[3].cells[1].innerHTML = "$" + lmepercent;
+            tbl6.rows[3].cells[1].innerHTML = lmepercent + "%";
             // Table Seven
             const tbl7 = document.getElementById("tbl7");
             feetodate = (dailywaiting * mfqm).toFixed(2);
             tbl7.rows[1].cells[1].innerHTML = "$" + feetodate;
             // Table Eight
             const tbl8 = document.getElementById("tbl8");
-            let netcashout = ((totalgold * futurefx) - qmbought).toFixed(2);
+            let netcashout = parseFloat((totalgold * lmeprice) - qmbought).toFixed(2);
             tbl8.rows[0].cells[1].innerHTML = "$" + netcashout;
             tbl8.rows[1].cells[1].innerHTML = "$" + netcashout;
             // Table Nine
             const tbl9 = document.getElementById("tbl9");
-            let terminateusd = (netcashout - netcashout).toFixed(2);
-            let terminatemyr = (terminateusd - futurefx).toFixed(2);
+            let terminateusd = (netcashout - feetodate).toFixed(2);
+            let terminatemyr = (terminateusd * futurefx).toFixed(2);
             let profit = (terminatemyr - apayment).toFixed(2);
             tbl9.rows[0].cells[1].innerHTML = "$" + terminateusd;
             tbl9.rows[1].cells[1].innerHTML = "RM" + terminatemyr;
             tbl9.rows[2].cells[1].innerHTML = "RM" + profit;
-            // console.log(futurefx);
+            // console.log(usdgain, lmecprice);
             // console.log(lmecprice, fxrate, unitbought, unitcost);
         }
         function lmeCPrice() {
