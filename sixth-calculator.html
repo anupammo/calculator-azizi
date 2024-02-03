@@ -498,7 +498,9 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script>
-        var dailywaiting = 90;
+        let dailywaiting = 90;
+        let lmecprice = 63;
+        let lmeprice = 66;
         function chartData() {
             var xValues = [1, dailywaiting];
             var yValues = [55, 60, 65, 70];
@@ -509,7 +511,7 @@
                     labels: xValues,
                     datasets: [{
                         label: 'USD / $',
-                        data: [63, 68],
+                        data: [lmecprice, lmeprice],
                         borderColor: "blue",
                         fill: false
                     }]
@@ -520,7 +522,7 @@
             })
         }
         function getValue() {
-            let lmecprice = document.getElementById('lme-cprice').value;
+            lmecprice = document.getElementById('lme-cprice').value;
             let fxrate = document.getElementById('fx-rate').value;
             let qmprice = document.getElementById('qm-price').value;
             let unitbought = document.getElementById('unit-bought').value;
@@ -571,7 +573,7 @@
             tbl5.rows[2].cells[1].innerHTML = "$" + netcash;
             // Table Six
             const tbl6 = document.getElementById("tbl6");
-            let lmeprice = (parseInt(usdgain) + parseInt(lmecprice));
+            lmeprice = (parseInt(usdgain) + parseInt(lmecprice));
             let lmepercent = ((lmeprice - lmecprice) / lmecprice).toFixed(2);
             tbl6.rows[2].cells[1].innerHTML = "$" + lmeprice;
             tbl6.rows[3].cells[1].innerHTML = lmepercent + "%";
@@ -597,12 +599,15 @@
         }
         function lmeCPrice() {
             getValue();
+            chartData();
         }
         function fxRate() {
             getValue();
+            chartData();
         }
         function unitBought() {
             getValue();
+            chartData();
         }
         // function unitPrice() {
         //     getValue();
@@ -612,9 +617,11 @@
         // }
         function futureFx() {
             getValue();
+            chartData();
         }
         function usdGain() {
             getValue();
+            chartData();
         }
         function dailyWaiting() {
             getValue();
