@@ -273,10 +273,10 @@
                                             <tr>
                                                 <td>Price for 1 Unit GAE 5X (USD)</td>
                                                 <td class="bg-warning">
-                                                    <span class="d-inline">$</span>
+                                                    <span class="d-inline float-end text-end ps-1">$</span>
                                                     <input type="text"
-                                                        class="form-control bg-warning shadow-none d-inline border-0"
-                                                        style="padding: 3px 0px; width: 60px;" placeholder="25"
+                                                        class="form-control bg-warning shadow-none d-inline float-end text-end border-0"
+                                                        style="padding: 0px; width: 60px;" placeholder="25"
                                                         value="25" id="unit-price" disabled>
                                                 </td>
                                             </tr>
@@ -310,9 +310,9 @@
                                             <tr>
                                                 <td>QM Facility for 1 Unit GAE5x (USD)</td>
                                                 <td class="bg-warning">
-                                                    <span class="d-inline">$</span>
+                                                    <span class="d-inline float-end text-end ps-1">$</span>
                                                     <input type="text"
-                                                        class="form-control bg-warning shadow-none d-inline border-0"
+                                                        class="form-control bg-warning shadow-none d-inline float-end text-end border-0"
                                                         style="padding: 3px 0px; width: 50px;" placeholder="100"
                                                         value="100.00" id="qm-price" disabled>
                                                 </td>
@@ -371,12 +371,11 @@
                     <div class="accordion" id="accordionExample1">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button shadow-none collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="true"
                                     aria-controls="collapseFour"></button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample1">
+                            <div id="collapseFour" class="accordion-collapse" data-bs-parent="#accordionExample1">
                                 <div class="accordion-body">
                                     <div class="bg-warning rounded">
                                         <p class="p-3">Future Termination Target</p>
@@ -386,20 +385,20 @@
                                             <tr>
                                                 <td>Future FX Rate</td>
                                                 <td class="bg-warning">
-                                                    <span class="d-inline">RM</span>
+                                                    <span class="d-inline float-end ps-1">RM</span>
                                                     <input type="text"
-                                                        class="form-control bg-warning shadow-none d-inline border-0"
-                                                        style="padding: 3px 0px; width: 50px;" value="4.708"
+                                                        class="form-control bg-warning shadow-none d-inline float-end text-end border-0"
+                                                        style="padding: 0px; width: 50px;" value="4.708"
                                                         id="future-fx" onchange="futureFx()">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>increment USD GAIN FROM BUY</td>
                                                 <td class="bg-warning">
-                                                    <span class="d-inline">$</span>
+                                                    <span class="d-inline float-end text-end">$</span>
                                                     <input type="text"
-                                                        class="form-control bg-warning shadow-none d-inline border-0"
-                                                        style="padding: 3px 0px; width: 50px;" value="3.00"
+                                                        class="form-control bg-warning shadow-none d-inline float-end text-end border-0"
+                                                        style="padding: 0px; width: 50px;" value="3.00"
                                                         id="usd-gain" onchange="usdGain()">
                                                 </td>
                                             </tr>
@@ -418,10 +417,10 @@
                                             <tr>
                                                 <td>Daily Waiting</td>
                                                 <td class="bg-warning">
-                                                    <span class="d-inline">$</span>
+                                                    <span class="d-inline float-end ps-1">days</span>
                                                     <input type="text"
-                                                        class="form-control bg-warning shadow-none d-inline border-0"
-                                                        style="padding: 3px 0px; width: 50px;" value="90"
+                                                        class="form-control bg-warning shadow-none d-inline float-end text-end border-0"
+                                                        style="padding: 0px; width: 50px;" value="90"
                                                         id="daily-waiting" onchange="dailyWaiting()">
                                                 </td>
                                             </tr>
@@ -558,7 +557,7 @@
             // Table Seven
             const tbl7 = document.getElementById("tbl7");
             feetodate = (dailywaiting * mfqm).toFixed(2);
-            tbl7.rows[1].cells[1].innerHTML = "$" + feetodate;
+            tbl7.rows[1].cells[1].innerHTML = feetodate;
             // Table Eight
             const tbl8 = document.getElementById("tbl8");
             let netcashout = parseFloat((totalgold * lmeprice) - qmbought).toFixed(2);
@@ -601,21 +600,17 @@
         }
     </script>
     <script>
-        var xValues = [1, 4, 8, 12];
+        var xValues = [1, 90];
+        var yValues = [55, 60, 65, 70];
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
             type: "line",
             data: {
                 labels: xValues,
                 datasets: [{
-                    label: '%',
-                    data: [],
+                    label: 'USD / $',
+                    data: [63, 68],
                     borderColor: "blue",
-                    fill: false
-                }, {
-                    label: '%',
-                    data: [55, 60, 65, 70],
-                    borderColor: "red",
                     fill: false
                 }]
             },
