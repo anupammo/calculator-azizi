@@ -73,7 +73,60 @@
     </style>
 </head>
 
-<body onload="chartData()">
+<body onload="chartData(); chartData10x();">
+    <header class="parallax bg-style pb-5">
+        <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+            <div class="container">
+                <a class="navbar-brand" href="./">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-house-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                        <path fill-rule="evenodd"
+                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    Home
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Calculators
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="first-calculator">Calculator 1</a></li>
+                                <li><a class="dropdown-item" href="gold-calculator">Calculator 2</a></li>
+                                <li><a class="dropdown-item" href="third-calculator">Calculator 3</a></li>
+                                <li><a class="dropdown-item" href="fourth-calculator">Calculator 4</a></li>
+                                <li><a class="dropdown-item" href="fifth-calculator">Calculator 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center text-white">
+                        <span class="display-3 font-bolder">Anggaran Nilai 15% NC0 dari
+                            Kemudahan GCA</span>
+                        <br>
+                        <span class="lead p">Solusi Pemulihan Ekonomi Keluarga</span>
+                        <br>
+                        <a class="lead text-white" style="text-decoration: none;"
+                            href="https://sites.google.com/moe-dl.edu.my/cikguemas/">Disediakan oleh CikguEmas.Com</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
     <section style="margin-top: -50px;">
         <div class="container">
             <div class="row">
@@ -873,8 +926,7 @@
             getValue();
             chartData();
         }
-    </script>
-    <script>
+
         // 10x
         let dailywaiting10x = 90;
         let lmecprice10x = 63;
@@ -883,7 +935,7 @@
             var xValues = [1, dailywaiting10x];
             var yValues = [55, 60, 65, 70];
             const ctx = document.getElementById('myChart10x');
-            const myChart10x = new Chart(ctx, {
+            const myChart = new Chart(ctx, {
                 type: "line",
                 data: {
                     labels: xValues,
@@ -1014,6 +1066,10 @@
             getValue10x();
             chartData10x();
         }
+    function forBodyload() {
+        window.onload = chartData;
+        window.onload = chartData10x;
+    }
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/anupammo/calculator-azizi@main/fifth-calculator-v3.js"></script> -->
 
