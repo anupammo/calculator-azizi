@@ -880,7 +880,6 @@
             const tbl6 = document.getElementById("tbl6");
             lmeprice = (parseFloat(usdgain) + parseInt(lmecprice));
             let lmepercent = (((lmeprice - lmecprice) / lmecprice) * 100).toFixed(1);
-            console.log(lmeprice, lmecprice);
             tbl6.rows[2].cells[1].innerHTML = "$" + lmeprice;
             tbl6.rows[3].cells[1].innerHTML = lmepercent + "%";
             // Table Seven
