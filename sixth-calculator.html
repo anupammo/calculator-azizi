@@ -157,21 +157,23 @@
                 <div class="col-12">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                                type="button" role="tab" aria-controls="nav-home" aria-selected="false">5x</button>
-                            <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab"
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">GAE 5x</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                                aria-selected="true">10x</button>
+                                aria-selected="false">GAE 10x</button>
                         </div>
                     </nav>
                     <div class="tab-content tab-content border border-top-0" id="nav-tabContent">
-                        <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                            tabindex="0">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab" tabindex="0">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6 col-12 my-3">
                                         <div class="card border border-warning h-100">
-                                            <div class="card-header border border-warning bg-warning px-5 py-3">Calculator GAE 5X</div>
+                                            <div class="card-header border border-warning bg-warning px-5 py-3">
+                                                Calculator GAE 5X</div>
                                             <div class="card-body px-5">
                                                 <form class="my-3" action="">
                                                     <div class="mb-3">
@@ -455,13 +457,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
-                            aria-labelledby="nav-profile-tab" tabindex="0">
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                            tabindex="0">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6 col-12 my-3">
                                         <div class="card border border-warning h-100">
-                                            <div class="card-header border border-warning bg-warning px-5 py-3">Calculator GAE 10X</div>
+                                            <div class="card-header border border-warning bg-warning px-5 py-3">
+                                                Calculator GAE 10X</div>
                                             <div class="card-body px-5">
                                                 <form class="my-3">
                                                     <div class="mb-3">
@@ -875,7 +878,7 @@
             tbl5.rows[2].cells[1].innerHTML = "$" + netcash;
             // Table Six
             const tbl6 = document.getElementById("tbl6");
-            lmeprice = (parseInt(usdgain) + parseInt(lmecprice));
+            lmeprice = (parseFloat(usdgain) + parseInt(lmecprice));
             let lmepercent = (((lmeprice - lmecprice) / lmecprice) * 100).toFixed(1);
             console.log(lmeprice, lmecprice);
             tbl6.rows[2].cells[1].innerHTML = "$" + lmeprice;
@@ -897,8 +900,6 @@
             tbl9.rows[0].cells[1].innerHTML = "$" + terminateusd;
             tbl9.rows[1].cells[1].innerHTML = "RM" + terminatemyr;
             tbl9.rows[2].cells[1].innerHTML = "RM" + profit;
-            // console.log(usdgain, lmecprice);
-            // console.log(lmecprice, fxrate, unitbought, unitcost);
         }
         function lmeCPrice() {
             getValue();
@@ -1010,7 +1011,7 @@
             tbl15.rows[2].cells[1].innerHTML = "$" + netcash10x;
             // Table Six
             const tbl16 = document.getElementById("tbl16");
-            lmeprice10x = (parseInt(usdgain10x) + parseInt(lmecprice10x));
+            lmeprice10x = (parseFloat(usdgain10x) + parseInt(lmecprice10x));
             let lmepercent10x = (((lmeprice10x - lmecprice10x) / lmecprice10x) * 100).toFixed(1);
             tbl16.rows[2].cells[1].innerHTML = "$" + lmeprice10x;
             tbl16.rows[3].cells[1].innerHTML = lmepercent10x + "%";
@@ -1033,7 +1034,6 @@
             let totalacc = parseFloat(netcashout10x) + parseFloat(refundmf);
             let netcash = (parseFloat(totalacc) * parseFloat(futurefx10x)).toFixed(2);
             let totalprofit = (parseFloat(netcash) - parseFloat(gae10xmyr)).toFixed(2);
-            // console.log(futurefx10x, refundmf);
             tbl19.rows[0].cells[1].innerHTML = "$" + refundmf;
             tbl19.rows[1].cells[1].innerHTML = "RM" + totalmf;
             tbl19.rows[2].cells[1].innerHTML = "$" + totalacc;
@@ -1064,10 +1064,10 @@
             getValue10x();
             chartData10x();
         }
-    function forBodyload() {
-        window.onload = chartData;
-        window.onload = chartData10x;
-    }
+        function forBodyload() {
+            window.onload = chartData;
+            window.onload = chartData10x;
+        }
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/anupammo/calculator-azizi@main/fifth-calculator-v3.js"></script> -->
 
